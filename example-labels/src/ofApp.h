@@ -1,9 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxTangramTile.h"
-#include "ofxTangramLabels.h"
-#include "ofxTangramBuilder.h"
+#include "ofxVectorTile.h"
+#include "ofxVectorLabels.h"
+#include "ofxVectorBuilder.h"
 
 class ofApp : public ofBaseApp{
 public:
@@ -25,8 +25,8 @@ public:
     ofLight     light;
     ofFbo       fbo;
   
-    ofxTangramTile      tile;
-    ofxTangramBuilder   builder;
-    ofxTangramLabels    labels;
+    ofxVectorTile      tile;
+    ofxVectorBuilder   builder;
+    ofxVectorLabels    labels;
     ofVboMesh           tileMesh;
 };

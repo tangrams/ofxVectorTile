@@ -1,5 +1,5 @@
 //
-//  ofxTangramTile
+//  ofxVectorTile
 //
 //  Created by Patricio Gonzalez Vivo on 10/10/14.
 //

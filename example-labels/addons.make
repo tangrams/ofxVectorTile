@@ -1,3 +1,3 @@
 ofxFTGL
 ofxJSON
-ofxTangramTile
+ofxVectorTile

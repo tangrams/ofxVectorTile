@@ -1,33 +1,33 @@
 //
-//  ofxTangramBuilder.cpp
+//  ofxVectorBuilder.cpp
 //
 //  Created by Patricio Gonzalez Vivo on 10/10/14.
 //
 //
 
-#include "ofxTangramBuilder.h"
+#include "ofxVectorBuilder.h"
 
 #include "ofxGlm.h"
 
-ofxTangramBuilder::ofxTangramBuilder():bFirst(true){
+ofxVectorBuilder::ofxVectorBuilder():bFirst(true){
 
 }
 
-ofxTangramBuilder::~ofxTangramBuilder(){
+ofxVectorBuilder::~ofxVectorBuilder(){
     
 }
 
-ofPoint ofxTangramBuilder::getOffset(){
+ofPoint ofxVectorBuilder::getOffset(){
     return toOf(m_geometryOffset);
 }
 
-ofxTangramTile ofxTangramBuilder::getFromWeb(int _tileX, int _tileY, int _zoom){
+ofxVectorTile ofxVectorBuilder::getFromWeb(int _tileX, int _tileY, int _zoom){
     if(bFirst){
         glmGeometryBuilder::setOffset(_tileX,_tileY,_zoom);
         bFirst = false;
     }
     
-    ofxTangramTile tile;
+    ofxVectorTile tile;
     glmGeometryBuilder::load(_tileX,_tileY,_zoom,tile);
     
     return tile;

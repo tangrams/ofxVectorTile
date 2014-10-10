@@ -1,35 +1,35 @@
 //
-//  ofxTangramTile.cpp
+//  ofxVectorTile.cpp
 //
 //  Created by Patricio Gonzalez Vivo on 10/10/14.
 //
 //
 
-#include "ofxTangramTile.h"
+#include "ofxVectorTile.h"
 
 #include "ofxGlm.h"
 
-ofxTangramTile::ofxTangramTile(){
+ofxVectorTile::ofxVectorTile(){
     
 }
 
-ofxTangramTile::~ofxTangramTile(){
+ofxVectorTile::~ofxVectorTile(){
     
 }
 
-ofMesh ofxTangramTile::getMesh(){
+ofMesh ofxVectorTile::getMesh(){
     return toOf(glmTile::getMesh());
 }
 
-ofMesh ofxTangramTile::getMeshFor(const std::string &_layerName){
+ofMesh ofxVectorTile::getMeshFor(const std::string &_layerName){
     return toOf(glmTile::getMeshFor(_layerName));
 }
 
-ofMesh ofxTangramTile::getMeshFor(const std::vector< std::string > &_layersNames){
+ofMesh ofxVectorTile::getMeshFor(const std::vector< std::string > &_layersNames){
     return toOf(glmTile::getMeshFor(_layersNames));
 }
 
-void ofxTangramTile::draw(){
+void ofxVectorTile::draw(){
     for (auto &layer : byLayers ){
         for( auto &feature : layer.second ){
             feature->draw();

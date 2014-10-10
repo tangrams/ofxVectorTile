@@ -1,5 +1,5 @@
 //
-//  ofxTangramTile.cpp
+//  ofxVectorTile.cpp
 //
 //  Created by Patricio Gonzalez Vivo on 10/10/14.
 //
@@ -10,11 +10,11 @@
 #include "ofMain.h"
 #include "glmTile.h"
 
-class ofxTangramTile : public glmTile {
+class ofxVectorTile : public glmTile {
 public:
     
-    ofxTangramTile();
-    virtual ~ofxTangramTile();
+    ofxVectorTile();
+    virtual ~ofxVectorTile();
     
     ofMesh getMesh();
     ofMesh getMeshFor(const std::string &_layerName);
