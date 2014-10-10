@@ -16,6 +16,7 @@ public:
     virtual ~ofxTangramLabels();
     
     void updateCameraPosition( ofPoint _camPos );
+    void updateProjection();
     
     void loadFont(string _font, int _size);
 };

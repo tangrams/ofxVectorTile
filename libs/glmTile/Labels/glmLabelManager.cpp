@@ -312,6 +312,8 @@ void glmLabelManager::draw2D(){
         it->draw2D();
     }
     
+    glColor4f(1.,1.,1.,1.);
+    
     for (auto &it : pointLabels) {
         if(bDebugPoints){
             it->drawDebug();

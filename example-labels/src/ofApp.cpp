@@ -5,48 +5,81 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetVerticalSync(true);
-    ofEnableDepthTest();
+    ofEnableAlphaBlending();
     
     light.setDiffuseColor(ofFloatColor(0.9));
     light.setPosition(ofPoint(0,0,100));
     
+    //  Load Label Fonts
+    //
     labels.loadFont("Champagne & Limousines.ttf", 10);
+    
+    //  Link the label manager with the builder
+    //
     builder.setLabelManager(&labels);
     
-//    tileMesh = builder.get(19299,24631,16);
-    
-//    tile.load(19299,24631,16);
-//    builder.loadTo(19299,24631,16, tile);
+    //  Request a new tile to the builder
+    //
     tile = builder.getFromWeb(19299,24631,16);
+    
+    //  Make a VBO from the tile (FASTER)
+    //
+    tileMesh = tile.getMesh();
+    
+    fbo.allocate(ofGetWidth(),ofGetHeight());
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-//    labels.updateCameraPosition(cam.getPosition());
+    labels.updateCameraPosition(cam.getPosition());
+    
+    //  Update the scene
+    //
+    fbo.begin();
+    ofClear(0,0,0,0);
+    cam.begin();
+    ofEnableDepthTest();
+    
+    ofEnableLighting();
+    light.enable();
+    
+    //    tile.draw();
+    tileMesh.draw();
+    
+    light.disable();
+    ofDisableLighting();
+    
+    labels.draw3D();
+    labels.updateProjection();
+    
+    ofDisableDepthTest();
+    cam.end();
+    fbo.end();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackground(0);
+    ofBackgroundGradient(ofColor::gray,ofColor::black);
     
-    cam.begin();
-    light.enable();
-    ofEnableLighting();
+    ofSetColor(255);
+    fbo.draw(0,0);
     
-    tile.draw();
-//    tileMesh.draw();
-//    labels.draw3D();
-//    labels.updateProjection();
+    labels.draw2D();
     
-    ofDisableLighting();
-    light.disable();
-    cam.end();
-    
-//    labels.draw2D();
+    ofDrawBitmapString(" 'p' : toogle point labels debug", 10,15);
+    ofDrawBitmapString(" 'l' : toogle line labels debug", 10,35);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    
+    if(key == 'f'){
+        ofToggleFullscreen();
+    } else if (key == 'p'){
+        labels.bDebugPoints = !labels.bDebugPoints;
+    } else if (key == 'l'){
+        labels.bDebugLines = !labels.bDebugLines;
+    }
 
 }
 
@@ -77,7 +110,7 @@ void ofApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+    fbo.allocate(w,h);
 }
 
 //--------------------------------------------------------------

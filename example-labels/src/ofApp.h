@@ -23,9 +23,10 @@ public:
     
     ofEasyCam   cam;
     ofLight     light;
+    ofFbo       fbo;
   
     ofxTangramTile      tile;
     ofxTangramBuilder   builder;
     ofxTangramLabels    labels;
-//    ofMesh              tileMesh;
+    ofVboMesh           tileMesh;
 };
