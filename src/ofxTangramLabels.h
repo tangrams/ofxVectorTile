@@ -15,8 +15,11 @@ public:
     ofxTangramLabels();
     virtual ~ofxTangramLabels();
     
-    void updateCameraPosition( ofPoint _camPos );
+    void setFontColor( const ofFloatColor &_front, const ofFloatColor &_back );
+    void loadFont( const string &_font, int _size);
+    
+    void updateCameraPosition( const ofPoint &_camPos );
     void updateProjection();
     
-    void loadFont(string _font, int _size);
+    
 };
