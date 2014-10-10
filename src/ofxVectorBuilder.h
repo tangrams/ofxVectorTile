@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "ofMain.h"
+//#include "ofMain.h"
 #include "ofxVectorTile.h"
 #include "glmGeometryBuilder.h"
 

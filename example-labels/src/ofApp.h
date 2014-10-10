@@ -2,8 +2,9 @@
 
 #include "ofMain.h"
 #include "ofxVectorTile.h"
-#include "ofxVectorLabels.h"
 #include "ofxVectorBuilder.h"
+#include "ofxVectorLabels.h"
+
 
 class ofApp : public ofBaseApp{
 public:
@@ -28,5 +29,5 @@ public:
     ofxVectorTile      tile;
     ofxVectorBuilder   builder;
     ofxVectorLabels    labels;
-    ofVboMesh           tileMesh;
+    ofVboMesh          tileMesh;
 };

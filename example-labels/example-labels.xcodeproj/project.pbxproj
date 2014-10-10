@@ -582,8 +582,8 @@
 			isa = PBXGroup;
 			children = (
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1147,6 +1147,34 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/include,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/include/FTGL,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib/osx,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib/vs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib/vs64,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp/include,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp/src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmFTGL,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTile,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTile/Labels,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools/gl,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools/physics,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools/shapes,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/src,
+				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
@@ -1237,6 +1265,34 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../../../../Patricio/Desktop/openFrameworks/libs/glut/lib/osx\"";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = NONE;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/include,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/include/FTGL,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib/osx,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib/vs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/libs/FTGL/lib/vs64,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxFTGL/src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp/include,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp/src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/src,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmFTGL,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTile,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTile/Labels,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools/gl,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools/physics,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/libs/glmTools/shapes,
+					../../../../../../Patricio/Desktop/openFrameworks/addons/ofxVectorTile/src,
+				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
 				INFOPLIST_FILE = "openFrameworks-Info.plist";

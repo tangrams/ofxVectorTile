@@ -22,6 +22,4 @@ public:
     
     void updateCameraPosition( const ofPoint &_camPos );
     void updateProjection();
-    
-    
 };

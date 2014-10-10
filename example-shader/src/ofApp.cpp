@@ -7,8 +7,6 @@
 
 #include "ofApp.h"
 
-#include "ofxGlm.h"
-
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetVerticalSync(true);

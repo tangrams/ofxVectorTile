@@ -7,6 +7,7 @@
 //
 
 #include "ofxVectorLabels.h"
+
 #include "glmFont.h"
 #include "ofxGlm.h"
 
