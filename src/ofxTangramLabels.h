@@ -6,6 +6,8 @@
 //
 //
 
+#pragma once
+
 #include "ofMain.h"
 #include "glmLabelManager.h"
 
