@@ -9,7 +9,7 @@
 #include "glmLabelManager.h"
 #include <algorithm>
 
-glmLabelManager::glmLabelManager(): minDistance(50), maxDistance(500), bLines(true), bPoints(true), bDebugLines(false), bUpdateSegments(false), bDebugPoints(false), bDebugField(false), bDebugGrid(false), m_bFontChanged(true), m_bChange(true) {
+glmLabelManager::glmLabelManager(): minDistance(50), maxDistance(500), bLines(true), bPoints(true), bDebugLines(false), bUpdateSegments(false), bDebugPoints(false), m_bFontChanged(true), m_bChange(true) {
 }
 
 glmLabelManager::~glmLabelManager(){
@@ -152,11 +152,6 @@ void glmLabelManager::updateProjection(){
     glGetIntegerv(GL_VIEWPORT, &viewport[0]);
     if(m_viewport != viewport){
         m_viewport = viewport;
-        
-        m_field.set(m_viewport[2], m_viewport[3], 100);
-        m_field.addRepelForce(glm::vec3(viewport[2]*0.5,viewport[3]*0.5,0.0), viewport[2], 10.0);
-        m_field.addRepelBorders(20);
-        
         m_bProjectionChanged = true;
     }
     
@@ -322,18 +317,6 @@ void glmLabelManager::draw2D(){
             it->drawDebug();
         }
         it->draw2D();
-    }
-    
-    if(bDebugGrid){
-        glLineWidth(0.01);
-        glColor4f(m_font->colorFront.r,m_font->colorFront.g,m_font->colorFront.b,0.3);
-        m_field.drawGrid();
-    }
-    
-    if(bDebugField){
-        glLineWidth(0.01);
-        glColor4f(m_font->colorFront.r,m_font->colorFront.g,m_font->colorFront.b,0.8);
-        m_field.drawForces();
     }
     
     glColor4f(1.,1.,1.,1.);

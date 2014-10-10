@@ -7,6 +7,16 @@
 
 #include "ofxTangramTile.h"
 
+#include "ofxGlm.h"
+
+ofxTangramTile::ofxTangramTile(){
+    
+}
+
+ofxTangramTile::~ofxTangramTile(){
+    
+}
+
 ofMesh ofxTangramTile::getMesh(){
     return toOf(glmTile::getMesh());
 }

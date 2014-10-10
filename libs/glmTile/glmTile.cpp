@@ -13,6 +13,10 @@ glmTile::glmTile():tileX(-1), tileY(-1), zoom(-1){
 }
 
 glmTile::~glmTile(){
+    byLayers.clear();
+    labeledFeatures.clear();
+    labeledLines.clear();
+    labeledPoints.clear();
 }
 
 bool glmTile::load(int _tileX, int _tileY, int _zoom){

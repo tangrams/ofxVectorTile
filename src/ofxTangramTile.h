@@ -7,13 +7,14 @@
 
 #pragma once
 
-#include "ofxGlm.h"
+#include "ofMain.h"
 #include "glmTile.h"
-
-#include "ofxTangramBuilder.h"
 
 class ofxTangramTile : public glmTile {
 public:
+    
+    ofxTangramTile();
+    virtual ~ofxTangramTile();
     
     ofMesh getMesh();
     ofMesh getMeshFor(const std::string &_layerName);

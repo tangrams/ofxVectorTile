@@ -23,7 +23,7 @@ public:
     std::vector<glmPolyline> shapes;
     std::string     idString;
     
-private:
+protected:
     
 };
 

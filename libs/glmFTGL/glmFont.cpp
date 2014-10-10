@@ -7,12 +7,11 @@
 //
 
 #include "glmFont.h"
-
 glmFont::glmFont(): m_bLoaded(false), m_font(NULL), colorBack(0.,0.,0.), colorFront(1.,1.,1.) {
 }
 
 glmFont::~glmFont(){
-    //	unload();
+//    unload();
 }
 
 void glmFont::unload(){
@@ -25,7 +24,9 @@ void glmFont::unload(){
 }
 
 bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, bool _bUsePolygons){
-	unload();
+    if (m_bLoaded) {
+        unload();
+    }
     
     _fontsize *= 2;
     

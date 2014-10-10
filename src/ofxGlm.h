@@ -9,8 +9,6 @@
 #pragma once
 
 #include "ofMain.h"
-#include "glm/glm.hpp"
-#include "glmMesh.h"
 
 ofFloatColor toOf(const glm::vec4 &_v){
     return ofFloatColor(_v.x,_v.y,_v.z,_v.w);

@@ -12,7 +12,6 @@
 		245D56282EFA41221CBB8D0B /* glmVectorField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9D543C95566F190E48961DB /* glmVectorField.cpp */; };
 		2A023674D0E6934B5A92C53F /* glmFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11CAC5DD80E8F7DBB3E52953 /* glmFont.cpp */; };
 		3210BEC5DD9CDA464A332C9A /* glmRectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CAF0B98DE6CF736CF7647922 /* glmRectangle.cpp */; };
-		3DD43D2019E8019000E76750 /* ofxTangramBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DD43D1E19E8019000E76750 /* ofxTangramBuilder.cpp */; };
 		3DD43D2219E801B800E76750 /* ofxTangramTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DD43D2119E801B800E76750 /* ofxTangramTile.cpp */; };
 		3DD43D2419E801E600E76750 /* ofxGlm.h in Sources */ = {isa = PBXBuildFile; fileRef = 3DD43D2319E801E600E76750 /* ofxGlm.h */; };
 		60025F3560DE3C8E3D75EB82 /* ofxFTGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E612CCF397977E5C4BF6BC94 /* ofxFTGLFont.cpp */; };
@@ -137,7 +136,6 @@
 		3B36F72F722AC94ABFACB8FE /* fast_square_root.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fast_square_root.hpp; path = ../../../addons/ofxTangramTile/libs/glm/gtx/fast_square_root.hpp; sourceTree = SOURCE_ROOT; };
 		3C04529D80D7E9D82B0271DA /* transform2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = transform2.hpp; path = ../../../addons/ofxTangramTile/libs/glm/gtx/transform2.hpp; sourceTree = SOURCE_ROOT; };
 		3C6AB2D7EED3856AAA37E28C /* ofxFTGLSimpleLayout.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFTGLSimpleLayout.cpp; path = ../../../addons/ofxFTGL/src/ofxFTGLSimpleLayout.cpp; sourceTree = SOURCE_ROOT; };
-		3DD43D1E19E8019000E76750 /* ofxTangramBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxTangramBuilder.cpp; path = ../src/ofxTangramBuilder.cpp; sourceTree = "<group>"; };
 		3DD43D1F19E8019000E76750 /* ofxTangramBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxTangramBuilder.h; path = ../src/ofxTangramBuilder.h; sourceTree = "<group>"; };
 		3DD43D2119E801B800E76750 /* ofxTangramTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxTangramTile.cpp; path = ../src/ofxTangramTile.cpp; sourceTree = "<group>"; };
 		3DD43D2319E801E600E76750 /* ofxGlm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxGlm.h; path = ../src/ofxGlm.h; sourceTree = "<group>"; };
@@ -666,7 +664,6 @@
 				B64E52BB455D88196B826C5E /* ofxTangramTile.h */,
 				3DD43D2119E801B800E76750 /* ofxTangramTile.cpp */,
 				3DD43D1F19E8019000E76750 /* ofxTangramBuilder.h */,
-				3DD43D1E19E8019000E76750 /* ofxTangramBuilder.cpp */,
 				3DD43D2319E801E600E76750 /* ofxGlm.h */,
 			);
 			name = src;
@@ -961,7 +958,6 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				60025F3560DE3C8E3D75EB82 /* ofxFTGLFont.cpp in Sources */,
 				676FD24AABFA7205A11029FB /* ofxFTGLSimpleLayout.cpp in Sources */,
-				3DD43D2019E8019000E76750 /* ofxTangramBuilder.cpp in Sources */,
 				BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */,
 				3DD43D2419E801E600E76750 /* ofxGlm.h in Sources */,
 				FB84AAF8D1B7A95266DB5C09 /* jsoncpp.cpp in Sources */,

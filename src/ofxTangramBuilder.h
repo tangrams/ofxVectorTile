@@ -7,12 +7,22 @@
 
 #pragma once
 
-#include "glmGeometryBuilder.h"
-#include "glmLabelManager.h"
-#include "glmFont.h"
-
 #include "ofMain.h"
+#include "ofxTangramTile.h"
+#include "glmGeometryBuilder.h"
 
-typedef glmGeometryBuilder ofxTangramBuilder;
-typedef glmLabelManager ofxTangramLabels;
-typedef glmFont ofxTangramFont;
+class ofxTangramBuilder : public glmGeometryBuilder {
+public:
+    
+    ofxTangramBuilder();
+    virtual ~ofxTangramBuilder();
+    
+    ofxTangramTile getFromWeb(int _tileX, int _tileY, int _zoom);
+    
+    ofPoint getOffset();
+    
+    
+private:
+    
+    bool    bFirst;
+};

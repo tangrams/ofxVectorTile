@@ -48,7 +48,7 @@ public:
     
     float lineWidth;
     
-private:
+protected:
     
     void buildLayer(Json::Value &_jsonRoot, const std::string &_layerName, glmTile &_tile, float _minHeight = 0.);
     

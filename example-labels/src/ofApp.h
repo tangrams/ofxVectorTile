@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxTangramTile.h"
+#include "ofxTangramLabels.h"
+#include "ofxTangramBuilder.h"
 
 class ofApp : public ofBaseApp{
 public:
@@ -22,8 +24,8 @@ public:
     ofEasyCam   cam;
     ofLight     light;
   
+    ofxTangramTile      tile;
     ofxTangramBuilder   builder;
     ofxTangramLabels    labels;
-    ofVboMesh           tileMesh;
-    ofxTangramFont      font;
+//    ofMesh              tileMesh;
 };

@@ -1,5 +1,7 @@
 #include "ofApp.h"
 
+#include "ofxGlm.h"
+
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofSetVerticalSync(true);
@@ -8,18 +10,19 @@ void ofApp::setup(){
     light.setDiffuseColor(ofFloatColor(0.9));
     light.setPosition(ofPoint(0,0,100));
     
-    font.loadFont(ofToDataPath("Champagne & Limousines.ttf"), 10);
-    labels.setFont(&font);
+    labels.loadFont("Champagne & Limousines.ttf", 10);
     builder.setLabelManager(&labels);
     
-    builder.setOffset(19299,24631,16);
-    glmMesh mesh = builder.getFromWeb(19299,24631,16).getMesh();
-    tileMesh = toOf(mesh);
+//    tileMesh = builder.get(19299,24631,16);
+    
+//    tile.load(19299,24631,16);
+//    builder.loadTo(19299,24631,16, tile);
+    tile = builder.getFromWeb(19299,24631,16);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    labels.updateCameraPosition( toGlm(cam.getPosition()) );
+//    labels.updateCameraPosition(cam.getPosition());
 }
 
 //--------------------------------------------------------------
@@ -30,16 +33,16 @@ void ofApp::draw(){
     light.enable();
     ofEnableLighting();
     
-    tileMesh.draw();
-    labels.draw3D();
-    labels.updateProjection();
+    tile.draw();
+//    tileMesh.draw();
+//    labels.draw3D();
+//    labels.updateProjection();
     
     ofDisableLighting();
     light.disable();
     cam.end();
     
-    labels.draw2D();
-
+//    labels.draw2D();
 }
 
 //--------------------------------------------------------------

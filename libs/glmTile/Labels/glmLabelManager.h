@@ -54,13 +54,10 @@ public:
     
     bool    bDebugLines;
     bool    bDebugPoints;
-    bool    bDebugGrid;
-    bool    bDebugField;
     
-private:
+protected:
     
     glmFontRef  m_font;
-    glmVectorField m_field;
     
     glm::ivec4  m_viewport;
     glm::vec3   m_cameraPos;

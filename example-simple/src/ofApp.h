@@ -23,5 +23,4 @@ public:
     ofLight     light;
   
     ofxTangramTile      tile;
-    
 };
