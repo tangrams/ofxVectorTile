@@ -10,7 +10,7 @@ Labels in maps are a huge headache, and have been for a long time. There are lot
 The main trick is a 2D projection of the geometry to place the text, within the canvas. Like a heads-up display layer between the 3D geometry and the camera.
 
 Like this: 
-![HUD](images/Pg_24_top.JPG)
+![HUD](images/hud.jpg)
 
 In the canvas: 
 ![projection](images/projection.png)
