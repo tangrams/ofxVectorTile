@@ -1,0 +1,1340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05612E3ACC81C515F7705E24 /* glmParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05DE7D195F9614CA5F4BA9B /* glmParticle.cpp */; };
+		0E50C4F297E99E523A3525BA /* glmMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E4C53FCC41945B128781BC /* glmMesh.cpp */; };
+		152C01A77E6883C168513707 /* glmFastPolyline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24B06A3B3AE0F6A876437960 /* glmFastPolyline.cpp */; };
+		1F92FEF583A0EB8B69714758 /* ofxVectorBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576809FA14D5E841B45DE68D /* ofxVectorBuilder.cpp */; };
+		2E8BC0E4DC32DADB9F8B8ECC /* glmTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D2D8E2EFEB4346E39F824D4 /* glmTools.cpp */; };
+		38D2956935FD5E7769906F24 /* glmAnchorLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D51F890B97152D968130C6F6 /* glmAnchorLine.cpp */; };
+		3ED32EF861F35ABD91313221 /* glmRectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 164FA608D677666E27C7CB2A /* glmRectangle.cpp */; };
+		494079F3850AA286ADCF8A90 /* glmPolyline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE99061BFF1805D8CD24C4D8 /* glmPolyline.cpp */; };
+		560699F20E0E736EFD3A0B47 /* ofxVectorTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCA0B70DFD26F1FBF354DC /* ofxVectorTile.cpp */; };
+		5C93E1FA8288BBEDE7F88088 /* glmFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFAA0613D7D9B283EB61CA04 /* glmFont.cpp */; };
+		60025F3560DE3C8E3D75EB82 /* ofxFTGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E612CCF397977E5C4BF6BC94 /* ofxFTGLFont.cpp */; };
+		62B2A42A94A55503A3A22BD9 /* glmPolarPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5F8298D0089C7A3777FDBBD /* glmPolarPoint.cpp */; };
+		676FD24AABFA7205A11029FB /* ofxFTGLSimpleLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AB2D7EED3856AAA37E28C /* ofxFTGLSimpleLayout.cpp */; };
+		783CEF4CB6421016AAD923C0 /* glmFeatureLabelPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FDA7A6C9E8AEB158A6F551C3 /* glmFeatureLabelPoint.cpp */; };
+		7D1A5E80373D67AF833F4B4E /* glmVectorField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E0F84F9159F96473BF04 /* glmVectorField.cpp */; };
+		8A15AFC9C374BF14148C3D5A /* glmLabelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07C30454A591C489A8A5D7E9 /* glmLabelManager.cpp */; };
+		91AE5D3FF8D2F539EE2812F6 /* glmTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8997B6B843F1389DE7A80139 /* glmTile.cpp */; };
+		B1386C4D76E08D1C48557B8D /* ofxVectorLabels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35E518B1D652890EC5C94375 /* ofxVectorLabels.cpp */; };
+		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		BE25DD4C66860160B4189B72 /* glmFeatureLabelLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12272E11E17BBF7AB792DCF1 /* glmFeatureLabelLine.cpp */; };
+		BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2B099E6BD1199664C48B177 /* ofxJSONElement.cpp */; };
+		BF4290E011DFCCBE7648C31E /* glmGeometryBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5D27C767B936AE5D00D561C /* glmGeometryBuilder.cpp */; };
+		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
+		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
+		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
+		E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */; };
+		E45BE97F0E8CC7DD009D7055 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9750E8CC7DD009D7055 /* CoreAudio.framework */; };
+		E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9760E8CC7DD009D7055 /* CoreFoundation.framework */; };
+		E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9770E8CC7DD009D7055 /* CoreServices.framework */; };
+		E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9790E8CC7DD009D7055 /* OpenGL.framework */; };
+		E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */; };
+		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
+		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
+		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
+		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
+		E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
+		E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */; };
+		E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E077E715D3B6510020DFD4 /* QTKit.framework */; };
+		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
+		F30DF3DCCBFB7848F36E20BA /* glmFeatureLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17B258AE67598473F4A2F06C /* glmFeatureLabel.cpp */; };
+		F719C711898D37F6DE9F4A1C /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4EA273D68D81106D2BAA76AD /* glm.cpp */; };
+		FB84AAF8D1B7A95266DB5C09 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21BDE665988474F1B1F4D302 /* jsoncpp.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B27C1510CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+		E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E4B27C1410CBEB8E00536013;
+			remoteInfo = openFrameworks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4C2427710CC5ABF004149E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01EC92C4E1921B895568C356 /* glmTools.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmTools.h; path = ../../../addons/ofxVectorTile/libs/glmTools/glmTools.h; sourceTree = SOURCE_ROOT; };
+		01F4AFD550E000F1001E077C /* ulp.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ulp.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/ulp.hpp; sourceTree = SOURCE_ROOT; };
+		0213D91AB7ED0C381ED32823 /* unsigned_int.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = unsigned_int.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/unsigned_int.hpp; sourceTree = SOURCE_ROOT; };
+		025FA19A0AF969838A9CD724 /* integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = integer.hpp; path = ../../../addons/ofxVectorTile/libs/glm/integer.hpp; sourceTree = SOURCE_ROOT; };
+		048379284ACDC491C8343610 /* type_mat3x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat3x4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat3x4.hpp; sourceTree = SOURCE_ROOT; };
+		06156667B2B9EA3179851996 /* vec2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vec2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/vec2.hpp; sourceTree = SOURCE_ROOT; };
+		0694196F3B8EFB4CC3A092F0 /* normalize_dot.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = normalize_dot.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/normalize_dot.hpp; sourceTree = SOURCE_ROOT; };
+		070D7ACC110C1218D8DDE42A /* color_space.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = color_space.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/color_space.hpp; sourceTree = SOURCE_ROOT; };
+		07C30454A591C489A8A5D7E9 /* glmLabelManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmLabelManager.cpp; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmLabelManager.cpp; sourceTree = SOURCE_ROOT; };
+		0829E38C6D2587676C416C34 /* intrinsic_integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intrinsic_integer.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/intrinsic_integer.hpp; sourceTree = SOURCE_ROOT; };
+		08824FB112AE59BDA8F86BE9 /* intrinsic_common.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intrinsic_common.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/intrinsic_common.hpp; sourceTree = SOURCE_ROOT; };
+		099D39164730D3D7A0BA2505 /* trigonometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = trigonometric.hpp; path = ../../../addons/ofxVectorTile/libs/glm/trigonometric.hpp; sourceTree = SOURCE_ROOT; };
+		09CFA5D3CBACF7A1733127E1 /* euler_angles.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = euler_angles.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/euler_angles.hpp; sourceTree = SOURCE_ROOT; };
+		0BF0AD519F5AEA4B6786D5FE /* norm.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = norm.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/norm.hpp; sourceTree = SOURCE_ROOT; };
+		0C154599B0FD3EA150BB53B9 /* rotate_vector.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = rotate_vector.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/rotate_vector.hpp; sourceTree = SOURCE_ROOT; };
+		0C1D48D35C8A5A1829A32126 /* inertia.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = inertia.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/inertia.hpp; sourceTree = SOURCE_ROOT; };
+		0E447FD13C5B6095191AD187 /* ofxGlm.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGlm.h; path = ../../../addons/ofxVectorTile/src/ofxGlm.h; sourceTree = SOURCE_ROOT; };
+		0F30E7B2B03EEA39917E180A /* integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = integer.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/integer.hpp; sourceTree = SOURCE_ROOT; };
+		0F72BAF8DA4FF3993C5884C0 /* vector_relational.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vector_relational.hpp; path = ../../../addons/ofxVectorTile/libs/glm/vector_relational.hpp; sourceTree = SOURCE_ROOT; };
+		0F7AB011A98389A4EAE2F1EC /* _fixes.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _fixes.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/_fixes.hpp; sourceTree = SOURCE_ROOT; };
+		107F5E8032DD1BB1FB4B36CD /* type_mat4x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat4x4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat4x4.hpp; sourceTree = SOURCE_ROOT; };
+		1199B4309412F477C84AD3F5 /* extend.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = extend.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/extend.hpp; sourceTree = SOURCE_ROOT; };
+		12272E11E17BBF7AB792DCF1 /* glmFeatureLabelLine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmFeatureLabelLine.cpp; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmFeatureLabelLine.cpp; sourceTree = SOURCE_ROOT; };
+		1329BC23A935AC95ADC5692E /* reciprocal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = reciprocal.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/reciprocal.hpp; sourceTree = SOURCE_ROOT; };
+		1351E5C1B396A640F102481A /* _vectorize.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _vectorize.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/_vectorize.hpp; sourceTree = SOURCE_ROOT; };
+		13D4661604F5BABF84DAA315 /* FTBufferFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTBufferFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBufferFont.h; sourceTree = SOURCE_ROOT; };
+		1559D2A70161A24A83E674F1 /* ulp.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ulp.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/ulp.hpp; sourceTree = SOURCE_ROOT; };
+		158DA3863C8FAA2F26085B3E /* type_mat4x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat4x2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat4x2.hpp; sourceTree = SOURCE_ROOT; };
+		15F298686CF5CABC03107F48 /* _features.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _features.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/_features.hpp; sourceTree = SOURCE_ROOT; };
+		1645F56257269CD0356320BD /* ofxJSON.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSON.h; path = ../../../addons/ofxJSON/src/ofxJSON.h; sourceTree = SOURCE_ROOT; };
+		164FA608D677666E27C7CB2A /* glmRectangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmRectangle.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmRectangle.cpp; sourceTree = SOURCE_ROOT; };
+		1714DD01BC88B21ACAC42372 /* constants.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = constants.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/constants.hpp; sourceTree = SOURCE_ROOT; };
+		17B258AE67598473F4A2F06C /* glmFeatureLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmFeatureLabel.cpp; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmFeatureLabel.cpp; sourceTree = SOURCE_ROOT; };
+		17F02F86229CD65E91BBBF1D /* glmMesh.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmMesh.h; path = ../../../addons/ofxVectorTile/libs/glmTools/gl/glmMesh.h; sourceTree = SOURCE_ROOT; };
+		19ADE7F5C5EDF826406FC4CC /* FTBBox.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTBBox.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBBox.h; sourceTree = SOURCE_ROOT; };
+		1A54C0F40EA36FEBCCCB805D /* random.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = random.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/random.hpp; sourceTree = SOURCE_ROOT; };
+		1ACFA260BE58B7A36EEA1448 /* ofxFTGLFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFTGLFont.h; path = ../../../addons/ofxFTGL/src/ofxFTGLFont.h; sourceTree = SOURCE_ROOT; };
+		1B1C95BDCA96F14F43FFADAA /* _literals.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _literals.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/_literals.hpp; sourceTree = SOURCE_ROOT; };
+		1D8140076E51FD6CF47E0438 /* type_vec1.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_vec1.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_vec1.hpp; sourceTree = SOURCE_ROOT; };
+		1E503ED4AD9316A8B6DD2CBC /* polar_coordinates.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = polar_coordinates.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/polar_coordinates.hpp; sourceTree = SOURCE_ROOT; };
+		1FFCA0B70DFD26F1FBF354DC /* ofxVectorTile.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxVectorTile.cpp; path = ../../../addons/ofxVectorTile/src/ofxVectorTile.cpp; sourceTree = SOURCE_ROOT; };
+		20AD7DCD72DABD7ACA08AAC2 /* func_trigonometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_trigonometric.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_trigonometric.hpp; sourceTree = SOURCE_ROOT; };
+		21BDE665988474F1B1F4D302 /* jsoncpp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = jsoncpp.cpp; path = ../../../addons/ofxJSON/libs/jsoncpp/src/jsoncpp.cpp; sourceTree = SOURCE_ROOT; };
+		21F14DFA0F1F6BB811024EC0 /* type_float.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_float.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_float.hpp; sourceTree = SOURCE_ROOT; };
+		2207355D9297853D5A3CD6C2 /* vec4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vec4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/vec4.hpp; sourceTree = SOURCE_ROOT; };
+		2326BE2216867313E09C57D8 /* normal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = normal.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/normal.hpp; sourceTree = SOURCE_ROOT; };
+		2430335F418986D0A0C26269 /* projection.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = projection.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/projection.hpp; sourceTree = SOURCE_ROOT; };
+		24B06A3B3AE0F6A876437960 /* glmFastPolyline.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmFastPolyline.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmFastPolyline.cpp; sourceTree = SOURCE_ROOT; };
+		2521E334B811DC462739CBA0 /* matrix_major_storage.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_major_storage.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/matrix_major_storage.hpp; sourceTree = SOURCE_ROOT; };
+		26A541233BC6F736E758F718 /* ofxJSONElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSONElement.h; path = ../../../addons/ofxJSON/src/ofxJSONElement.h; sourceTree = SOURCE_ROOT; };
+		28ED752C33AF93061AC7FAD5 /* associated_min_max.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = associated_min_max.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/associated_min_max.hpp; sourceTree = SOURCE_ROOT; };
+		29A2F28C1DE66F8FD733FB33 /* FTTextureGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTTextureGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTTextureGlyph.h; sourceTree = SOURCE_ROOT; };
+		2A6980E9AB8BB00C57D3B337 /* intrinsic_geometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intrinsic_geometric.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/intrinsic_geometric.hpp; sourceTree = SOURCE_ROOT; };
+		2BB7CF518AA4F41AB5CAE7E0 /* fast_square_root.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fast_square_root.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/fast_square_root.hpp; sourceTree = SOURCE_ROOT; };
+		2C7CF000B7B4F782C187C353 /* json.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = json.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/json.h; sourceTree = SOURCE_ROOT; };
+		2EA0E39499CA6E3A66736FCB /* vec3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vec3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/vec3.hpp; sourceTree = SOURCE_ROOT; };
+		31965D6D686C3D76C1F535DC /* vector_angle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vector_angle.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/vector_angle.hpp; sourceTree = SOURCE_ROOT; };
+		35E518B1D652890EC5C94375 /* ofxVectorLabels.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxVectorLabels.cpp; path = ../../../addons/ofxVectorTile/src/ofxVectorLabels.cpp; sourceTree = SOURCE_ROOT; };
+		388AAF8A80C304BB3E971E09 /* FTGLBitmapFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGLBitmapFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLBitmapFont.h; sourceTree = SOURCE_ROOT; };
+		3A0267A89769F09CEDCD102F /* glmFastPolyline.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmFastPolyline.h; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmFastPolyline.h; sourceTree = SOURCE_ROOT; };
+		3A1F48F751C7D1BD5150BA50 /* glmTile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmTile.h; path = ../../../addons/ofxVectorTile/libs/glmTile/glmTile.h; sourceTree = SOURCE_ROOT; };
+		3A21B1DD01195DF7DDB6EF68 /* closest_point.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = closest_point.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/closest_point.hpp; sourceTree = SOURCE_ROOT; };
+		3C6AB2D7EED3856AAA37E28C /* ofxFTGLSimpleLayout.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFTGLSimpleLayout.cpp; path = ../../../addons/ofxFTGL/src/ofxFTGLSimpleLayout.cpp; sourceTree = SOURCE_ROOT; };
+		3DB70154129A5ED9A8F12519 /* ofxVectorTile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxVectorTile.h; path = ../../../addons/ofxVectorTile/src/ofxVectorTile.h; sourceTree = SOURCE_ROOT; };
+		3DC986966F0A3EBFE3A3528C /* glmFeatureLabelPoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmFeatureLabelPoint.h; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmFeatureLabelPoint.h; sourceTree = SOURCE_ROOT; };
+		3F98B5519F190083D915B614 /* matrix_transform.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_transform.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/matrix_transform.hpp; sourceTree = SOURCE_ROOT; };
+		405B1711E81AB44F411A490F /* func_packing.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_packing.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_packing.hpp; sourceTree = SOURCE_ROOT; };
+		43A9A9A8788DA2BF721A88C3 /* fast_exponential.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fast_exponential.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/fast_exponential.hpp; sourceTree = SOURCE_ROOT; };
+		4637FF94637045047AAAEEAD /* ofxFTGL.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFTGL.h; path = ../../../addons/ofxFTGL/src/ofxFTGL.h; sourceTree = SOURCE_ROOT; };
+		46997B06DFEECDD46B566C8A /* vec1.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vec1.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/vec1.hpp; sourceTree = SOURCE_ROOT; };
+		4B67F48BA17D835A6A36AD9D /* component_wise.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = component_wise.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/component_wise.hpp; sourceTree = SOURCE_ROOT; };
+		4E635AE3320D2A21D5830482 /* mixed_product.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mixed_product.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/mixed_product.hpp; sourceTree = SOURCE_ROOT; };
+		4EA273D68D81106D2BAA76AD /* glm.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glm.cpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/glm.cpp; sourceTree = SOURCE_ROOT; };
+		500FA269E1F13E491DC1849C /* color_space_YCoCg.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = color_space_YCoCg.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/color_space_YCoCg.hpp; sourceTree = SOURCE_ROOT; };
+		50B2E46145C9FD0E8977A4F8 /* matrix_cross_product.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_cross_product.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/matrix_cross_product.hpp; sourceTree = SOURCE_ROOT; };
+		51B1AB0249B3C99DC9506276 /* type_vec3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_vec3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_vec3.hpp; sourceTree = SOURCE_ROOT; };
+		529588D4EFA80C7242C8B3B9 /* fwd.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fwd.hpp; path = ../../../addons/ofxVectorTile/libs/glm/fwd.hpp; sourceTree = SOURCE_ROOT; };
+		52D96D713529EAD05D059452 /* transform2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = transform2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/transform2.hpp; sourceTree = SOURCE_ROOT; };
+		5366B15B10C455F64E14DD23 /* type_mat.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat.hpp; sourceTree = SOURCE_ROOT; };
+		537D6C28C3F9AF8D0847BE79 /* ofxFTGLSimpleLayout.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFTGLSimpleLayout.h; path = ../../../addons/ofxFTGL/src/ofxFTGLSimpleLayout.h; sourceTree = SOURCE_ROOT; };
+		53DA477982DE19080ABB37D4 /* ofxVectorBuilder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxVectorBuilder.h; path = ../../../addons/ofxVectorTile/src/ofxVectorBuilder.h; sourceTree = SOURCE_ROOT; };
+		5431FF6FD52CE8CE81D7C121 /* glmLabelManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmLabelManager.h; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmLabelManager.h; sourceTree = SOURCE_ROOT; };
+		551C850C37FEE1E6CB520BA0 /* gradient_paint.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = gradient_paint.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/gradient_paint.hpp; sourceTree = SOURCE_ROOT; };
+		55AFB5411873EF25F50DD5CB /* _swizzle_func.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _swizzle_func.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/_swizzle_func.hpp; sourceTree = SOURCE_ROOT; };
+		55BE498A1C83228482D61393 /* transform.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = transform.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/transform.hpp; sourceTree = SOURCE_ROOT; };
+		55EB0FA2247C466A03DA7A4B /* matrix_access.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_access.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/matrix_access.hpp; sourceTree = SOURCE_ROOT; };
+		5618C888C969D754438F104C /* ftgl.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ftgl.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/ftgl.h; sourceTree = SOURCE_ROOT; };
+		563AD684EA16AE2EFB57B6BF /* mat2x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat2x3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat2x3.hpp; sourceTree = SOURCE_ROOT; };
+		568D2360267FC9850C4D19A1 /* io.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = io.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/io.hpp; sourceTree = SOURCE_ROOT; };
+		568E8FD76B1735A21AA12648 /* FTGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGlyph.h; sourceTree = SOURCE_ROOT; };
+		56C8E581925B36F4C6945909 /* glmGeometryBuilder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmGeometryBuilder.h; path = ../../../addons/ofxVectorTile/libs/glmTile/glmGeometryBuilder.h; sourceTree = SOURCE_ROOT; };
+		576809FA14D5E841B45DE68D /* ofxVectorBuilder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxVectorBuilder.cpp; path = ../../../addons/ofxVectorTile/src/ofxVectorBuilder.cpp; sourceTree = SOURCE_ROOT; };
+		57D0CEB39A8A7D8872D6552E /* type_mat3x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat3x3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat3x3.hpp; sourceTree = SOURCE_ROOT; };
+		5A45F6E0C6A7C998BAF2ECCA /* type_ptr.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_ptr.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/type_ptr.hpp; sourceTree = SOURCE_ROOT; };
+		5D12D9022A2CD65E4A59751C /* random.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = random.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/random.hpp; sourceTree = SOURCE_ROOT; };
+		5EBA497D05DA95E2A6F44281 /* FTBitmapGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTBitmapGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBitmapGlyph.h; sourceTree = SOURCE_ROOT; };
+		5EDBC7EB3D12F8635CE86796 /* type_mat3x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat3x2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat3x2.hpp; sourceTree = SOURCE_ROOT; };
+		5F73C5F56BF6015BB35D2CD7 /* FTGLPixmapFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGLPixmapFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLPixmapFont.h; sourceTree = SOURCE_ROOT; };
+		61313493CDB52744E22A604D /* json-forwards.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = "json-forwards.h"; path = "../../../addons/ofxJSON/libs/jsoncpp/include/json/json-forwards.h"; sourceTree = SOURCE_ROOT; };
+		64E033EF75F019D868DE2728 /* exponential.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = exponential.hpp; path = ../../../addons/ofxVectorTile/libs/glm/exponential.hpp; sourceTree = SOURCE_ROOT; };
+		666AE23FFD882CBC3FF4B2CF /* intrinsic_trigonometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intrinsic_trigonometric.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/intrinsic_trigonometric.hpp; sourceTree = SOURCE_ROOT; };
+		6784C67AB30753E181F77383 /* func_matrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_matrix.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_matrix.hpp; sourceTree = SOURCE_ROOT; };
+		68C8F0E501406B9089CFE1A0 /* func_noise.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_noise.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_noise.hpp; sourceTree = SOURCE_ROOT; };
+		696049968167E0FE3ECBD586 /* FTGLOutlineFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGLOutlineFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLOutlineFont.h; sourceTree = SOURCE_ROOT; };
+		6AEFFA904C2E36049B4B80C0 /* common.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = common.hpp; path = ../../../addons/ofxVectorTile/libs/glm/common.hpp; sourceTree = SOURCE_ROOT; };
+		6D2B76EB4FE9672DB5F58581 /* precision.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = precision.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/precision.hpp; sourceTree = SOURCE_ROOT; };
+		6D2D8E2EFEB4346E39F824D4 /* glmTools.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmTools.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/glmTools.cpp; sourceTree = SOURCE_ROOT; };
+		6FA9276AE3E44C9894F7F2FE /* epsilon.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = epsilon.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/epsilon.hpp; sourceTree = SOURCE_ROOT; };
+		70B729FEC1A26C21BA015303 /* intrinsic_matrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intrinsic_matrix.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/intrinsic_matrix.hpp; sourceTree = SOURCE_ROOT; };
+		73442F6AD4F5B3776B7E4576 /* epsilon.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = epsilon.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/epsilon.hpp; sourceTree = SOURCE_ROOT; };
+		74035CBF269B1E4EC80EE24E /* raw_data.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = raw_data.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/raw_data.hpp; sourceTree = SOURCE_ROOT; };
+		76841606F1748D2FDD468D8E /* noise.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = noise.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/noise.hpp; sourceTree = SOURCE_ROOT; };
+		76CCE8BC23CE3E31AC4DEB08 /* mat3x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat3x4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat3x4.hpp; sourceTree = SOURCE_ROOT; };
+		776D78305BDC77598A8FF13E /* quaternion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = quaternion.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/quaternion.hpp; sourceTree = SOURCE_ROOT; };
+		78A64E16FC3B0CAC6CB5899C /* FTBuffer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTBuffer.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBuffer.h; sourceTree = SOURCE_ROOT; };
+		7AFD1D1F8F6C238D2323DA90 /* glmVectorField.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmVectorField.h; path = ../../../addons/ofxVectorTile/libs/glmTools/physics/glmVectorField.h; sourceTree = SOURCE_ROOT; };
+		7CBC05532B019AB874CCD71D /* packing.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = packing.hpp; path = ../../../addons/ofxVectorTile/libs/glm/packing.hpp; sourceTree = SOURCE_ROOT; };
+		7FCF5E91B968C17A96449D24 /* FTPixmapGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTPixmapGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTPixmapGlyph.h; sourceTree = SOURCE_ROOT; };
+		7FDCF1F44FBE458C2FD866F1 /* glmFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmFont.h; path = ../../../addons/ofxVectorTile/libs/glmFTGL/glmFont.h; sourceTree = SOURCE_ROOT; };
+		8074201436AA085D504491AF /* type_vec.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_vec.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_vec.hpp; sourceTree = SOURCE_ROOT; };
+		81314C5612FEAC21F8E1A4B0 /* glmPolarPoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmPolarPoint.h; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmPolarPoint.h; sourceTree = SOURCE_ROOT; };
+		8174182E3F89EACFC728A825 /* orthonormalize.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = orthonormalize.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/orthonormalize.hpp; sourceTree = SOURCE_ROOT; };
+		81B1FC56D93D3361AA0427B8 /* matrix_interpolation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_interpolation.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/matrix_interpolation.hpp; sourceTree = SOURCE_ROOT; };
+		847E38E3C75970BFB64895D8 /* glmAnchorLine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmAnchorLine.h; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmAnchorLine.h; sourceTree = SOURCE_ROOT; };
+		84E4C53FCC41945B128781BC /* glmMesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmMesh.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/gl/glmMesh.cpp; sourceTree = SOURCE_ROOT; };
+		850BD5F32E3B94ECD135307E /* perpendicular.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = perpendicular.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/perpendicular.hpp; sourceTree = SOURCE_ROOT; };
+		860530328FA49404C909AA33 /* hint.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = hint.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/hint.hpp; sourceTree = SOURCE_ROOT; };
+		863CA70B78F5627115247529 /* simd_quat.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simd_quat.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/simd_quat.hpp; sourceTree = SOURCE_ROOT; };
+		8822989584545D08759A3862 /* constants.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = constants.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/constants.hpp; sourceTree = SOURCE_ROOT; };
+		8997B6B843F1389DE7A80139 /* glmTile.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmTile.cpp; path = ../../../addons/ofxVectorTile/libs/glmTile/glmTile.cpp; sourceTree = SOURCE_ROOT; };
+		8D5AA63E3EC7FF82D0E0CAF9 /* matrix_operation.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_operation.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/matrix_operation.hpp; sourceTree = SOURCE_ROOT; };
+		8E0D31358646C1FD8C486438 /* rotate_normalized_axis.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = rotate_normalized_axis.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/rotate_normalized_axis.hpp; sourceTree = SOURCE_ROOT; };
+		9371DBD23C4A36395D5B9F78 /* simd_vec4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simd_vec4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/simd_vec4.hpp; sourceTree = SOURCE_ROOT; };
+		955700FADBA9A47BAF048738 /* setup.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = setup.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/setup.hpp; sourceTree = SOURCE_ROOT; };
+		9655FB7681C1573EA5EE6F2D /* intersect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intersect.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/intersect.hpp; sourceTree = SOURCE_ROOT; };
+		9859B648837FD2EE8FC08F1F /* simd_mat4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simd_mat4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/simd_mat4.hpp; sourceTree = SOURCE_ROOT; };
+		9C40AF75BC59BE70643662BD /* FTOutlineGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTOutlineGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTOutlineGlyph.h; sourceTree = SOURCE_ROOT; };
+		9F3E302F29BB2788BA8C2B27 /* quaternion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = quaternion.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/quaternion.hpp; sourceTree = SOURCE_ROOT; };
+		9F76AEFE9A7818CD434F7AAA /* FTGLTextureFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGLTextureFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLTextureFont.h; sourceTree = SOURCE_ROOT; };
+		A1B9FC5A15CD28B1F2D1CB62 /* int_10_10_10_2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = int_10_10_10_2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/int_10_10_10_2.hpp; sourceTree = SOURCE_ROOT; };
+		A3D7831C6AFF609AB1B1CE74 /* glm.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glm.hpp; path = ../../../addons/ofxVectorTile/libs/glm/glm.hpp; sourceTree = SOURCE_ROOT; };
+		A53DFB291C2B8F2353568BB2 /* matrix_query.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_query.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/matrix_query.hpp; sourceTree = SOURCE_ROOT; };
+		A5663FFE9C8ACE440C6C4946 /* FTPoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTPoint.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTPoint.h; sourceTree = SOURCE_ROOT; };
+		A912ED542BAC280CB1006F88 /* FTSimpleLayout.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTSimpleLayout.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTSimpleLayout.h; sourceTree = SOURCE_ROOT; };
+		A96CA28C4F5890AC233ECC42 /* mat4x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat4x3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat4x3.hpp; sourceTree = SOURCE_ROOT; };
+		A9B78B746B05CADBC8F7178F /* glmParticle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmParticle.h; path = ../../../addons/ofxVectorTile/libs/glmTools/physics/glmParticle.h; sourceTree = SOURCE_ROOT; };
+		AABD29D024CD9799079FE4FC /* glmFeatureLabelLine.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmFeatureLabelLine.h; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmFeatureLabelLine.h; sourceTree = SOURCE_ROOT; };
+		AB5B0B09E3B9733D56C1DAD9 /* matrix_integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_integer.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/matrix_integer.hpp; sourceTree = SOURCE_ROOT; };
+		ABE1092208340C3537BF760C /* mat2x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat2x2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat2x2.hpp; sourceTree = SOURCE_ROOT; };
+		AC2AEA6C14347C3575CEA29E /* FTFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTFont.h; sourceTree = SOURCE_ROOT; };
+		AC8F488F4CBE4AE2B419AD74 /* type_vec4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_vec4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_vec4.hpp; sourceTree = SOURCE_ROOT; };
+		AD2ED40B550A7CE94B98954C /* number_precision.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = number_precision.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/number_precision.hpp; sourceTree = SOURCE_ROOT; };
+		AEB35FA4864666516E6DA4DB /* type_vec2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_vec2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_vec2.hpp; sourceTree = SOURCE_ROOT; };
+		AF28A9A76564FC4B001FC533 /* glmFeature.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmFeature.h; path = ../../../addons/ofxVectorTile/libs/glmTile/glmFeature.h; sourceTree = SOURCE_ROOT; };
+		B03E61A55508ACF102B8E169 /* mat2x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat2x4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat2x4.hpp; sourceTree = SOURCE_ROOT; };
+		B279E11B6EACB2259C3D8D58 /* type_mat4x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat4x3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat4x3.hpp; sourceTree = SOURCE_ROOT; };
+		B3006DF3F93F20E910A008FA /* spline.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = spline.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/spline.hpp; sourceTree = SOURCE_ROOT; };
+		B30510610D842EA4F23DB0E8 /* FTPolyGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTPolyGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTPolyGlyph.h; sourceTree = SOURCE_ROOT; };
+		B315265394D7BF62C19BB3F5 /* func_vector_relational.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_vector_relational.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_vector_relational.hpp; sourceTree = SOURCE_ROOT; };
+		B50AFC561FD8A4E69C3992F1 /* func_geometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_geometric.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_geometric.hpp; sourceTree = SOURCE_ROOT; };
+		B6382D00260341CB856495FC /* type_mat2x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat2x2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat2x2.hpp; sourceTree = SOURCE_ROOT; };
+		B84F09C424710E936D0576B5 /* handed_coordinate_space.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = handed_coordinate_space.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/handed_coordinate_space.hpp; sourceTree = SOURCE_ROOT; };
+		BA3B9844FBB94D2D5FA2FFC1 /* FTGLExtrdFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGLExtrdFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLExtrdFont.h; sourceTree = SOURCE_ROOT; };
+		BACCB5EFB2F292B65D3E4672 /* extented_min_max.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = extented_min_max.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/extented_min_max.hpp; sourceTree = SOURCE_ROOT; };
+		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		BC304E464DF4FEA7B9DB0467 /* FTExtrdGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTExtrdGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTExtrdGlyph.h; sourceTree = SOURCE_ROOT; };
+		BC77CD4A771CF92A779D9F8D /* mat3x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat3x2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat3x2.hpp; sourceTree = SOURCE_ROOT; };
+		BD2B6724E9062B7FD62EFBF4 /* dual_quaternion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dual_quaternion.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/dual_quaternion.hpp; sourceTree = SOURCE_ROOT; };
+		BE99061BFF1805D8CD24C4D8 /* glmPolyline.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmPolyline.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmPolyline.cpp; sourceTree = SOURCE_ROOT; };
+		BFE0E0F84F9159F96473BF04 /* glmVectorField.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmVectorField.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/physics/glmVectorField.cpp; sourceTree = SOURCE_ROOT; };
+		C01CCF0632046DF053CFE9EC /* log_base.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = log_base.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/log_base.hpp; sourceTree = SOURCE_ROOT; };
+		C05DE7D195F9614CA5F4BA9B /* glmParticle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmParticle.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/physics/glmParticle.cpp; sourceTree = SOURCE_ROOT; };
+		C21037E74319B956025657A7 /* type_precision.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_precision.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/type_precision.hpp; sourceTree = SOURCE_ROOT; };
+		C2F96408341FFA4F5538ED30 /* fast_trigonometry.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fast_trigonometry.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/fast_trigonometry.hpp; sourceTree = SOURCE_ROOT; };
+		C329ACAB3BF4BCCAC352328D /* func_integer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_integer.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_integer.hpp; sourceTree = SOURCE_ROOT; };
+		C65A5D791489A2ABD1EBC2BE /* bit.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = bit.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/bit.hpp; sourceTree = SOURCE_ROOT; };
+		C81AA1F4C557AC7697DEE40C /* mat4x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat4x4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat4x4.hpp; sourceTree = SOURCE_ROOT; };
+		C90F64051542A5A29BD18E84 /* glmFeatureLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmFeatureLabel.h; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmFeatureLabel.h; sourceTree = SOURCE_ROOT; };
+		C92385284DC975E9BCE540E3 /* ext.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ext.hpp; path = ../../../addons/ofxVectorTile/libs/glm/ext.hpp; sourceTree = SOURCE_ROOT; };
+		CD21526795B74C502D5B9022 /* type_int.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_int.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_int.hpp; sourceTree = SOURCE_ROOT; };
+		CED0D17128EB429A779122D8 /* FTBufferGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTBufferGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBufferGlyph.h; sourceTree = SOURCE_ROOT; };
+		D1CE3CCD8E49CA9953153DB0 /* FTLayout.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTLayout.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTLayout.h; sourceTree = SOURCE_ROOT; };
+		D280136442E84CB147B66716 /* multiple.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = multiple.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/multiple.hpp; sourceTree = SOURCE_ROOT; };
+		D51F890B97152D968130C6F6 /* glmAnchorLine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmAnchorLine.cpp; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmAnchorLine.cpp; sourceTree = SOURCE_ROOT; };
+		DBA39FBAB5B002794DB2A9AB /* glmRectangle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmRectangle.h; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmRectangle.h; sourceTree = SOURCE_ROOT; };
+		DBA75DDB2C08308D203D8CCC /* matrix_inverse.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_inverse.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/matrix_inverse.hpp; sourceTree = SOURCE_ROOT; };
+		DC0A22D98EE20C7A8998FBF9 /* string_cast.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = string_cast.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/string_cast.hpp; sourceTree = SOURCE_ROOT; };
+		DD176FED72E09202B6FB0EC0 /* func_exponential.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_exponential.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_exponential.hpp; sourceTree = SOURCE_ROOT; };
+		E357C28E24A45F2F8174FD70 /* type_mat2x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat2x3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat2x3.hpp; sourceTree = SOURCE_ROOT; };
+		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
+		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		E45BE9750E8CC7DD009D7055 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
+		E45BE9760E8CC7DD009D7055 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
+		E462F386DE0AB5831CDF8508 /* type_gentype.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_gentype.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_gentype.hpp; sourceTree = SOURCE_ROOT; };
+		E4B69B5B0A3A1756003C02F2 /* exampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
+		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
+		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
+		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		E551C9893B56F806BFA76272 /* FTGLPolygonFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGLPolygonFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLPolygonFont.h; sourceTree = SOURCE_ROOT; };
+		E612CCF397977E5C4BF6BC94 /* ofxFTGLFont.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFTGLFont.cpp; path = ../../../addons/ofxFTGL/src/ofxFTGLFont.cpp; sourceTree = SOURCE_ROOT; };
+		E62E1F9CF00A52CC7F39B88D /* _noise.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _noise.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/_noise.hpp; sourceTree = SOURCE_ROOT; };
+		E677A2C77903BD4C45CCC299 /* intrinsic_exponential.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intrinsic_exponential.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/intrinsic_exponential.hpp; sourceTree = SOURCE_ROOT; };
+		E6902CA254A0A274FF1370C1 /* glmPolyline.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glmPolyline.h; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmPolyline.h; sourceTree = SOURCE_ROOT; };
+		E7663A67DC0CC9436E9FC948 /* intrinsic_vector_relational.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intrinsic_vector_relational.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/intrinsic_vector_relational.hpp; sourceTree = SOURCE_ROOT; };
+		E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		E7E077E715D3B6510020DFD4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		E7E26C70DDE0C7D889F7D80A /* ofxVectorLabels.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxVectorLabels.h; path = ../../../addons/ofxVectorTile/src/ofxVectorLabels.h; sourceTree = SOURCE_ROOT; };
+		E7F985F515E0DE99003869B5 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = /System/Library/Frameworks/Accelerate.framework; sourceTree = "<absolute>"; };
+		E811E599263D710F73CABE0F /* matrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix.hpp; path = ../../../addons/ofxVectorTile/libs/glm/matrix.hpp; sourceTree = SOURCE_ROOT; };
+		E8D2C80D317927C9BFBA9D22 /* matrix_transform_2d.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = matrix_transform_2d.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/matrix_transform_2d.hpp; sourceTree = SOURCE_ROOT; };
+		E9146E141FAC4D8AEBC97729 /* geometric.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = geometric.hpp; path = ../../../addons/ofxVectorTile/libs/glm/geometric.hpp; sourceTree = SOURCE_ROOT; };
+		EC9E2E1C37792D549435A255 /* type_half.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_half.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_half.hpp; sourceTree = SOURCE_ROOT; };
+		ED15BD3BE861FA8E722B77DE /* noise.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = noise.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/noise.hpp; sourceTree = SOURCE_ROOT; };
+		EDAC3507530C802898F4D0FF /* mat3x3.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat3x3.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat3x3.hpp; sourceTree = SOURCE_ROOT; };
+		EF4CE5F6F3853B9F70314704 /* optimum_pow.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = optimum_pow.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/optimum_pow.hpp; sourceTree = SOURCE_ROOT; };
+		EFAA0613D7D9B283EB61CA04 /* glmFont.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmFont.cpp; path = ../../../addons/ofxVectorTile/libs/glmFTGL/glmFont.cpp; sourceTree = SOURCE_ROOT; };
+		F054BDBBF1DDEBB49FF209E4 /* scalar_relational.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = scalar_relational.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/scalar_relational.hpp; sourceTree = SOURCE_ROOT; };
+		F17E3EDDEBA34DE066F909FE /* wrap.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = wrap.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/wrap.hpp; sourceTree = SOURCE_ROOT; };
+		F1A7AF75C83C946DCC7C3AD3 /* _swizzle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = _swizzle.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/_swizzle.hpp; sourceTree = SOURCE_ROOT; };
+		F2785CAA57E61B4D7DE4CDC8 /* std_based_type.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = std_based_type.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/std_based_type.hpp; sourceTree = SOURCE_ROOT; };
+		F2B099E6BD1199664C48B177 /* ofxJSONElement.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxJSONElement.cpp; path = ../../../addons/ofxJSON/src/ofxJSONElement.cpp; sourceTree = SOURCE_ROOT; };
+		F42CC96C50D7D6A3209987E7 /* packing.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = packing.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/packing.hpp; sourceTree = SOURCE_ROOT; };
+		F5410C55EDD3A86D727ADA8F /* compatibility.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = compatibility.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/compatibility.hpp; sourceTree = SOURCE_ROOT; };
+		F5D27C767B936AE5D00D561C /* glmGeometryBuilder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmGeometryBuilder.cpp; path = ../../../addons/ofxVectorTile/libs/glmTile/glmGeometryBuilder.cpp; sourceTree = SOURCE_ROOT; };
+		F5F8298D0089C7A3777FDBBD /* glmPolarPoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmPolarPoint.cpp; path = ../../../addons/ofxVectorTile/libs/glmTools/shapes/glmPolarPoint.cpp; sourceTree = SOURCE_ROOT; };
+		F90FA12E3A67DF2B68726736 /* reciprocal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = reciprocal.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/reciprocal.hpp; sourceTree = SOURCE_ROOT; };
+		FAB0E605669F53A966C31128 /* mat4x2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mat4x2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/mat4x2.hpp; sourceTree = SOURCE_ROOT; };
+		FC4ED61255A429E5939CC7DC /* type_mat2x4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = type_mat2x4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/type_mat2x4.hpp; sourceTree = SOURCE_ROOT; };
+		FDA7A6C9E8AEB158A6F551C3 /* glmFeatureLabelPoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = glmFeatureLabelPoint.cpp; path = ../../../addons/ofxVectorTile/libs/glmTile/Labels/glmFeatureLabelPoint.cpp; sourceTree = SOURCE_ROOT; };
+		FE03C2ECA1004C9ECDE5DF11 /* func_common.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = func_common.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/func_common.hpp; sourceTree = SOURCE_ROOT; };
+		FFEB15066A9FACCA9A997204 /* vector_query.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = vector_query.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/vector_query.hpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4B69B590A3A1756003C02F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
+				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
+				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
+				E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */,
+				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
+				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
+				E45BE97D0E8CC7DD009D7055 /* AudioToolbox.framework in Frameworks */,
+				E45BE97F0E8CC7DD009D7055 /* CoreAudio.framework in Frameworks */,
+				E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */,
+				E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */,
+				E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */,
+				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
+				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
+				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
+				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
+				E7E077E515D3B63C0020DFD4 /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0644B855AE89CAC99AF31A8A /* glmFTGL */ = {
+			isa = PBXGroup;
+			children = (
+				EFAA0613D7D9B283EB61CA04 /* glmFont.cpp */,
+				7FDCF1F44FBE458C2FD866F1 /* glmFont.h */,
+			);
+			name = glmFTGL;
+			sourceTree = "<group>";
+		};
+		1F8693414A871B902117E34F /* shapes */ = {
+			isa = PBXGroup;
+			children = (
+				24B06A3B3AE0F6A876437960 /* glmFastPolyline.cpp */,
+				3A0267A89769F09CEDCD102F /* glmFastPolyline.h */,
+				F5F8298D0089C7A3777FDBBD /* glmPolarPoint.cpp */,
+				81314C5612FEAC21F8E1A4B0 /* glmPolarPoint.h */,
+				BE99061BFF1805D8CD24C4D8 /* glmPolyline.cpp */,
+				E6902CA254A0A274FF1370C1 /* glmPolyline.h */,
+				164FA608D677666E27C7CB2A /* glmRectangle.cpp */,
+				DBA39FBAB5B002794DB2A9AB /* glmRectangle.h */,
+			);
+			name = shapes;
+			sourceTree = "<group>";
+		};
+		2865DAEF86B1907A704CA70B /* ofxJSON */ = {
+			isa = PBXGroup;
+			children = (
+				292AF6148769654D0DF26018 /* src */,
+				F40E80CB2D443CBA9581DD03 /* libs */,
+			);
+			name = ofxJSON;
+			sourceTree = "<group>";
+		};
+		292AF6148769654D0DF26018 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				1645F56257269CD0356320BD /* ofxJSON.h */,
+				F2B099E6BD1199664C48B177 /* ofxJSONElement.cpp */,
+				26A541233BC6F736E758F718 /* ofxJSONElement.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		47663309F7B6DEFCC9FF1BC4 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				4B2519C6392A255E39886206 /* glm */,
+				0644B855AE89CAC99AF31A8A /* glmFTGL */,
+				B772104E9696A8B202BA02F7 /* glmTile */,
+				6B101E64C61158156691AE5C /* glmTools */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		4A2D2ADB2F86B344049F4E46 /* FTGL */ = {
+			isa = PBXGroup;
+			children = (
+				BDE86EF88054C51D5873409F /* include */,
+			);
+			name = FTGL;
+			sourceTree = "<group>";
+		};
+		4B2519C6392A255E39886206 /* glm */ = {
+			isa = PBXGroup;
+			children = (
+				6AEFFA904C2E36049B4B80C0 /* common.hpp */,
+				E16355C320A810DDCAA3F585 /* detail */,
+				64E033EF75F019D868DE2728 /* exponential.hpp */,
+				C92385284DC975E9BCE540E3 /* ext.hpp */,
+				529588D4EFA80C7242C8B3B9 /* fwd.hpp */,
+				E9146E141FAC4D8AEBC97729 /* geometric.hpp */,
+				A3D7831C6AFF609AB1B1CE74 /* glm.hpp */,
+				4CF45BCA2D180A27E5129600 /* gtc */,
+				ABF30C31556C6D7E6159BD0C /* gtx */,
+				025FA19A0AF969838A9CD724 /* integer.hpp */,
+				ABE1092208340C3537BF760C /* mat2x2.hpp */,
+				563AD684EA16AE2EFB57B6BF /* mat2x3.hpp */,
+				B03E61A55508ACF102B8E169 /* mat2x4.hpp */,
+				BC77CD4A771CF92A779D9F8D /* mat3x2.hpp */,
+				EDAC3507530C802898F4D0FF /* mat3x3.hpp */,
+				76CCE8BC23CE3E31AC4DEB08 /* mat3x4.hpp */,
+				FAB0E605669F53A966C31128 /* mat4x2.hpp */,
+				A96CA28C4F5890AC233ECC42 /* mat4x3.hpp */,
+				C81AA1F4C557AC7697DEE40C /* mat4x4.hpp */,
+				E811E599263D710F73CABE0F /* matrix.hpp */,
+				7CBC05532B019AB874CCD71D /* packing.hpp */,
+				099D39164730D3D7A0BA2505 /* trigonometric.hpp */,
+				06156667B2B9EA3179851996 /* vec2.hpp */,
+				2EA0E39499CA6E3A66736FCB /* vec3.hpp */,
+				2207355D9297853D5A3CD6C2 /* vec4.hpp */,
+				0F72BAF8DA4FF3993C5884C0 /* vector_relational.hpp */,
+			);
+			name = glm;
+			sourceTree = "<group>";
+		};
+		4CF45BCA2D180A27E5129600 /* gtc */ = {
+			isa = PBXGroup;
+			children = (
+				8822989584545D08759A3862 /* constants.hpp */,
+				6FA9276AE3E44C9894F7F2FE /* epsilon.hpp */,
+				55EB0FA2247C466A03DA7A4B /* matrix_access.hpp */,
+				AB5B0B09E3B9733D56C1DAD9 /* matrix_integer.hpp */,
+				DBA75DDB2C08308D203D8CCC /* matrix_inverse.hpp */,
+				3F98B5519F190083D915B614 /* matrix_transform.hpp */,
+				ED15BD3BE861FA8E722B77DE /* noise.hpp */,
+				F42CC96C50D7D6A3209987E7 /* packing.hpp */,
+				9F3E302F29BB2788BA8C2B27 /* quaternion.hpp */,
+				5D12D9022A2CD65E4A59751C /* random.hpp */,
+				1329BC23A935AC95ADC5692E /* reciprocal.hpp */,
+				C21037E74319B956025657A7 /* type_precision.hpp */,
+				5A45F6E0C6A7C998BAF2ECCA /* type_ptr.hpp */,
+				1559D2A70161A24A83E674F1 /* ulp.hpp */,
+			);
+			name = gtc;
+			sourceTree = "<group>";
+		};
+		58AD3BD71B781D9BC25763C8 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				61313493CDB52744E22A604D /* json-forwards.h */,
+				2C7CF000B7B4F782C187C353 /* json.h */,
+			);
+			name = json;
+			sourceTree = "<group>";
+		};
+		6B101E64C61158156691AE5C /* glmTools */ = {
+			isa = PBXGroup;
+			children = (
+				6EEE56E0A104770CF833D7A3 /* gl */,
+				6D2D8E2EFEB4346E39F824D4 /* glmTools.cpp */,
+				01EC92C4E1921B895568C356 /* glmTools.h */,
+				FC4C2BE1075869175BFB01C1 /* physics */,
+				1F8693414A871B902117E34F /* shapes */,
+			);
+			name = glmTools;
+			sourceTree = "<group>";
+		};
+		6EEE56E0A104770CF833D7A3 /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				84E4C53FCC41945B128781BC /* glmMesh.cpp */,
+				17F02F86229CD65E91BBBF1D /* glmMesh.h */,
+			);
+			name = gl;
+			sourceTree = "<group>";
+		};
+		977A836DD2C489CCC5E330FF /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				D486FC87F063317BB47E9FAC /* include */,
+				CCDC6F9CCF925CC402160B85 /* src */,
+			);
+			name = jsoncpp;
+			sourceTree = "<group>";
+		};
+		ABF30C31556C6D7E6159BD0C /* gtx */ = {
+			isa = PBXGroup;
+			children = (
+				28ED752C33AF93061AC7FAD5 /* associated_min_max.hpp */,
+				C65A5D791489A2ABD1EBC2BE /* bit.hpp */,
+				3A21B1DD01195DF7DDB6EF68 /* closest_point.hpp */,
+				070D7ACC110C1218D8DDE42A /* color_space.hpp */,
+				500FA269E1F13E491DC1849C /* color_space_YCoCg.hpp */,
+				F5410C55EDD3A86D727ADA8F /* compatibility.hpp */,
+				4B67F48BA17D835A6A36AD9D /* component_wise.hpp */,
+				1714DD01BC88B21ACAC42372 /* constants.hpp */,
+				BD2B6724E9062B7FD62EFBF4 /* dual_quaternion.hpp */,
+				73442F6AD4F5B3776B7E4576 /* epsilon.hpp */,
+				09CFA5D3CBACF7A1733127E1 /* euler_angles.hpp */,
+				1199B4309412F477C84AD3F5 /* extend.hpp */,
+				BACCB5EFB2F292B65D3E4672 /* extented_min_max.hpp */,
+				43A9A9A8788DA2BF721A88C3 /* fast_exponential.hpp */,
+				2BB7CF518AA4F41AB5CAE7E0 /* fast_square_root.hpp */,
+				C2F96408341FFA4F5538ED30 /* fast_trigonometry.hpp */,
+				551C850C37FEE1E6CB520BA0 /* gradient_paint.hpp */,
+				B84F09C424710E936D0576B5 /* handed_coordinate_space.hpp */,
+				0C1D48D35C8A5A1829A32126 /* inertia.hpp */,
+				A1B9FC5A15CD28B1F2D1CB62 /* int_10_10_10_2.hpp */,
+				0F30E7B2B03EEA39917E180A /* integer.hpp */,
+				9655FB7681C1573EA5EE6F2D /* intersect.hpp */,
+				568D2360267FC9850C4D19A1 /* io.hpp */,
+				C01CCF0632046DF053CFE9EC /* log_base.hpp */,
+				50B2E46145C9FD0E8977A4F8 /* matrix_cross_product.hpp */,
+				81B1FC56D93D3361AA0427B8 /* matrix_interpolation.hpp */,
+				2521E334B811DC462739CBA0 /* matrix_major_storage.hpp */,
+				8D5AA63E3EC7FF82D0E0CAF9 /* matrix_operation.hpp */,
+				A53DFB291C2B8F2353568BB2 /* matrix_query.hpp */,
+				E8D2C80D317927C9BFBA9D22 /* matrix_transform_2d.hpp */,
+				4E635AE3320D2A21D5830482 /* mixed_product.hpp */,
+				D280136442E84CB147B66716 /* multiple.hpp */,
+				76841606F1748D2FDD468D8E /* noise.hpp */,
+				0BF0AD519F5AEA4B6786D5FE /* norm.hpp */,
+				2326BE2216867313E09C57D8 /* normal.hpp */,
+				0694196F3B8EFB4CC3A092F0 /* normalize_dot.hpp */,
+				AD2ED40B550A7CE94B98954C /* number_precision.hpp */,
+				EF4CE5F6F3853B9F70314704 /* optimum_pow.hpp */,
+				8174182E3F89EACFC728A825 /* orthonormalize.hpp */,
+				850BD5F32E3B94ECD135307E /* perpendicular.hpp */,
+				1E503ED4AD9316A8B6DD2CBC /* polar_coordinates.hpp */,
+				2430335F418986D0A0C26269 /* projection.hpp */,
+				776D78305BDC77598A8FF13E /* quaternion.hpp */,
+				1A54C0F40EA36FEBCCCB805D /* random.hpp */,
+				74035CBF269B1E4EC80EE24E /* raw_data.hpp */,
+				F90FA12E3A67DF2B68726736 /* reciprocal.hpp */,
+				8E0D31358646C1FD8C486438 /* rotate_normalized_axis.hpp */,
+				0C154599B0FD3EA150BB53B9 /* rotate_vector.hpp */,
+				F054BDBBF1DDEBB49FF209E4 /* scalar_relational.hpp */,
+				9859B648837FD2EE8FC08F1F /* simd_mat4.hpp */,
+				863CA70B78F5627115247529 /* simd_quat.hpp */,
+				9371DBD23C4A36395D5B9F78 /* simd_vec4.hpp */,
+				B3006DF3F93F20E910A008FA /* spline.hpp */,
+				F2785CAA57E61B4D7DE4CDC8 /* std_based_type.hpp */,
+				DC0A22D98EE20C7A8998FBF9 /* string_cast.hpp */,
+				55BE498A1C83228482D61393 /* transform.hpp */,
+				52D96D713529EAD05D059452 /* transform2.hpp */,
+				01F4AFD550E000F1001E077C /* ulp.hpp */,
+				0213D91AB7ED0C381ED32823 /* unsigned_int.hpp */,
+				46997B06DFEECDD46B566C8A /* vec1.hpp */,
+				31965D6D686C3D76C1F535DC /* vector_angle.hpp */,
+				FFEB15066A9FACCA9A997204 /* vector_query.hpp */,
+				F17E3EDDEBA34DE066F909FE /* wrap.hpp */,
+			);
+			name = gtx;
+			sourceTree = "<group>";
+		};
+		ADDCCF0BAA767B3D24DB0DA1 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				4A2D2ADB2F86B344049F4E46 /* FTGL */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		B547D3D5BDD9893E938359F4 /* FTGL */ = {
+			isa = PBXGroup;
+			children = (
+				19ADE7F5C5EDF826406FC4CC /* FTBBox.h */,
+				5EBA497D05DA95E2A6F44281 /* FTBitmapGlyph.h */,
+				78A64E16FC3B0CAC6CB5899C /* FTBuffer.h */,
+				13D4661604F5BABF84DAA315 /* FTBufferFont.h */,
+				CED0D17128EB429A779122D8 /* FTBufferGlyph.h */,
+				BC304E464DF4FEA7B9DB0467 /* FTExtrdGlyph.h */,
+				AC2AEA6C14347C3575CEA29E /* FTFont.h */,
+				5618C888C969D754438F104C /* ftgl.h */,
+				388AAF8A80C304BB3E971E09 /* FTGLBitmapFont.h */,
+				BA3B9844FBB94D2D5FA2FFC1 /* FTGLExtrdFont.h */,
+				696049968167E0FE3ECBD586 /* FTGLOutlineFont.h */,
+				5F73C5F56BF6015BB35D2CD7 /* FTGLPixmapFont.h */,
+				E551C9893B56F806BFA76272 /* FTGLPolygonFont.h */,
+				9F76AEFE9A7818CD434F7AAA /* FTGLTextureFont.h */,
+				568E8FD76B1735A21AA12648 /* FTGlyph.h */,
+				D1CE3CCD8E49CA9953153DB0 /* FTLayout.h */,
+				9C40AF75BC59BE70643662BD /* FTOutlineGlyph.h */,
+				7FCF5E91B968C17A96449D24 /* FTPixmapGlyph.h */,
+				A5663FFE9C8ACE440C6C4946 /* FTPoint.h */,
+				B30510610D842EA4F23DB0E8 /* FTPolyGlyph.h */,
+				A912ED542BAC280CB1006F88 /* FTSimpleLayout.h */,
+				29A2F28C1DE66F8FD733FB33 /* FTTextureGlyph.h */,
+			);
+			name = FTGL;
+			sourceTree = "<group>";
+		};
+		B772104E9696A8B202BA02F7 /* glmTile */ = {
+			isa = PBXGroup;
+			children = (
+				AF28A9A76564FC4B001FC533 /* glmFeature.h */,
+				F5D27C767B936AE5D00D561C /* glmGeometryBuilder.cpp */,
+				56C8E581925B36F4C6945909 /* glmGeometryBuilder.h */,
+				8997B6B843F1389DE7A80139 /* glmTile.cpp */,
+				3A1F48F751C7D1BD5150BA50 /* glmTile.h */,
+				CDDDDD5F02EA374944D60D79 /* Labels */,
+			);
+			name = glmTile;
+			sourceTree = "<group>";
+		};
+		BB4B014C10F69532006C3DED /* addons */ = {
+			isa = PBXGroup;
+			children = (
+				CA3F382B01A67D889933EFD3 /* ofxFTGL */,
+				2865DAEF86B1907A704CA70B /* ofxJSON */,
+				D6BF0C06962E11B5872FE5FB /* ofxVectorTile */,
+			);
+			name = addons;
+			sourceTree = "<group>";
+		};
+		BBAB23C913894ECA00AA2426 /* system frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7F985F515E0DE99003869B5 /* Accelerate.framework */,
+				E4C2424410CC5A17004149E2 /* AppKit.framework */,
+				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
+				E4C2424610CC5A17004149E2 /* IOKit.framework */,
+				E45BE9710E8CC7DD009D7055 /* AGL.framework */,
+				E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */,
+				E45BE9730E8CC7DD009D7055 /* AudioToolbox.framework */,
+				E45BE9750E8CC7DD009D7055 /* CoreAudio.framework */,
+				E45BE9760E8CC7DD009D7055 /* CoreFoundation.framework */,
+				E45BE9770E8CC7DD009D7055 /* CoreServices.framework */,
+				E45BE9790E8CC7DD009D7055 /* OpenGL.framework */,
+				E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */,
+				E7E077E415D3B63C0020DFD4 /* CoreVideo.framework */,
+				E7E077E715D3B6510020DFD4 /* QTKit.framework */,
+			);
+			name = "system frameworks";
+			sourceTree = "<group>";
+		};
+		BBAB23CA13894EDB00AA2426 /* 3rd party frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB23BE13894E4700AA2426 /* GLUT.framework */,
+			);
+			name = "3rd party frameworks";
+			sourceTree = "<group>";
+		};
+		BDE86EF88054C51D5873409F /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B547D3D5BDD9893E938359F4 /* FTGL */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		BECB994234CDFC86C52B8F01 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0E447FD13C5B6095191AD187 /* ofxGlm.h */,
+				576809FA14D5E841B45DE68D /* ofxVectorBuilder.cpp */,
+				53DA477982DE19080ABB37D4 /* ofxVectorBuilder.h */,
+				35E518B1D652890EC5C94375 /* ofxVectorLabels.cpp */,
+				E7E26C70DDE0C7D889F7D80A /* ofxVectorLabels.h */,
+				1FFCA0B70DFD26F1FBF354DC /* ofxVectorTile.cpp */,
+				3DB70154129A5ED9A8F12519 /* ofxVectorTile.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		CA3F382B01A67D889933EFD3 /* ofxFTGL */ = {
+			isa = PBXGroup;
+			children = (
+				DCFAD93157D5440FF608276A /* src */,
+				ADDCCF0BAA767B3D24DB0DA1 /* libs */,
+			);
+			name = ofxFTGL;
+			sourceTree = "<group>";
+		};
+		CCDC6F9CCF925CC402160B85 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				21BDE665988474F1B1F4D302 /* jsoncpp.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		CDDDDD5F02EA374944D60D79 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				D51F890B97152D968130C6F6 /* glmAnchorLine.cpp */,
+				847E38E3C75970BFB64895D8 /* glmAnchorLine.h */,
+				17B258AE67598473F4A2F06C /* glmFeatureLabel.cpp */,
+				C90F64051542A5A29BD18E84 /* glmFeatureLabel.h */,
+				12272E11E17BBF7AB792DCF1 /* glmFeatureLabelLine.cpp */,
+				AABD29D024CD9799079FE4FC /* glmFeatureLabelLine.h */,
+				FDA7A6C9E8AEB158A6F551C3 /* glmFeatureLabelPoint.cpp */,
+				3DC986966F0A3EBFE3A3528C /* glmFeatureLabelPoint.h */,
+				07C30454A591C489A8A5D7E9 /* glmLabelManager.cpp */,
+				5431FF6FD52CE8CE81D7C121 /* glmLabelManager.h */,
+			);
+			name = Labels;
+			sourceTree = "<group>";
+		};
+		D486FC87F063317BB47E9FAC /* include */ = {
+			isa = PBXGroup;
+			children = (
+				58AD3BD71B781D9BC25763C8 /* json */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		D6BF0C06962E11B5872FE5FB /* ofxVectorTile */ = {
+			isa = PBXGroup;
+			children = (
+				BECB994234CDFC86C52B8F01 /* src */,
+				47663309F7B6DEFCC9FF1BC4 /* libs */,
+			);
+			name = ofxVectorTile;
+			sourceTree = "<group>";
+		};
+		DCFAD93157D5440FF608276A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4637FF94637045047AAAEEAD /* ofxFTGL.h */,
+				E612CCF397977E5C4BF6BC94 /* ofxFTGLFont.cpp */,
+				1ACFA260BE58B7A36EEA1448 /* ofxFTGLFont.h */,
+				3C6AB2D7EED3856AAA37E28C /* ofxFTGLSimpleLayout.cpp */,
+				537D6C28C3F9AF8D0847BE79 /* ofxFTGLSimpleLayout.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		E16355C320A810DDCAA3F585 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				15F298686CF5CABC03107F48 /* _features.hpp */,
+				0F7AB011A98389A4EAE2F1EC /* _fixes.hpp */,
+				1B1C95BDCA96F14F43FFADAA /* _literals.hpp */,
+				E62E1F9CF00A52CC7F39B88D /* _noise.hpp */,
+				F1A7AF75C83C946DCC7C3AD3 /* _swizzle.hpp */,
+				55AFB5411873EF25F50DD5CB /* _swizzle_func.hpp */,
+				1351E5C1B396A640F102481A /* _vectorize.hpp */,
+				FE03C2ECA1004C9ECDE5DF11 /* func_common.hpp */,
+				DD176FED72E09202B6FB0EC0 /* func_exponential.hpp */,
+				B50AFC561FD8A4E69C3992F1 /* func_geometric.hpp */,
+				C329ACAB3BF4BCCAC352328D /* func_integer.hpp */,
+				6784C67AB30753E181F77383 /* func_matrix.hpp */,
+				68C8F0E501406B9089CFE1A0 /* func_noise.hpp */,
+				405B1711E81AB44F411A490F /* func_packing.hpp */,
+				20AD7DCD72DABD7ACA08AAC2 /* func_trigonometric.hpp */,
+				B315265394D7BF62C19BB3F5 /* func_vector_relational.hpp */,
+				4EA273D68D81106D2BAA76AD /* glm.cpp */,
+				860530328FA49404C909AA33 /* hint.hpp */,
+				08824FB112AE59BDA8F86BE9 /* intrinsic_common.hpp */,
+				E677A2C77903BD4C45CCC299 /* intrinsic_exponential.hpp */,
+				2A6980E9AB8BB00C57D3B337 /* intrinsic_geometric.hpp */,
+				0829E38C6D2587676C416C34 /* intrinsic_integer.hpp */,
+				70B729FEC1A26C21BA015303 /* intrinsic_matrix.hpp */,
+				666AE23FFD882CBC3FF4B2CF /* intrinsic_trigonometric.hpp */,
+				E7663A67DC0CC9436E9FC948 /* intrinsic_vector_relational.hpp */,
+				6D2B76EB4FE9672DB5F58581 /* precision.hpp */,
+				955700FADBA9A47BAF048738 /* setup.hpp */,
+				21F14DFA0F1F6BB811024EC0 /* type_float.hpp */,
+				E462F386DE0AB5831CDF8508 /* type_gentype.hpp */,
+				EC9E2E1C37792D549435A255 /* type_half.hpp */,
+				CD21526795B74C502D5B9022 /* type_int.hpp */,
+				5366B15B10C455F64E14DD23 /* type_mat.hpp */,
+				B6382D00260341CB856495FC /* type_mat2x2.hpp */,
+				E357C28E24A45F2F8174FD70 /* type_mat2x3.hpp */,
+				FC4ED61255A429E5939CC7DC /* type_mat2x4.hpp */,
+				5EDBC7EB3D12F8635CE86796 /* type_mat3x2.hpp */,
+				57D0CEB39A8A7D8872D6552E /* type_mat3x3.hpp */,
+				048379284ACDC491C8343610 /* type_mat3x4.hpp */,
+				158DA3863C8FAA2F26085B3E /* type_mat4x2.hpp */,
+				B279E11B6EACB2259C3D8D58 /* type_mat4x3.hpp */,
+				107F5E8032DD1BB1FB4B36CD /* type_mat4x4.hpp */,
+				8074201436AA085D504491AF /* type_vec.hpp */,
+				1D8140076E51FD6CF47E0438 /* type_vec1.hpp */,
+				AEB35FA4864666516E6DA4DB /* type_vec2.hpp */,
+				51B1AB0249B3C99DC9506276 /* type_vec3.hpp */,
+				AC8F488F4CBE4AE2B419AD74 /* type_vec4.hpp */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
+		E4328144138ABC890047C5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4328148138ABC890047C5CB /* openFrameworksDebug.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E45BE5980E8CC70C009D7055 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBAB23CA13894EDB00AA2426 /* 3rd party frameworks */,
+				BBAB23C913894ECA00AA2426 /* system frameworks */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+		E4B69B4A0A3A1720003C02F2 = {
+			isa = PBXGroup;
+			children = (
+				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
+				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
+				E4B69E1C0A3A1BDC003C02F2 /* src */,
+				E4EEC9E9138DF44700A80321 /* openFrameworks */,
+				BB4B014C10F69532006C3DED /* addons */,
+				E45BE5980E8CC70C009D7055 /* frameworks */,
+				E4B69B5B0A3A1756003C02F2 /* exampleDebug.app */,
+			);
+			sourceTree = "<group>";
+		};
+		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
+				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+			);
+			path = src;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4EEC9E9138DF44700A80321 /* openFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */,
+				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
+			);
+			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+		F40E80CB2D443CBA9581DD03 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				977A836DD2C489CCC5E330FF /* jsoncpp */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		FC4C2BE1075869175BFB01C1 /* physics */ = {
+			isa = PBXGroup;
+			children = (
+				C05DE7D195F9614CA5F4BA9B /* glmParticle.cpp */,
+				A9B78B746B05CADBC8F7178F /* glmParticle.h */,
+				BFE0E0F84F9159F96473BF04 /* glmVectorField.cpp */,
+				7AFD1D1F8F6C238D2323DA90 /* glmVectorField.h */,
+			);
+			name = physics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4B69B5A0A3A1756003C02F2 /* example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example" */;
+			buildPhases = (
+				E4B69B580A3A1756003C02F2 /* Sources */,
+				E4B69B590A3A1756003C02F2 /* Frameworks */,
+				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
+				E4C2427710CC5ABF004149E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
+			);
+			name = example;
+			productName = myOFApp;
+			productReference = E4B69B5B0A3A1756003C02F2 /* exampleDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = E4B69B4A0A3A1720003C02F2;
+			productRefGroup = E4B69B4A0A3A1720003C02F2;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4328144138ABC890047C5CB /* Products */;
+					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E4B69B5A0A3A1756003C02F2 /* example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = openFrameworksDebug.a;
+			remoteRef = E4328147138ABC890047C5CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4B6FFFD0C3F9AB9008CF71C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"; install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\";\nmkdir -p \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\ncp -f \"$ICON_FILE\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Resources/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4B69B580A3A1756003C02F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				60025F3560DE3C8E3D75EB82 /* ofxFTGLFont.cpp in Sources */,
+				676FD24AABFA7205A11029FB /* ofxFTGLSimpleLayout.cpp in Sources */,
+				BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */,
+				FB84AAF8D1B7A95266DB5C09 /* jsoncpp.cpp in Sources */,
+				1F92FEF583A0EB8B69714758 /* ofxVectorBuilder.cpp in Sources */,
+				B1386C4D76E08D1C48557B8D /* ofxVectorLabels.cpp in Sources */,
+				560699F20E0E736EFD3A0B47 /* ofxVectorTile.cpp in Sources */,
+				F719C711898D37F6DE9F4A1C /* glm.cpp in Sources */,
+				5C93E1FA8288BBEDE7F88088 /* glmFont.cpp in Sources */,
+				BF4290E011DFCCBE7648C31E /* glmGeometryBuilder.cpp in Sources */,
+				91AE5D3FF8D2F539EE2812F6 /* glmTile.cpp in Sources */,
+				38D2956935FD5E7769906F24 /* glmAnchorLine.cpp in Sources */,
+				F30DF3DCCBFB7848F36E20BA /* glmFeatureLabel.cpp in Sources */,
+				BE25DD4C66860160B4189B72 /* glmFeatureLabelLine.cpp in Sources */,
+				783CEF4CB6421016AAD923C0 /* glmFeatureLabelPoint.cpp in Sources */,
+				8A15AFC9C374BF14148C3D5A /* glmLabelManager.cpp in Sources */,
+				0E50C4F297E99E523A3525BA /* glmMesh.cpp in Sources */,
+				2E8BC0E4DC32DADB9F8B8ECC /* glmTools.cpp in Sources */,
+				05612E3ACC81C515F7705E24 /* glmParticle.cpp in Sources */,
+				7D1A5E80373D67AF833F4B4E /* glmVectorField.cpp in Sources */,
+				152C01A77E6883C168513707 /* glmFastPolyline.cpp in Sources */,
+				62B2A42A94A55503A3A22BD9 /* glmPolarPoint.cpp in Sources */,
+				494079F3850AA286ADCF8A90 /* glmPolyline.cpp in Sources */,
+				3ED32EF861F35ABD91313221 /* glmRectangle.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4EEB9AC138B136A00A80321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openFrameworks;
+			targetProxy = E4EEB9AB138B136A00A80321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxFTGL/libs,
+					../../../addons/ofxFTGL/libs/FTGL,
+					../../../addons/ofxFTGL/libs/FTGL/include,
+					../../../addons/ofxFTGL/libs/FTGL/include/FTGL,
+					../../../addons/ofxFTGL/libs/FTGL/lib,
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx,
+					../../../addons/ofxFTGL/libs/FTGL/lib/vs64,
+					../../../addons/ofxFTGL/src,
+					../../../addons/ofxJSON/libs,
+					../../../addons/ofxJSON/libs/jsoncpp,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../addons/ofxJSON/libs/jsoncpp/src,
+					../../../addons/ofxJSON/src,
+					../../../addons/ofxVectorTile/libs,
+					../../../addons/ofxVectorTile/libs/glm,
+					../../../addons/ofxVectorTile/libs/glm/detail,
+					../../../addons/ofxVectorTile/libs/glm/gtc,
+					../../../addons/ofxVectorTile/libs/glm/gtx,
+					../../../addons/ofxVectorTile/libs/glmFTGL,
+					../../../addons/ofxVectorTile/libs/glmTile,
+					../../../addons/ofxVectorTile/libs/glmTile/Labels,
+					../../../addons/ofxVectorTile/libs/glmTools,
+					../../../addons/ofxVectorTile/libs/glmTools/gl,
+					../../../addons/ofxVectorTile/libs/glmTools/physics,
+					../../../addons/ofxVectorTile/libs/glmTools/shapes,
+					../../../addons/ofxVectorTile/src,
+					src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-lpthread",
+					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx/libftgl.a,
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E4B69B4F0A3A1720003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_UNROLL_LOOPS = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(OF_CORE_HEADERS)",
+					../../../addons/ofxFTGL/libs,
+					../../../addons/ofxFTGL/libs/FTGL,
+					../../../addons/ofxFTGL/libs/FTGL/include,
+					../../../addons/ofxFTGL/libs/FTGL/include/FTGL,
+					../../../addons/ofxFTGL/libs/FTGL/lib,
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx,
+					../../../addons/ofxFTGL/libs/FTGL/lib/vs64,
+					../../../addons/ofxFTGL/src,
+					../../../addons/ofxJSON/libs,
+					../../../addons/ofxJSON/libs/jsoncpp,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../addons/ofxJSON/libs/jsoncpp/src,
+					../../../addons/ofxJSON/src,
+					../../../addons/ofxVectorTile/libs,
+					../../../addons/ofxVectorTile/libs/glm,
+					../../../addons/ofxVectorTile/libs/glm/detail,
+					../../../addons/ofxVectorTile/libs/glm/gtc,
+					../../../addons/ofxVectorTile/libs/glm/gtx,
+					../../../addons/ofxVectorTile/libs/glmFTGL,
+					../../../addons/ofxVectorTile/libs/glmTile,
+					../../../addons/ofxVectorTile/libs/glmTile/Labels,
+					../../../addons/ofxVectorTile/libs/glmTools,
+					../../../addons/ofxVectorTile/libs/glmTools/gl,
+					../../../addons/ofxVectorTile/libs/glmTools/physics,
+					../../../addons/ofxVectorTile/libs/glmTools/shapes,
+					../../../addons/ofxVectorTile/src,
+					src,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-D__MACOSX_CORE__",
+					"-lpthread",
+					"-mtune=native",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx/libftgl.a,
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E4B69B600A3A1757003C02F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				ICON = "$(ICON_NAME_DEBUG)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_25)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_26)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_27)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_28)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_29)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_30)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_31)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_32)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_33)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_34)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_35)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_36)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_37)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_38)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_39)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_40)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_41)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_42)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_43)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_44)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_45)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_46)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_47)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_48)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_49)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx/libftgl.a,
+					"-lcurl",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4B69B610A3A1757003C02F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = NONE;
+				ICON = "$(ICON_NAME_RELEASE)";
+				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
+				INFOPLIST_FILE = "openFrameworks-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_5)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_6)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_14)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_15)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_10)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_11)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_12)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_13)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_16)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_17)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_18)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_19)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_20)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_21)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_22)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_23)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_24)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_25)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_26)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_27)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_28)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_29)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_30)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_31)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_32)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_33)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_34)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_35)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_36)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_37)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_38)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_39)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_40)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_41)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_42)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_43)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_44)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_45)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_46)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_47)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_48)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_49)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_50)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
+				);
+				OTHER_LDFLAGS = (
+					"$(OF_CORE_LIBS)",
+					../../../addons/ofxFTGL/libs/FTGL/lib/osx/libftgl.a,
+					"-lcurl",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B4E0A3A1720003C02F2 /* Debug */,
+				E4B69B4F0A3A1720003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B69B600A3A1757003C02F2 /* Debug */,
+				E4B69B610A3A1757003C02F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4B69B4C0A3A1720003C02F2 /* Project object */;
+}

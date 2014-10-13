@@ -1,23 +1,14 @@
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-*.app
-*.mode*
+# Some general ignore patterns
 build/
 obj/
+*.o
 Debug*/
 Release*/
+*.mode*
+*.app/
 *.pyc
+.svn/
 
-*/bin/*
-!*/bin/data/
-
-# IDE-specific ignore patterns
 
 #XCode
 *.pbxuser
@@ -38,15 +29,12 @@ xcuserdata
 *.opensdf
 *.suo
 ipch/
-# User-specific files
-*.suo
-*.user
-*.sln.docstates
 
 #Eclipse
 .metadata
 local.properties
 .externalToolBuilders
+
 
 # OS-specific ignore patterns
 
@@ -70,3 +58,15 @@ Desktop.ini
 
 #Android
 .csettings
+/libs/openFrameworksCompiled/project/android/paths.make
+
+# Miscellaneous
+.mailmap
+
+/week1-movingRec/bin/data/park6/
+/week1-movingRec/bin/data/park5/
+/week1-movingRec/bin/data/park4/
+/week1-movingRec/bin/data/park3/
+/week1-movingRec/bin/data/park2/
+/week1-movingRec/bin/data/park1/
+/week1-movingRec/bin/data/Archive.zip
