@@ -10,7 +10,7 @@
 
 #include "ofMain.h"
 
-ofFloatColor toOf(const glm::vec4 &_v){
+static ofFloatColor toOf(const glm::vec4 &_v){
     return ofFloatColor(_v.x,_v.y,_v.z,_v.w);
 }
 
