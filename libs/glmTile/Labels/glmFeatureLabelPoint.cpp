@@ -158,9 +158,15 @@ void glmFeatureLabelPoint::draw2D(){
         }
         
         if(m_alpha > 0.0 && m_projectedCentroid.z > 0 && m_anchorPoint.z > 0){
-            glColor4f(m_font->colorFront.x,m_font->colorFront.y,m_font->colorFront.z,m_alpha);
 //            drawStippleLine(m_projectedCentroid, m_anchorPoint, 0x1111);
+#ifdef GLFONTSTASH
+            FONScontext* ctx = m_font->getContext();
+            glfonsSetColor(ctx, m_font->colorFront.x * 255, m_font->colorFront.y * 255, m_font->colorFront.z * 255, m_alpha * 255);
+            m_font->drawString(m_text, m_fsid, m_label, m_alpha);
+#else
+            glColor4f(m_font->colorFront.x,m_font->colorFront.y,m_font->colorFront.z,m_alpha);
             m_font->drawString(m_text, m_label, m_alpha);
+#endif
         }
     }
 }

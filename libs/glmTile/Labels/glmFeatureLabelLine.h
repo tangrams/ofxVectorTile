@@ -14,8 +14,6 @@
 
 #include "glmFeatureLabelPoint.h"
 
-#include "glfontstash.h"
-
 class glmFeatureLabelLine : public glmFeatureLabel{
 public:
     

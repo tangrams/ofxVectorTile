@@ -15,6 +15,8 @@
 #include "glmRectangle.h"
 #include "glfontstash.h"
 
+#define GLFONTSTASH
+
 class glmFont {
 public:
     
@@ -42,19 +44,27 @@ public:
     void drawString(const std::string &_s, float _alpha );
     void drawString(const std::string &_s, const glm::vec3 &_pos, float _alpha );
     void drawString(const std::string &_s, const glmRectangle &_rect, float _alpha);
+
+#ifdef GLFONTSTASH
+    void drawString(const std::string &_s, unsigned int _id, float _alpha);
+    void drawString(const std::string &_s, unsigned int _id, const glm::vec3 &_pos, float _alpha);
+    void drawString(const std::string &_s, unsigned int _id, const glmRectangle &_rect, float _alpha);
+    
+    FONScontext* getContext() const;
+#endif
     
     glm::vec3   colorBack;
     glm::vec3   colorFront;
-    
-    FONScontext* getContext() { return fs; };
     
 protected:
     FTFont* m_font;
     FTFont* m_outlineFont;
     bool    m_bLoaded;
     
-    FONScontext* fs;
-    int fontNormal;
+#ifdef GLFONTSTASH
+    FONScontext* m_fs;
+    int          m_fontNormal;
+#endif
 };
 
 typedef std::tr1::shared_ptr<glmFont> glmFontRef;

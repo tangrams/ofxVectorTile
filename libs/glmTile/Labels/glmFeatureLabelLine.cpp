@@ -230,9 +230,6 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
             }
             
             if(!bOver){
-#define GLFONTSTASH
-//#define FTGL
-                
 #ifdef GLFONTSTASH
                 FONScontext* fs = m_font->getContext();
                 
@@ -251,10 +248,9 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
                     glfonsTranslate(fs, 0.0, m_label.height*0.5);
                 }
                 
-                m_font->drawString(m_text, mark.m_alpha);
+                m_font->drawString(m_text, m_fsid, mark.m_alpha);
                 glfonsPopMatrix(fs);
-#endif
-#ifdef FTGL
+#else
                 glPushMatrix();
                 glTranslated(src.x, src.y, src.z);
                 
