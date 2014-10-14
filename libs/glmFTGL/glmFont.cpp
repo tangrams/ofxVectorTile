@@ -7,6 +7,13 @@
 //
 
 #include "glmFont.h"
+
+#define GLFONTSTASH_IMPLEMENTATION
+#include "glfontstash.h"
+
+#define GLFONTSTASH
+//#define FTGL
+
 glmFont::glmFont(): m_bLoaded(false), m_font(NULL), colorBack(0.,0.,0.), colorFront(1.,1.,1.) {
 }
 
@@ -24,10 +31,6 @@ void glmFont::unload(){
 }
 
 bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, bool _bUsePolygons){
-    if (m_bLoaded) {
-        unload();
-    }
-    
     _fontsize *= 2;
     
     if (_depth != 0) {
@@ -64,6 +67,25 @@ bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, boo
     }
     
     m_bLoaded = true;
+
+#ifdef GLFONTSTASH
+    fs = glfonsCreate(512, 512, FONS_ZERO_TOPLEFT);
+    if (fs == NULL) {
+        printf("Could not create stash.\n");
+    }
+
+    // wip on fontstash
+    char* resourcePath = "../../../data/Champagne & Limousines.ttf";
+    
+    fontNormal = fonsAddFont(fs, "sans", resourcePath);
+    if (fontNormal == FONS_INVALID) {
+        printf("Could not add font normal.\n");
+    }
+    
+    fonsSetSize(fs, _fontsize);
+    fonsSetFont(fs, fontNormal);
+#endif
+    
     return true;
 }
 
@@ -147,17 +169,41 @@ glmRectangle glmFont::getStringBoundingBox(const std::wstring &_s){
 }
 
 void glmFont::drawString(const std::string &_s, float _alpha){
+#ifdef GLFONTSTASH
+    fsuint text;
+    glfonsBufferText(fs, _s.c_str(), &text);
     
+    //glfonsSetColor(fs, 255, 255, 255, _alpha * 255);
+    glfonsDrawText(fs, text);
+    
+    glfonsUnbufferText(fs, text);
+#endif
+#ifdef FTGL
     glLineWidth(2);
     glColor4f(colorBack.r,colorBack.g,colorBack.b, _alpha);
     m_outlineFont->Render(_s.c_str(), -1, FTPoint());
     glColor4f(colorFront.r,colorFront.g,colorFront.b, _alpha);
     m_font->Render(_s.c_str(), -1, FTPoint());
     glLineWidth(1);
-    
+#endif
 }
 
 void glmFont::drawString(const std::string &_s, const glm::vec3 &_pos, float _alpha){
+#ifdef GLFONTSTASH
+    fsuint text;
+    glfonsBufferText(fs, _s.c_str(), &text);
+    
+    glfonsPushMatrix(fs);
+
+    glfonsTranslate(fs, _pos.x, _pos.y);
+    glfonsScale(fs, 1, -1);
+    glfonsSetColor(fs, 255, 255, 255, _alpha * 255);
+    glfonsDrawText(fs, text);
+    glfonsPopMatrix(fs);
+    
+    glfonsUnbufferText(fs, text);
+#endif
+#ifdef FTGL
     glPushMatrix();
     glTranslatef(_pos.x,_pos.y,_pos.z);
     glScalef(1,-1,1);
@@ -165,15 +211,35 @@ void glmFont::drawString(const std::string &_s, const glm::vec3 &_pos, float _al
     drawString(_s, _alpha);
     
     glPopMatrix();
+#endif
 }
 
 void glmFont::drawString(const std::string &_s, const glmRectangle &_rect, float _alpha){
-    glPushMatrix();
     glm::vec3 p = _rect.getBottomLeft();
+#ifdef GLFONTSTASH
+    fsuint text;
+
+    // shouldn't buffer and unbuffer at each frame
+    glfonsBufferText(fs, _s.c_str(), &text);
+
+    glfonsPushMatrix(fs);
+    
+    glfonsTranslate(fs, p.x, p.y);
+    glfonsSetColor(fs, 255, 255, 255, _alpha * 255);
+    glfonsDrawText(fs, text);
+    
+    glfonsPopMatrix(fs);
+        
+    glfonsUnbufferText(fs, text);
+#endif
+#ifdef FTGL
+    glPushMatrix();
+    
     glTranslatef(p.x,p.y,p.z);
     glScalef(1,-1,1);
     
     drawString(_s, _alpha);
     
     glPopMatrix();
+#endif
 }

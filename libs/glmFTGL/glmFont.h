@@ -13,6 +13,7 @@
 #include "glm/glm.hpp"
 
 #include "glmRectangle.h"
+#include "glfontstash.h"
 
 class glmFont {
 public:
@@ -45,10 +46,15 @@ public:
     glm::vec3   colorBack;
     glm::vec3   colorFront;
     
+    FONScontext* getContext() { return fs; };
+    
 protected:
     FTFont* m_font;
     FTFont* m_outlineFont;
     bool    m_bLoaded;
+    
+    FONScontext* fs;
+    int fontNormal;
 };
 
 typedef std::tr1::shared_ptr<glmFont> glmFontRef;

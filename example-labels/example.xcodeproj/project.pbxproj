@@ -219,6 +219,9 @@
 		955700FADBA9A47BAF048738 /* setup.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = setup.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/setup.hpp; sourceTree = SOURCE_ROOT; };
 		9655FB7681C1573EA5EE6F2D /* intersect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intersect.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/intersect.hpp; sourceTree = SOURCE_ROOT; };
 		9859B648837FD2EE8FC08F1F /* simd_mat4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simd_mat4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/simd_mat4.hpp; sourceTree = SOURCE_ROOT; };
+		988DB4E419EC60F20053632E /* fontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
+		988DB4E519EC60F20053632E /* glfontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfontstash.h; sourceTree = "<group>"; };
+		988DB4E619EC60F20053632E /* stb_truetype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
 		9C40AF75BC59BE70643662BD /* FTOutlineGlyph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTOutlineGlyph.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTOutlineGlyph.h; sourceTree = SOURCE_ROOT; };
 		9F3E302F29BB2788BA8C2B27 /* quaternion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = quaternion.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/quaternion.hpp; sourceTree = SOURCE_ROOT; };
 		9F76AEFE9A7818CD434F7AAA /* FTGLTextureFont.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FTGLTextureFont.h; path = ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLTextureFont.h; sourceTree = SOURCE_ROOT; };
@@ -507,6 +510,16 @@
 				CCDC6F9CCF925CC402160B85 /* src */,
 			);
 			name = jsoncpp;
+			sourceTree = "<group>";
+		};
+		988DB4D919EC1CFB0053632E /* fontstash */ = {
+			isa = PBXGroup;
+			children = (
+				988DB4E419EC60F20053632E /* fontstash.h */,
+				988DB4E519EC60F20053632E /* glfontstash.h */,
+				988DB4E619EC60F20053632E /* stb_truetype.h */,
+			);
+			name = fontstash;
 			sourceTree = "<group>";
 		};
 		ABF30C31556C6D7E6159BD0C /* gtx */ = {
@@ -839,6 +852,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				988DB4D919EC1CFB0053632E /* fontstash */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
