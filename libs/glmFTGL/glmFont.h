@@ -46,9 +46,10 @@ public:
     void drawString(const std::string &_s, const glmRectangle &_rect, float _alpha);
 
 #ifdef GLFONTSTASH
-    void drawString(const std::string &_s, unsigned int _id, float _alpha);
-    void drawString(const std::string &_s, unsigned int _id, const glm::vec3 &_pos, float _alpha);
-    void drawString(const std::string &_s, unsigned int _id, const glmRectangle &_rect, float _alpha);
+    void drawString(unsigned int _id, float _alpha);
+    void drawString(unsigned int _id, const glm::vec3 &_pos, float _alpha);
+    void drawString(unsigned int _id, const glmRectangle &_rect, float _alpha);
+    void drawSubString(unsigned int _id, unsigned int _from, unsigned int _to, float _alpha);
     
     FONScontext* getContext() const;
 #endif

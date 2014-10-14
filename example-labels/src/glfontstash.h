@@ -31,12 +31,12 @@
 typedef unsigned int fsuint;
 typedef unsigned int fsenum;
 
-#define BUFFER_SIZE 2
+#define BUFFER_SIZE     2
+#define N_GLYPH_VERTS   6
 
 struct GLFONSvbo {
     int nverts;
     GLuint buffers[BUFFER_SIZE];
-    glm::vec2 bbox[2];
 };
 
 typedef struct GLFONSvbo GLFONSvbo;
@@ -53,6 +53,7 @@ struct GLFONScontext {
     GLuint colorAttrib;
     
     std::map<fsuint, GLFONSvbo*>* vbos;
+    std::map<fsuint, glm::vec2*> bboxs;
     std::stack<glm::mat4> matrixStack;
     glm::mat4 projectionMatrix;
     
@@ -100,6 +101,7 @@ void glfonsAnchorPoint(FONScontext* ctx, float x, float y);
 void glfonsRotate(FONScontext* ctx, float angle);
 void glfonsTranslate(FONScontext* ctx, float x, float y);
 void glfonsDrawText(FONScontext* ctx, fsuint id);
+void glfonsDrawText(FONScontext* ctx, fsuint id, unsigned int from, unsigned int to);
 void glfonsSetColor(FONScontext* ctx, unsigned int r, unsigned int g, unsigned int b, unsigned int a);
 void glfonsScale(FONScontext* ctx, float x, float y);
 
@@ -230,9 +232,7 @@ static void glfons__renderUpdate(void* userPtr, int* rect, const unsigned char* 
     int w = rect[2] - rect[0];
     int h = rect[3] - rect[1];
     
-    // TODO : store the bounding box
-
-    // TODO : update smaller part of texture 
+    // TODO : update smaller part of texture
     glBindTexture(GL_TEXTURE_2D, gl->tex);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, gl->width, gl->height, 0, GL_ALPHA, GL_UNSIGNED_BYTE, data);
 }
@@ -262,7 +262,7 @@ FONScontext* glfonsCreate(int width, int height, int flags)
 {
     FONSparams params;
     GLFONScontext* gl = new GLFONScontext;
-
+    
     params.width = width;
     params.height = height;
     params.flags = (unsigned char)flags;
@@ -295,8 +295,8 @@ void glfonsBufferText(FONScontext* ctx, const char* s, fsuint* id)
     
     fonsDrawText(ctx, 0, 0, s, NULL, 0);
     
-    float inf = -std::numeric_limits<float>::infinity();
-    float x0 = -inf, x1 = inf, y0 = -inf, y1 = inf;
+    float inf = std::numeric_limits<float>::infinity();
+    float x0 = inf, x1 = -inf, y0 = inf, y1 = -inf;
     for(int i = 0; i < ctx->nverts; i += 2) {
         x0 = ctx->verts[i] < x0 ? ctx->verts[i] : x0;
         x1 = ctx->verts[i] > x1 ? ctx->verts[i] : x1;
@@ -304,8 +304,11 @@ void glfonsBufferText(FONScontext* ctx, const char* s, fsuint* id)
         y1 = ctx->verts[i+1] > y1 ? ctx->verts[i+1] : y1;
     }
     
-    vboBufferDesc->bbox[0] = glm::vec2(x0, y0);
-    vboBufferDesc->bbox[1] = glm::vec2(x1, y1);
+    glm::vec2 bbox[2];
+    bbox[0] = glm::vec2(x0, y0);
+    bbox[1] = glm::vec2(x1, y1);
+    glctx->bboxs.insert(std::pair<fsuint, glm::vec2*>(*id, bbox));
+    
     //vboBufferDesc->anchorPoint = glm::vec2(0.5);
     
     glGenBuffers(BUFFER_SIZE, vboBufferDesc->buffers);
@@ -319,21 +322,21 @@ void glfonsBufferText(FONScontext* ctx, const char* s, fsuint* id)
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
     vboBufferDesc->nverts = ctx->nverts;
-
+    
     // reset fontstash state
     ctx->nverts = 0;
-
+    
     glctx->vbos->insert(std::pair<fsuint, GLFONSvbo*>(*id, vboBufferDesc));
 }
 
 void glfonsUnbufferText(FONScontext* ctx, fsuint id)
 {
     GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
-
+    
     if(glctx->vbos->find(id) != glctx->vbos->end()) {
         // TODO : should test if it already exists before accessing it
         GLFONSvbo* vboInfo = glctx->vbos->at(id);
-    
+        
         if(vboInfo != NULL) {
             glDeleteBuffers(3, vboInfo->buffers);
             glctx->vbos->erase(id);
@@ -359,8 +362,8 @@ void glfonsRotate(FONScontext* ctx, float angle)
     glm::vec3 raxis = glm::vec3(0.0, 0.0, 1.0);
     
     glctx->rotation = glctx->matrixStack.top()
-        * glm::rotate(glctx->rotation, angle, raxis)
-        * glm::inverse(glctx->matrixStack.top());
+    * glm::rotate(glctx->rotation, angle, raxis)
+    * glm::inverse(glctx->matrixStack.top());
 }
 
 void glfonsTranslate(FONScontext* ctx, float x, float y)
@@ -374,12 +377,16 @@ void glfonsScale(FONScontext* ctx, float x, float y) {
     glctx->scale = glm::scale(glctx->scale, glm::vec3(x, y, 1.0));
 }
 
-void glfonsDrawText(FONScontext* ctx, fsuint id)
+void glfonsDrawText(FONScontext* ctx, fsuint id, unsigned int from, unsigned int to)
 {
     GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
     
-    if(!glctx || glctx->tex == 0 || glctx->vbos->find(id) == glctx->vbos->end())
+    if(glctx->tex == 0)
         return;
+    
+    int d = (to - from) + 1;
+    int iFirst = from * N_GLYPH_VERTS;
+    int count = d * N_GLYPH_VERTS;
     
     GLFONSvbo* vboDesc = glctx->vbos->at(id);
     
@@ -391,30 +398,38 @@ void glfonsDrawText(FONScontext* ctx, fsuint id)
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, glctx->tex);
         glEnable(GL_TEXTURE_2D);
-    
+        
         glUseProgram(glctx->shaderProgram);
         glUniform1i(glGetUniformLocation(glctx->shaderProgram, "tex"), 0);
         glUniformMatrix4fv(glGetUniformLocation(glctx->shaderProgram, "mvp"), 1, GL_FALSE, glm::value_ptr(mvp));
         glUniform4f(glGetUniformLocation(glctx->shaderProgram, "color"), color.r, color.g, color.b, color.a);
-    
+        
         glBindBuffer(GL_ARRAY_BUFFER, vboDesc->buffers[0]);
         glVertexAttribPointer(glctx->posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
         glEnableVertexAttribArray(glctx->posAttrib);
-    
+        
         glBindBuffer(GL_ARRAY_BUFFER, vboDesc->buffers[1]);
         glVertexAttribPointer(glctx->texCoordAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
         glEnableVertexAttribArray(glctx->texCoordAttrib);
-    
-        glDrawArrays(GL_TRIANGLES, 0, vboDesc->nverts);
-    
+        
+        glDrawArrays(GL_TRIANGLES, iFirst, count);
+        
         glDisableVertexAttribArray(glctx->posAttrib);
         glDisableVertexAttribArray(glctx->texCoordAttrib);
         glDisableVertexAttribArray(glctx->colorAttrib);
-    
+        
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glUseProgram(0);
         glDisable(GL_TEXTURE_2D);
     }
+}
+
+void glfonsDrawText(FONScontext* ctx, fsuint id)
+{
+    GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
+    GLFONSvbo* vboDesc = glctx->vbos->at(id);
+    unsigned int last = (vboDesc->nverts / N_GLYPH_VERTS) - 1;
+    glfonsDrawText(ctx, id, 0, last);
 }
 
 void glfonsSetColor(FONScontext* ctx, unsigned int r, unsigned int g, unsigned int b, unsigned int a)
@@ -440,7 +455,7 @@ void glfonsPopMatrix(FONScontext* ctx)
     
     if(glctx->matrixStack.size() > 0) {
         glctx->matrixStack.pop();
-    
+        
         // TODO : fix this, should, retrieve old state
         resetMatrices(glctx);
     }

@@ -162,7 +162,7 @@ void glmFeatureLabelPoint::draw2D(){
 #ifdef GLFONTSTASH
             FONScontext* ctx = m_font->getContext();
             glfonsSetColor(ctx, m_font->colorFront.x * 255, m_font->colorFront.y * 255, m_font->colorFront.z * 255, m_alpha * 255);
-            m_font->drawString(m_text, m_fsid, m_label, m_alpha);
+            m_font->drawString(m_fsid, m_label, m_alpha);
 #else
             glColor4f(m_font->colorFront.x,m_font->colorFront.y,m_font->colorFront.z,m_alpha);
             m_font->drawString(m_text, m_label, m_alpha);

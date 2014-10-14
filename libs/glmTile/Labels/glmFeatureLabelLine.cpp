@@ -248,7 +248,7 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
                     glfonsTranslate(fs, 0.0, m_label.height*0.5);
                 }
                 
-                m_font->drawString(m_text, m_fsid, mark.m_alpha);
+                m_font->drawString(m_fsid, mark.m_alpha);
                 glfonsPopMatrix(fs);
 #else
                 glPushMatrix();
@@ -299,6 +299,24 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                 if(screen.inside(src)){
                     double rot = _anchorLine.getAngleAt(offset);
                     
+#ifdef GLFONTSTASH
+                    FONScontext* ctx = m_font->getContext();
+                    
+                    glfonsPushMatrix(ctx);
+                    glfonsTranslate(ctx, src.x, src.y);
+                    
+                    glfonsScale(ctx, 1, -1);
+                    glfonsRotate(ctx, rot * RAD_TO_DEG);
+                    
+                    glfonsScale(ctx, 1, -1);
+                    
+                    glfonsScale(ctx, -1, -1);
+                    glfonsTranslate(ctx, -m_lettersWidth[i], 0);
+                    
+                    glfonsTranslate(ctx, 0, -m_label.height*0.5);
+                    m_font->drawSubString(m_fsid, i, i, mark.m_alpha);
+                    glfonsPopMatrix(ctx);
+#else
                     glPushMatrix();
                     glTranslated(src.x, src.y, src.z);
                     
@@ -311,6 +329,7 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                     glTranslatef(0., -m_label.height*0.5,0.);
                     m_font->drawString( std::string(1,m_text[i]), mark.m_alpha );
                     glPopMatrix();
+#endif
                     offset += m_lettersWidth[i];
                 } else {
                     break;
@@ -324,6 +343,23 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                 if(screen.inside(src)){
                     double rot = _anchorLine.getAngleAt(offset);
                     
+#ifdef GLFONTSTASH
+                    FONScontext* ctx = m_font->getContext();
+                    
+                    glfonsPushMatrix(ctx);
+                    glfonsTranslate(ctx, src.x, src.y);
+                    
+                    glfonsScale(ctx, 1, -1);
+                    glfonsRotate(ctx, rot * RAD_TO_DEG);
+                    
+                    glfonsScale(ctx, 1, -1);
+                    
+                    glfonsTranslate(ctx, 0.0, -m_label.height * 0.5);
+                    
+                    m_font->drawSubString(m_fsid, i, i, mark.m_alpha);
+                    
+                    glfonsPopMatrix(ctx);
+#else
                     glPushMatrix();
                     glTranslated(src.x, src.y, src.z);
                     
@@ -334,6 +370,7 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                     m_font->drawString( std::string(1,m_text[i]), mark.m_alpha );
                     
                     glPopMatrix();
+#endif
                     offset += m_lettersWidth[i];
                 } else {
                     break;
