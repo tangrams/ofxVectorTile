@@ -234,6 +234,16 @@ void glmFont::drawString(unsigned int _id, const glmRectangle &_rect, float _alp
     glfonsPopMatrix(m_fs);
 }
 
+void glmFont::drawSubString(unsigned int _id, unsigned int _i, bool _offset, float _alpha) {
+    if(!_offset) {
+        // fix subuffer drawing by offseting by the position of the glyph
+        // because the buffer contains the whole string
+        float xglyphOffset = glfonsGetGlyphOffset(m_fs, _id, _i);
+        glfonsTranslate(m_fs, -xglyphOffset, 0.0);
+    }
+    drawSubString(_id, _i, _i, _alpha);
+}
+
 void glmFont::drawSubString(unsigned int _id, unsigned int _from, unsigned int _to, float _alpha) {
     glfonsScale(m_fs, 1, -1); // fix scale
     glfonsDrawText(m_fs, _id, _from, _to);

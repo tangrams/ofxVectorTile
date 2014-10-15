@@ -299,8 +299,6 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
 #ifdef GLFONTSTASH
                     FONScontext* ctx = m_font->getContext();
                     
-                    glfonsSetColor(ctx, 255, 0, 255, 255);
-                    
                     glfonsPushMatrix(ctx);
                     glfonsTranslate(ctx, src.x, src.y);
                     
@@ -311,7 +309,8 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                     glfonsTranslate(ctx, -m_lettersWidth[i], 0);
                     
                     glfonsTranslate(ctx, 0, -m_label.height*0.5);
-                    m_font->drawSubString(m_fsid, i, i, mark.m_alpha);
+                    
+                    m_font->drawSubString(m_fsid, i, false, mark.m_alpha);
                     glfonsPopMatrix(ctx);
 #else
                     glPushMatrix();
@@ -351,7 +350,7 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                     
                     glfonsTranslate(ctx, 0.0, -m_label.height * 0.5);
                     
-                    m_font->drawSubString(m_fsid, i, i, mark.m_alpha);
+                    m_font->drawSubString(m_fsid, i, false, mark.m_alpha);
                     
                     glfonsPopMatrix(ctx);
 #else

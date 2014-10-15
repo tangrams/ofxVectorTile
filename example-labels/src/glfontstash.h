@@ -54,6 +54,8 @@ struct GLFONScontext {
     
     std::map<fsuint, GLFONSvbo*>* vbos;
     std::map<fsuint, glm::vec2*> bboxs;
+    std::map<fsuint, float*> glyphsXOffset;
+    
     std::stack<glm::mat4> matrixStack;
     glm::mat4 projectionMatrix;
     
@@ -105,6 +107,8 @@ void glfonsUpdateViewport(FONScontext* ctx);
 
 void glfonsPushMatrix(FONScontext* ctx);
 void glfonsPopMatrix(FONScontext* ctx);
+
+float glfonsGetGlyphOffset(FONScontext* ctx, fsuint id, int i);
 
 // TODO : use a set of pixel shaders to change the font rendering style
 void glfonsSetShadingStyle(fsenum style);
@@ -240,6 +244,11 @@ static void glfons__renderDelete(void* userPtr)
             delete elmt.second;
         }
     }
+    for(auto& elmt : gl->glyphsXOffset) {
+        if(elmt.second != NULL) {
+            delete[] elmt.second;
+        }
+    }
     delete gl->vbos;
     delete gl;
 }
@@ -288,9 +297,18 @@ void glfonsBufferText(FONScontext* ctx, const char* s, fsuint* id)
     
     fonsDrawText(ctx, 0, 0, s, NULL, 0);
     
+    float* glyphsXOffset = new float[ctx->nverts / N_GLYPH_VERTS];
+    
+    int j = 0;
+    for(int i = 0; i < ctx->nverts * 2; i += N_GLYPH_VERTS * 2) {
+        glyphsXOffset[j++] = ctx->verts[i];
+    }
+    
+    glctx->glyphsXOffset.insert(std::pair<fsuint, float*>(*id, glyphsXOffset));
+    
     float inf = std::numeric_limits<float>::infinity();
     float x0 = inf, x1 = -inf, y0 = inf, y1 = -inf;
-    for(int i = 0; i < ctx->nverts; i += 2) {
+    for(int i = 0; i < ctx->nverts * 2; i += 2) {
         x0 = ctx->verts[i] < x0 ? ctx->verts[i] : x0;
         x1 = ctx->verts[i] > x1 ? ctx->verts[i] : x1;
         y0 = ctx->verts[i+1] < y0 ? ctx->verts[i+1] : y0;
@@ -428,6 +446,12 @@ void glfonsPopMatrix(FONScontext* ctx)
         glctx->transform = glctx->matrixStack.top();
         glctx->matrixStack.pop();
     }
+}
+
+float glfonsGetGlyphOffset(FONScontext* ctx, fsuint id, int i)
+{
+    GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
+    return glctx->glyphsXOffset.at(id)[i];
 }
 
 #endif
