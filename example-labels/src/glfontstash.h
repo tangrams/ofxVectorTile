@@ -41,6 +41,16 @@ struct GLFONSvbo {
 
 typedef struct GLFONSvbo GLFONSvbo;
 
+struct GLStash {
+    GLFONSvbo* vbo;
+    glm::vec2* bbox;
+    float* glyphsXOffset;
+    float length;
+    int nbGlyph;
+};
+
+typedef struct GLStash GLStash;
+
 struct GLFONScontext {
     GLuint tex;
     int width, height;
@@ -55,6 +65,7 @@ struct GLFONScontext {
     std::map<fsuint, GLFONSvbo*>* vbos;
     std::map<fsuint, glm::vec2*> bboxs;
     std::map<fsuint, float*> glyphsXOffset;
+    std::map<fsuint, float> lengths;
     
     std::stack<glm::mat4> matrixStack;
     glm::mat4 projectionMatrix;
@@ -107,8 +118,10 @@ void glfonsUpdateViewport(FONScontext* ctx);
 
 void glfonsPushMatrix(FONScontext* ctx);
 void glfonsPopMatrix(FONScontext* ctx);
+void glfonsGetBBox(FONScontext* ctx, fsuint id, float* x0, float* y0, float* x1, float* y1);
 
 float glfonsGetGlyphOffset(FONScontext* ctx, fsuint id, int i);
+float glfonsGetLength(FONScontext* ctx, fsuint id);
 
 // TODO : use a set of pixel shaders to change the font rendering style
 void glfonsSetShadingStyle(fsenum style);
@@ -249,6 +262,11 @@ static void glfons__renderDelete(void* userPtr)
             delete[] elmt.second;
         }
     }
+    for(auto& elmt : gl->bboxs) {
+        if(elmt.second != NULL) {
+            delete elmt.second;
+        }
+    }
     delete gl->vbos;
     delete gl;
 }
@@ -315,10 +333,12 @@ void glfonsBufferText(FONScontext* ctx, const char* s, fsuint* id)
         y1 = ctx->verts[i+1] > y1 ? ctx->verts[i+1] : y1;
     }
     
-    glm::vec2 bbox[2];
+    glm::vec2* bbox = new glm::vec2[2];
     bbox[0] = glm::vec2(x0, y0);
     bbox[1] = glm::vec2(x1, y1);
     glctx->bboxs.insert(std::pair<fsuint, glm::vec2*>(*id, bbox));
+    
+    glctx->lengths.insert(std::pair<fsuint, float>(*id, ctx->verts[(ctx->nverts*2)-2])); // get the last x
     
     glGenBuffers(BUFFER_SIZE, vboBufferDesc->buffers);
     
@@ -452,6 +472,21 @@ float glfonsGetGlyphOffset(FONScontext* ctx, fsuint id, int i)
 {
     GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
     return glctx->glyphsXOffset.at(id)[i];
+}
+
+void glfonsGetBBox(FONScontext* ctx, fsuint id, float* x0, float* y0, float* x1, float* y1)
+{
+    GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
+    glm::vec2* bbox = glctx->bboxs.at(id);
+    
+    *x0 = bbox[0].x; *y0 = bbox[0].y;
+    *x1 = bbox[1].x; *y1 = bbox[1].y;
+}
+
+float glfonsGetLength(FONScontext* ctx, fsuint id)
+{
+    GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
+    return glctx->lengths.at(id);
 }
 
 #endif

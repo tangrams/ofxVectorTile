@@ -66,8 +66,15 @@ bool glmFeatureLabelPoint::isInside(const glm::vec3 &_point){
 
 void glmFeatureLabelPoint::updateCached(){
     if(m_font!=NULL&&m_text!="NONE"){
+#ifdef GLFONTSTASH
+        float x0, y0, x1, y1;
+        glfonsGetBBox(m_font->getContext(), m_fsid, &x0, &y0, &x1, &y1);
+        m_label = glmRectangle(glm::vec4(x0, y0, x1, y1));
+#else
         m_label = m_font->getStringBoundingBox(m_text);
+#endif
         m_bChanged = false;
+
     }
 }
 
