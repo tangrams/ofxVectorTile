@@ -67,9 +67,7 @@ bool glmFeatureLabelPoint::isInside(const glm::vec3 &_point){
 void glmFeatureLabelPoint::updateCached(){
     if(m_font!=NULL&&m_text!="NONE"){
 #ifdef GLFONTSTASH
-        float x0, y0, x1, y1;
-        glfonsGetBBox(m_font->getContext(), m_fsid, &x0, &y0, &x1, &y1);
-        m_label = glmRectangle(glm::vec4(x0, y0, x1, y1));
+        m_label = m_font->getStringBoundingBox(m_fsid);
 #else
         m_label = m_font->getStringBoundingBox(m_text);
 #endif
@@ -168,7 +166,7 @@ void glmFeatureLabelPoint::draw2D(){
 //            drawStippleLine(m_projectedCentroid, m_anchorPoint, 0x1111);
 #ifdef GLFONTSTASH
             FONScontext* ctx = m_font->getContext();
-            glfonsSetColor(ctx, m_font->colorFront.x * 255, m_font->colorFront.y * 255, m_font->colorFront.z * 255, m_alpha * 255);
+            glfonsSetColor(ctx, 255, 255, 255, m_alpha * 255);
             m_font->drawString(m_fsid, m_label, m_alpha);
 #else
             glColor4f(m_font->colorFront.x,m_font->colorFront.y,m_font->colorFront.z,m_alpha);
@@ -209,7 +207,7 @@ void glmFeatureLabelPoint::draw3D(){
 
 void glmFeatureLabelPoint::drawDebug(){
     
-    glColor4f(m_font->colorFront.r, m_font->colorFront.g, m_font->colorFront.g, m_alpha);
+    glColor4f(1.0, 1.0, 1.0, m_alpha);
     glEnable(GL_LINE_STIPPLE);
     glLineStipple(1, 0x1111);
     for (auto &it: m_anchorLines) {
@@ -222,7 +220,7 @@ void glmFeatureLabelPoint::drawDebug(){
 //        glColor4f(m_font->colorFront.r, m_font->colorFront.g, m_font->colorFront.g,0.2);
 //        m_label.drawCorners();
     } else {
-        glColor4f(m_font->colorFront.r, m_font->colorFront.g, m_font->colorFront.g,1.);
+        glColor4f(1.0, 1.0, 1.0, 1.);
         getLabel(25).drawCorners();
     }
 }

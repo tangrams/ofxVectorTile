@@ -131,9 +131,7 @@ void glmFeatureLabelLine::updateCached(){
             }
         }
         
-        float x0, y0, x1, y1;
-        glfonsGetBBox(ctx, m_fsid, &x0, &y0, &x1, &y1);
-        m_label = glmRectangle(glm::vec4(x0, y0, x1, y1));
+        m_label = m_font->getStringBoundingBox(m_fsid);
 #else
         std::string word = "";
         float wordWidth = 0.0f;
@@ -184,8 +182,7 @@ void glmFeatureLabelLine::draw2D(){
 }
 
 void glmFeatureLabelLine::drawDebug(){
-    glColor4f(m_font->colorFront.x,m_font->colorFront.y,m_font->colorFront.z,m_alpha);
-    
+        
     glEnable(GL_LINE_STIPPLE);
     glLineStipple(1, 0x1111);
     for (auto &it: m_anchorLines) {
@@ -285,7 +282,6 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
                 glfonsPopMatrix(fs);
                 
                 
-                
                 float x0, y0, x1, y1;
                 glfonsGetBBox(fs, m_fsid, &x0, &y0, &x1, &y1);
                 
@@ -305,14 +301,14 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
                 glLineWidth(1.0);
                 glColor3f(1.0, 0.0, 0.0);
                 glBegin(GL_LINES);
-                glVertex3f(x0, y0, 0.0);
-                glVertex3f(x0, y1, 0.0);
-                glVertex3f(x0, y1, 0.0);
-                glVertex3f(x1, y1, 0.0);
-                glVertex3f(x1, y1, 0.0);
-                glVertex3f(x1, y0, 0.0);
-                glVertex3f(x1, y0, 0.0);
-                glVertex3f(x0, y0, 0.0);
+                    glVertex3f(x0, y0, 0.0);
+                    glVertex3f(x0, y1, 0.0);
+                    glVertex3f(x0, y1, 0.0);
+                    glVertex3f(x1, y1, 0.0);
+                    glVertex3f(x1, y1, 0.0);
+                    glVertex3f(x1, y0, 0.0);
+                    glVertex3f(x1, y0, 0.0);
+                    glVertex3f(x0, y0, 0.0);
                 glEnd();
                 glPopMatrix();
 #else
