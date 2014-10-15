@@ -155,6 +155,10 @@ void glmLabelManager::updateProjection(){
         m_bProjectionChanged = true;
     }
     
+#ifdef GLFONTSTASH
+    glfonsUpdateViewport(m_font->getContext());
+#endif
+    
     //  Projection Change? New Labels?
     //
     if(m_bProjectionChanged || m_bChange ){

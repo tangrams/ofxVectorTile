@@ -236,18 +236,15 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
                 glfonsPushMatrix(fs);
                 glfonsTranslate(fs, src.x, src.y);
                 
+                glfonsScale(fs, 1, -1);
+                glfonsRotate(fs, rot * RAD_TO_DEG);
+                
                 if(angle < PI*0.5 && angle > -PI*0.5) {
-                    glfonsRotate(fs, rot * RAD_TO_DEG);
-                    glfonsSetColor(fs, 255, 0, 0, mark.m_alpha * 255);
-                    glfonsTranslate(fs, 0.0, -m_label.height*0.5);
-                } else {
-                    glfonsScale(fs, 1, -1);
-                    glfonsRotate(fs, rot * RAD_TO_DEG);
-                    glfonsScale(fs, 1, -1);
-                    glfonsSetColor(fs, 255, 255, 0, mark.m_alpha * 255);
-                    glfonsTranslate(fs, 0.0, m_label.height*0.5);
+                    glfonsScale(fs, -1, -1);
+                    glfonsTranslate(fs, -m_label.width, 0);
                 }
                 
+                glfonsTranslate(fs, 0.0, -m_label.height*0.5);
                 m_font->drawString(m_fsid, mark.m_alpha);
                 glfonsPopMatrix(fs);
 #else
@@ -302,13 +299,13 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
 #ifdef GLFONTSTASH
                     FONScontext* ctx = m_font->getContext();
                     
+                    glfonsSetColor(ctx, 255, 0, 255, 255);
+                    
                     glfonsPushMatrix(ctx);
                     glfonsTranslate(ctx, src.x, src.y);
                     
                     glfonsScale(ctx, 1, -1);
                     glfonsRotate(ctx, rot * RAD_TO_DEG);
-                    
-                    glfonsScale(ctx, 1, -1);
                     
                     glfonsScale(ctx, -1, -1);
                     glfonsTranslate(ctx, -m_lettersWidth[i], 0);
@@ -351,8 +348,6 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                     
                     glfonsScale(ctx, 1, -1);
                     glfonsRotate(ctx, rot * RAD_TO_DEG);
-                    
-                    glfonsScale(ctx, 1, -1);
                     
                     glfonsTranslate(ctx, 0.0, -m_label.height * 0.5);
                     

@@ -202,7 +202,8 @@ void glmFont::drawString(const std::string &_s, const glmRectangle &_rect, float
 
 #ifdef GLFONTSTASH
 void glmFont::drawString(unsigned int _id, float _alpha) {
-    //glfonsSetColor(fs, 255, 255, 255, _alpha * 255);
+    glfonsSetColor(m_fs, 255, 255, 255, _alpha * 255);
+    glfonsScale(m_fs, 1, -1); // fix scale
     glfonsDrawText(m_fs, _id);
 }
 
@@ -211,8 +212,11 @@ void glmFont::drawString(unsigned int _id, const glm::vec3 &_pos, float _alpha) 
     
     glfonsTranslate(m_fs, _pos.x, _pos.y);
     glfonsScale(m_fs, 1, -1);
+    glfonsScale(m_fs, 1, -1); // fix scale
+    
     glfonsSetColor(m_fs, 255, 255, 255, _alpha * 255);
     glfonsDrawText(m_fs, _id);
+    
     glfonsPopMatrix(m_fs);
 }
 
@@ -221,6 +225,9 @@ void glmFont::drawString(unsigned int _id, const glmRectangle &_rect, float _alp
     glfonsPushMatrix(m_fs);
     
     glfonsTranslate(m_fs, p.x, p.y);
+    glfonsScale(m_fs, 1, -1);
+    glfonsScale(m_fs, 1, -1); // fix scale
+    
     glfonsSetColor(m_fs, 255, 255, 255, _alpha * 255);
     glfonsDrawText(m_fs, _id);
     
@@ -228,6 +235,7 @@ void glmFont::drawString(unsigned int _id, const glmRectangle &_rect, float _alp
 }
 
 void glmFont::drawSubString(unsigned int _id, unsigned int _from, unsigned int _to, float _alpha) {
+    glfonsScale(m_fs, 1, -1); // fix scale
     glfonsDrawText(m_fs, _id, _from, _to);
 }
 
