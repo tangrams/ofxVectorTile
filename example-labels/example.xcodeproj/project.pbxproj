@@ -21,7 +21,6 @@
 		7D1A5E80373D67AF833F4B4E /* glmVectorField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E0F84F9159F96473BF04 /* glmVectorField.cpp */; };
 		8A15AFC9C374BF14148C3D5A /* glmLabelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07C30454A591C489A8A5D7E9 /* glmLabelManager.cpp */; };
 		91AE5D3FF8D2F539EE2812F6 /* glmTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8997B6B843F1389DE7A80139 /* glmTile.cpp */; };
-		98C53F6819F00A9C000D87AA /* Champagne & Limousines.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98C53F6719F00A97000D87AA /* Champagne & Limousines.ttf */; };
 		98C53F6F19F00E3D000D87AA /* glmFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C53F6D19F00E3D000D87AA /* glmFont.cpp */; };
 		B1386C4D76E08D1C48557B8D /* ofxVectorLabels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35E518B1D652890EC5C94375 /* ofxVectorLabels.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
@@ -69,16 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		98C53F6519F00A68000D87AA /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				98C53F6819F00A9C000D87AA /* Champagne & Limousines.ttf in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E4C2427710CC5ABF004149E2 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,7 +202,6 @@
 		955700FADBA9A47BAF048738 /* setup.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = setup.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/setup.hpp; sourceTree = SOURCE_ROOT; };
 		9655FB7681C1573EA5EE6F2D /* intersect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intersect.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/intersect.hpp; sourceTree = SOURCE_ROOT; };
 		9859B648837FD2EE8FC08F1F /* simd_mat4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simd_mat4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/simd_mat4.hpp; sourceTree = SOURCE_ROOT; };
-		98C53F6719F00A97000D87AA /* Champagne & Limousines.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Champagne & Limousines.ttf"; path = "bin/data/Champagne & Limousines.ttf"; sourceTree = "<group>"; };
 		98C53F6A19F00E07000D87AA /* fontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
 		98C53F6B19F00E07000D87AA /* glfontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfontstash.h; sourceTree = "<group>"; };
 		98C53F6C19F00E07000D87AA /* stb_truetype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
@@ -749,7 +737,6 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
-				98C53F6719F00A97000D87AA /* Champagne & Limousines.ttf */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
@@ -809,7 +796,6 @@
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
 				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
 				E4C2427710CC5ABF004149E2 /* Copy Files */,
-				98C53F6519F00A68000D87AA /* CopyFiles */,
 			);
 			buildRules = (
 			);

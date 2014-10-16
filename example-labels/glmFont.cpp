@@ -22,25 +22,29 @@ glmFont::~glmFont(){
 void glmFont::unload(){
     m_bLoaded = false;
     
-    glfonsDelete(m_fs);
+    if(m_fs != NULL) {
+        glfonsDelete(m_fs);
+    }
 }
 
 bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, bool _bUsePolygons){
     _fontsize *= 2;
-
-    std::string resourcePath = "../Resources/" + _filename;
     
-    m_fontNormal = fonsAddFont(m_fs, "sans", resourcePath.c_str());
-    if(m_fontNormal == FONS_INVALID) {
-        printf("Could not add font normal.\n");
+    m_font = fonsAddFont(m_fs, "sans", _filename.c_str());
+    if(m_font == FONS_INVALID) {
+        std::cerr << "Could not add font normal" << std::endl;
+        glfonsDelete(m_fs);
+        m_fs = NULL;
+        
+        m_bLoaded = false;
+    } else {
+        fonsSetSize(m_fs, _fontsize);
+        fonsSetFont(m_fs, m_font);
+    
+        m_bLoaded = true;
     }
     
-    fonsSetSize(m_fs, _fontsize);
-    fonsSetFont(m_fs, m_fontNormal);
-    
-    m_bLoaded = true;
-    
-    return true;
+    return m_bLoaded;
 }
 
 bool glmFont::isLoaded(){

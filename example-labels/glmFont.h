@@ -38,7 +38,7 @@ protected:
     bool    m_bLoaded;
     
     FONScontext* m_fs;
-    int          m_fontNormal;
+    int          m_font;
 };
 
 typedef std::tr1::shared_ptr<glmFont> glmFontRef;

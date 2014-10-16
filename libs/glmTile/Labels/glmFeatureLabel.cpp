@@ -29,8 +29,10 @@ void glmFeatureLabel::setFont(glmFontRef &_fontRef){
     m_font = _fontRef;
     m_bChanged = true;
     
-    FONScontext* ctx = m_font->getContext();
-    glfonsBufferText(ctx, m_text.c_str(), &m_fsid);
+    if(m_font != NULL && m_font->isLoaded()) {
+        FONScontext* ctx = m_font->getContext();
+        glfonsBufferText(ctx, m_text.c_str(), &m_fsid);
+    }
 }
 
 void glmFeatureLabel::setText(const std::string &_text){
