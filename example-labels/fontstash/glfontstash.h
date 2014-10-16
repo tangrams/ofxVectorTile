@@ -242,7 +242,7 @@ static void glfons__renderDelete(void* userPtr) {
             glDeleteBuffers(BUFFER_SIZE, stash->vbo->buffers);
             delete stash->vbo;
             delete[] stash->glyphsXOffset;
-            gl->stashes->erase(elmt.first);
+            delete stash;
         }
     }
     

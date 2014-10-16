@@ -18,7 +18,7 @@ void ofApp::setup(){
     
     //  Request a new tile to the builder
     //
-    tile = builder.getFromWeb(19300,24631,16);
+    tile = builder.getFromWeb(19299,24631,16);
     
     //  Make a VBO from the tile (FASTER)
     //
