@@ -219,10 +219,13 @@ static void glfons__renderUpdate(void* userPtr, int* rect, const unsigned char* 
     
     int w = rect[2] - rect[0];
     int h = rect[3] - rect[1];
-    
-    // TODO : update smaller part of texture
+
     glBindTexture(GL_TEXTURE_2D, gl->tex);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_ALPHA, gl->width, gl->height, 0, GL_ALPHA, GL_UNSIGNED_BYTE, data);
+    for(int y = 0; y < h; ++y) {
+        const unsigned char *row = data + ((y + rect[1]) * gl->width + rect[0]);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, rect[0], y + rect[1], w, 1, GL_ALPHA, GL_UNSIGNED_BYTE, row);
+    }
+    glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 static void glfons__renderDraw(void* userPtr, const float* verts, const float* tcoords, const unsigned int* colors, int nverts) {
