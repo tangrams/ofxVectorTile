@@ -14,8 +14,6 @@
 #include "glmRectangle.h"
 #include "glfontstash.h"
 
-#define GLFONTSTASH
-
 class glmFont {
 public:
     
@@ -26,7 +24,6 @@ public:
     bool loadFont(std::string filename, float fontsize, float depth = 0, bool bUsePolygons = false);
     bool isLoaded();
 
-#ifdef GLFONTSTASH
     glmRectangle getStringBoundingBox(unsigned int id);
     
     void drawString(unsigned int _id, float _alpha);
@@ -36,15 +33,12 @@ public:
     void drawSubString(unsigned int _id, unsigned int _from, unsigned int _to, float _alpha);
     
     FONScontext* getContext() const;
-#endif
     
 protected:
     bool    m_bLoaded;
     
-#ifdef GLFONTSTASH
     FONScontext* m_fs;
     int          m_fontNormal;
-#endif
 };
 
 typedef std::tr1::shared_ptr<glmFont> glmFontRef;

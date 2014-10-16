@@ -17,10 +17,8 @@ glmFeatureLabel::glmFeatureLabel(const std::string &_text):m_text(_text), m_alph
 }
 
 glmFeatureLabel::~glmFeatureLabel(){
-#ifdef GLFONTSTASH
     FONScontext* ctx = m_font->getContext();
     glfonsUnbufferText(ctx, m_fsid);
-#endif
 };
 
 std::string glmFeatureLabel::getText(){
@@ -31,11 +29,8 @@ void glmFeatureLabel::setFont(glmFontRef &_fontRef){
     m_font = _fontRef;
     m_bChanged = true;
     
-#ifdef GLFONTSTASH
-    // should interface FONScontext, to use something like FONTContext that could be anything
     FONScontext* ctx = m_font->getContext();
     glfonsBufferText(ctx, m_text.c_str(), &m_fsid);
-#endif
 }
 
 void glmFeatureLabel::setText(const std::string &_text){
@@ -48,9 +43,6 @@ void glmFeatureLabel::setCameraPos(glm::vec3 *_camPos){
     m_cameraPos = _camPos;
 }
 
-#ifdef GLFONTSTASH
 unsigned int glmFeatureLabel::getId() const {
     return m_fsid;
 }
-#endif
-

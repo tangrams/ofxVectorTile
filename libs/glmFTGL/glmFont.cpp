@@ -12,9 +12,7 @@
 #include "glfontstash.h"
 
 glmFont::glmFont(): m_bLoaded(false) {
-#ifdef GLFONTSTASH
     m_fs = glfonsCreate(512, 512, FONS_ZERO_TOPLEFT);
-#endif
 }
 
 glmFont::~glmFont(){
@@ -24,25 +22,21 @@ glmFont::~glmFont(){
 void glmFont::unload(){
     m_bLoaded = false;
     
-#ifdef GLFONTSTASH
     glfonsDelete(m_fs);
-#endif
 }
 
 bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, bool _bUsePolygons){
     _fontsize *= 2;
-#ifdef GLFONTSTASH
-    // wip on fontstash
-    char* resourcePath = "../../../data/Champagne & Limousines.ttf";
+
+    std::string resourcePath = "../Resources/" + _filename;
     
-    m_fontNormal = fonsAddFont(m_fs, "sans", resourcePath);
+    m_fontNormal = fonsAddFont(m_fs, "sans", resourcePath.c_str());
     if(m_fontNormal == FONS_INVALID) {
         printf("Could not add font normal.\n");
     }
     
     fonsSetSize(m_fs, _fontsize);
     fonsSetFont(m_fs, m_fontNormal);
-#endif
     
     m_bLoaded = true;
     
@@ -53,7 +47,6 @@ bool glmFont::isLoaded(){
     return m_bLoaded;
 }
 
-#ifdef GLFONTSTASH
 glmRectangle glmFont::getStringBoundingBox(unsigned int id) {
     if(m_bLoaded){
         glm::vec4 bbox;
@@ -114,4 +107,3 @@ void glmFont::drawSubString(unsigned int _id, unsigned int _from, unsigned int _
 FONScontext* glmFont::getContext() const {
     return m_fs;
 }
-#endif

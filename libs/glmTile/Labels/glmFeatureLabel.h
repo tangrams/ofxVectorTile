@@ -31,9 +31,7 @@ public:
     
     bool    bVisible;
     
-#ifdef GLFONTSTASH
     unsigned int getId() const;
-#endif
     
 protected:
     virtual void updateCached() = 0;
@@ -46,9 +44,7 @@ protected:
     float       m_alpha;
     bool        m_bChanged;
     
-#ifdef GLFONTSTASH
     fsuint      m_fsid;
-#endif
 };
 
 typedef std::tr1::shared_ptr<glmFeatureLabel> glmFeatureLabelRef;
