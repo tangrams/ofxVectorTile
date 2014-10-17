@@ -257,6 +257,37 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
                 glfonsTranslate(fs, 0.0, -m_label.height*0.5);
                 m_font->drawString(m_fsid, mark.m_alpha);
                 glfonsPopMatrix(fs);
+                
+                // debug bbox stuff
+                float x0, y0, x1, y1;
+                glfonsGetBBox(fs, m_fsid, &x0, &y0, &x1, &y1);
+                
+                glPushMatrix();
+                glTranslated(src.x, src.y, src.z);
+                
+                glScalef(1,-1,1);
+                glRotated(rot*RAD_TO_DEG, 0, 0, -1);
+                
+                if(angle < PI*0.5 && angle > -PI*0.5){
+                    glScaled(-1, -1, 1);
+                    glTranslated(-m_label.width, 0, 0);
+                }
+                
+                glTranslatef(0., -m_label.height*0.5,0.);
+                glScaled(1, -1, 1);
+                glLineWidth(1.0);
+                glColor3f(1.0, 0.0, 0.0);
+                glBegin(GL_LINES);
+                    glVertex3f(x0, y0, 0.0);
+                    glVertex3f(x0, y1, 0.0);
+                    glVertex3f(x0, y1, 0.0);
+                    glVertex3f(x1, y1, 0.0);
+                    glVertex3f(x1, y1, 0.0);
+                    glVertex3f(x1, y0, 0.0);
+                    glVertex3f(x1, y0, 0.0);
+                    glVertex3f(x0, y0, 0.0);
+                glEnd();
+                glPopMatrix();
             }
         }
         
