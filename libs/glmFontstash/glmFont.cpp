@@ -22,25 +22,39 @@ glmFont::~glmFont(){
 void glmFont::unload(){
     m_bLoaded = false;
     
-    glfonsDelete(m_fs);
+    if(m_fs != NULL) {
+        glfonsDelete(m_fs);
+    }
 }
 
 bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, bool _bUsePolygons){
     _fontsize *= 2;
-
-    std::string resourcePath = "../Resources/" + _filename;
     
-    m_fontNormal = fonsAddFont(m_fs, "sans", resourcePath.c_str());
-    if(m_fontNormal == FONS_INVALID) {
-        printf("Could not add font normal.\n");
+    m_font = fonsAddFont(m_fs, "sans", _filename.c_str());
+    if(m_font == FONS_INVALID) {
+        std::cerr << "Could not add font normal" << std::endl;
+        glfonsDelete(m_fs);
+        m_fs = NULL;
+        
+        m_bLoaded = false;
+    } else {
+        m_effect = FONS_EFFECT_DISTANCE_FIELD;
+        
+        fonsSetBlur(m_fs, 5.0);
+        fonsSetBlurType(m_fs, m_effect);
+        
+        fonsSetSize(m_fs, _fontsize);
+        fonsSetFont(m_fs, m_font);
+        
+        glfonsSetOutlineColor(m_fs, 0, 0, 0, 255);
+        glfonsSetSDFProperties(m_fs, 0.1, 0.35, 0.3, 0.6, 0.8);
+        
+        fonsVertMetrics(m_fs, &m_ascender, &m_descender, &m_lineh);
+        
+        m_bLoaded = true;
     }
     
-    fonsSetSize(m_fs, _fontsize);
-    fonsSetFont(m_fs, m_fontNormal);
-    
-    m_bLoaded = true;
-    
-    return true;
+    return m_bLoaded;
 }
 
 bool glmFont::isLoaded(){
@@ -102,4 +116,20 @@ void glmFont::drawSubString(unsigned int _id, unsigned int _from, unsigned int _
 
 FONScontext* glmFont::getContext() const {
     return m_fs;
+}
+
+FONSeffectType glmFont::getEffect() const {
+    return m_effect;
+}
+
+float glmFont::getAscender() const {
+    return m_ascender;
+}
+
+float glmFont::getDescender() const {
+    return m_descender;
+}
+
+float glmFont::getLineH() const {
+    return m_lineh;
 }

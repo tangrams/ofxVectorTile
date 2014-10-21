@@ -21,7 +21,7 @@
 		7D1A5E80373D67AF833F4B4E /* glmVectorField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFE0E0F84F9159F96473BF04 /* glmVectorField.cpp */; };
 		8A15AFC9C374BF14148C3D5A /* glmLabelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07C30454A591C489A8A5D7E9 /* glmLabelManager.cpp */; };
 		91AE5D3FF8D2F539EE2812F6 /* glmTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8997B6B843F1389DE7A80139 /* glmTile.cpp */; };
-		98C53F6F19F00E3D000D87AA /* glmFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98C53F6D19F00E3D000D87AA /* glmFont.cpp */; };
+		98CE20D519F6C186007201CD /* glmFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98CE20D319F6C186007201CD /* glmFont.cpp */; };
 		B1386C4D76E08D1C48557B8D /* ofxVectorLabels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35E518B1D652890EC5C94375 /* ofxVectorLabels.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		BE25DD4C66860160B4189B72 /* glmFeatureLabelLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12272E11E17BBF7AB792DCF1 /* glmFeatureLabelLine.cpp */; };
@@ -202,12 +202,12 @@
 		955700FADBA9A47BAF048738 /* setup.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = setup.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/setup.hpp; sourceTree = SOURCE_ROOT; };
 		9655FB7681C1573EA5EE6F2D /* intersect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intersect.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/intersect.hpp; sourceTree = SOURCE_ROOT; };
 		9859B648837FD2EE8FC08F1F /* simd_mat4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simd_mat4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/simd_mat4.hpp; sourceTree = SOURCE_ROOT; };
-		98C53F6D19F00E3D000D87AA /* glmFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glmFont.cpp; sourceTree = "<group>"; };
-		98C53F6E19F00E3D000D87AA /* glmFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glmFont.h; sourceTree = "<group>"; };
 		98CE20CB19F6B249007201CD /* fontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
 		98CE20CC19F6B249007201CD /* glfontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfontstash.h; sourceTree = "<group>"; };
 		98CE20CD19F6B249007201CD /* sdf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sdf.h; sourceTree = "<group>"; };
 		98CE20CE19F6B249007201CD /* stb_truetype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		98CE20D319F6C186007201CD /* glmFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = glmFont.cpp; path = ../libs/glmFontstash/glmFont.cpp; sourceTree = "<group>"; };
+		98CE20D419F6C186007201CD /* glmFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = glmFont.h; path = ../libs/glmFontstash/glmFont.h; sourceTree = "<group>"; };
 		9F3E302F29BB2788BA8C2B27 /* quaternion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = quaternion.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/quaternion.hpp; sourceTree = SOURCE_ROOT; };
 		A1B9FC5A15CD28B1F2D1CB62 /* int_10_10_10_2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = int_10_10_10_2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/int_10_10_10_2.hpp; sourceTree = SOURCE_ROOT; };
 		A3D7831C6AFF609AB1B1CE74 /* glm.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glm.hpp; path = ../../../addons/ofxVectorTile/libs/glm/glm.hpp; sourceTree = SOURCE_ROOT; };
@@ -333,8 +333,8 @@
 		0644B855AE89CAC99AF31A8A /* glmFontstash */ = {
 			isa = PBXGroup;
 			children = (
-				98C53F6D19F00E3D000D87AA /* glmFont.cpp */,
-				98C53F6E19F00E3D000D87AA /* glmFont.h */,
+				98CE20D319F6C186007201CD /* glmFont.cpp */,
+				98CE20D419F6C186007201CD /* glmFont.h */,
 				98CE20CA19F6B249007201CD /* fontstash */,
 			);
 			name = glmFontstash;
@@ -884,7 +884,7 @@
 				560699F20E0E736EFD3A0B47 /* ofxVectorTile.cpp in Sources */,
 				F719C711898D37F6DE9F4A1C /* glm.cpp in Sources */,
 				BF4290E011DFCCBE7648C31E /* glmGeometryBuilder.cpp in Sources */,
-				98C53F6F19F00E3D000D87AA /* glmFont.cpp in Sources */,
+				98CE20D519F6C186007201CD /* glmFont.cpp in Sources */,
 				91AE5D3FF8D2F539EE2812F6 /* glmTile.cpp in Sources */,
 				38D2956935FD5E7769906F24 /* glmAnchorLine.cpp in Sources */,
 				F30DF3DCCBFB7848F36E20BA /* glmFeatureLabel.cpp in Sources */,
