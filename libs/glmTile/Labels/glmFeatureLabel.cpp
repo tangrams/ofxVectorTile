@@ -31,7 +31,7 @@ void glmFeatureLabel::setFont(glmFontRef &_fontRef){
     
     if(m_font != NULL && m_font->isLoaded()) {
         FONScontext* ctx = m_font->getContext();
-        glfonsBufferText(ctx, m_text.c_str(), &m_fsid);
+        glfonsBufferText(ctx, m_text.c_str(), &m_fsid, m_font->getEffect());
     }
 }
 

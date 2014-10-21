@@ -33,12 +33,14 @@ public:
     void drawSubString(unsigned int _id, unsigned int _from, unsigned int _to, float _alpha);
     
     FONScontext* getContext() const;
+    FONSeffectType getEffect() const;
     
 protected:
     bool    m_bLoaded;
     
     FONScontext* m_fs;
     int          m_font;
+    FONSeffectType m_effect;
 };
 
 typedef std::tr1::shared_ptr<glmFont> glmFontRef;

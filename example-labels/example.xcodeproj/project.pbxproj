@@ -202,11 +202,12 @@
 		955700FADBA9A47BAF048738 /* setup.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = setup.hpp; path = ../../../addons/ofxVectorTile/libs/glm/detail/setup.hpp; sourceTree = SOURCE_ROOT; };
 		9655FB7681C1573EA5EE6F2D /* intersect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = intersect.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/intersect.hpp; sourceTree = SOURCE_ROOT; };
 		9859B648837FD2EE8FC08F1F /* simd_mat4.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = simd_mat4.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/simd_mat4.hpp; sourceTree = SOURCE_ROOT; };
-		98C53F6A19F00E07000D87AA /* fontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
-		98C53F6B19F00E07000D87AA /* glfontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfontstash.h; sourceTree = "<group>"; };
-		98C53F6C19F00E07000D87AA /* stb_truetype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
 		98C53F6D19F00E3D000D87AA /* glmFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glmFont.cpp; sourceTree = "<group>"; };
 		98C53F6E19F00E3D000D87AA /* glmFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glmFont.h; sourceTree = "<group>"; };
+		98CE20CB19F6B249007201CD /* fontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
+		98CE20CC19F6B249007201CD /* glfontstash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfontstash.h; sourceTree = "<group>"; };
+		98CE20CD19F6B249007201CD /* sdf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sdf.h; sourceTree = "<group>"; };
+		98CE20CE19F6B249007201CD /* stb_truetype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
 		9F3E302F29BB2788BA8C2B27 /* quaternion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = quaternion.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtc/quaternion.hpp; sourceTree = SOURCE_ROOT; };
 		A1B9FC5A15CD28B1F2D1CB62 /* int_10_10_10_2.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = int_10_10_10_2.hpp; path = ../../../addons/ofxVectorTile/libs/glm/gtx/int_10_10_10_2.hpp; sourceTree = SOURCE_ROOT; };
 		A3D7831C6AFF609AB1B1CE74 /* glm.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = glm.hpp; path = ../../../addons/ofxVectorTile/libs/glm/glm.hpp; sourceTree = SOURCE_ROOT; };
@@ -334,7 +335,7 @@
 			children = (
 				98C53F6D19F00E3D000D87AA /* glmFont.cpp */,
 				98C53F6E19F00E3D000D87AA /* glmFont.h */,
-				98C53F6919F00E07000D87AA /* fontstash */,
+				98CE20CA19F6B249007201CD /* fontstash */,
 			);
 			name = glmFontstash;
 			sourceTree = "<group>";
@@ -477,14 +478,16 @@
 			name = jsoncpp;
 			sourceTree = "<group>";
 		};
-		98C53F6919F00E07000D87AA /* fontstash */ = {
+		98CE20CA19F6B249007201CD /* fontstash */ = {
 			isa = PBXGroup;
 			children = (
-				98C53F6A19F00E07000D87AA /* fontstash.h */,
-				98C53F6B19F00E07000D87AA /* glfontstash.h */,
-				98C53F6C19F00E07000D87AA /* stb_truetype.h */,
+				98CE20CB19F6B249007201CD /* fontstash.h */,
+				98CE20CC19F6B249007201CD /* glfontstash.h */,
+				98CE20CD19F6B249007201CD /* sdf.h */,
+				98CE20CE19F6B249007201CD /* stb_truetype.h */,
 			);
-			path = fontstash;
+			name = fontstash;
+			path = ../libs/glmFontstash/fontstash;
 			sourceTree = "<group>";
 		};
 		ABF30C31556C6D7E6159BD0C /* gtx */ = {
@@ -1044,6 +1047,8 @@
 		E4B69B600A3A1757003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1159,6 +1164,8 @@
 		E4B69B610A3A1757003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (

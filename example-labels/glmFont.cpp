@@ -38,9 +38,17 @@ bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, boo
         
         m_bLoaded = false;
     } else {
+        m_effect = FONS_EFFECT_DISTANCE_FIELD;
+        
+        fonsSetBlur(m_fs, 5.0);
+        fonsSetBlurType(m_fs, m_effect);
+        
         fonsSetSize(m_fs, _fontsize);
         fonsSetFont(m_fs, m_font);
-    
+        
+        glfonsSetOutlineColor(m_fs, 0, 0, 0, 255);
+        glfonsSetSDFProperties(m_fs, 0.1, 0.35, 0.3, 0.6, 0.8);
+        
         m_bLoaded = true;
     }
     
@@ -106,4 +114,8 @@ void glmFont::drawSubString(unsigned int _id, unsigned int _from, unsigned int _
 
 FONScontext* glmFont::getContext() const {
     return m_fs;
+}
+
+FONSeffectType glmFont::getEffect() const {
+    return m_effect;
 }
