@@ -49,6 +49,8 @@ bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, boo
         glfonsSetOutlineColor(m_fs, 0, 0, 0, 255);
         glfonsSetSDFProperties(m_fs, 0.1, 0.35, 0.3, 0.6, 0.8);
         
+        fonsVertMetrics(m_fs, &m_ascender, &m_descender, &m_lineh);
+        
         m_bLoaded = true;
     }
     
@@ -118,4 +120,16 @@ FONScontext* glmFont::getContext() const {
 
 FONSeffectType glmFont::getEffect() const {
     return m_effect;
+}
+
+float glmFont::getAscender() const {
+    return m_ascender;
+}
+
+float glmFont::getDescender() const {
+    return m_descender;
+}
+
+float glmFont::getLineH() const {
+    return m_lineh;
 }

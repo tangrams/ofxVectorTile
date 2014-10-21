@@ -35,12 +35,19 @@ public:
     FONScontext* getContext() const;
     FONSeffectType getEffect() const;
     
+    float getAscender() const;
+    float getDescender() const;
+    float getLineH() const;
+    
 protected:
     bool    m_bLoaded;
     
     FONScontext* m_fs;
     int          m_font;
     FONSeffectType m_effect;
+    float m_ascender;
+    float m_descender;
+    float m_lineh;
 };
 
 typedef std::tr1::shared_ptr<glmFont> glmFontRef;
