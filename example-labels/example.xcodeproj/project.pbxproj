@@ -1061,8 +1061,6 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					../../../addons/ofxFTGL/libs,
-					../../../addons/ofxFTGL/src,
 					../../../addons/ofxJSON/libs,
 					../../../addons/ofxJSON/libs/jsoncpp,
 					../../../addons/ofxJSON/libs/jsoncpp/include,
@@ -1074,7 +1072,8 @@
 					../../../addons/ofxVectorTile/libs/glm/detail,
 					../../../addons/ofxVectorTile/libs/glm/gtc,
 					../../../addons/ofxVectorTile/libs/glm/gtx,
-					../../../addons/ofxVectorTile/libs/glmFTGL,
+					../../../addons/ofxVectorTile/libs/glmFontstash/fontstash,
+					../../../addons/ofxVectorTile/libs/glmFontstash,
 					../../../addons/ofxVectorTile/libs/glmTile,
 					../../../addons/ofxVectorTile/libs/glmTile/Labels,
 					../../../addons/ofxVectorTile/libs/glmTools,
@@ -1177,8 +1176,6 @@
 				GCC_MODEL_TUNING = NONE;
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
-					../../../addons/ofxFTGL/libs,
-					../../../addons/ofxFTGL/src,
 					../../../addons/ofxJSON/libs,
 					../../../addons/ofxJSON/libs/jsoncpp,
 					../../../addons/ofxJSON/libs/jsoncpp/include,
@@ -1190,7 +1187,8 @@
 					../../../addons/ofxVectorTile/libs/glm/detail,
 					../../../addons/ofxVectorTile/libs/glm/gtc,
 					../../../addons/ofxVectorTile/libs/glm/gtx,
-					../../../addons/ofxVectorTile/libs/glmFTGL,
+					../../../addons/ofxVectorTile/libs/glmFontstash/fontstash,
+					../../../addons/ofxVectorTile/libs/glmFontstash,
 					../../../addons/ofxVectorTile/libs/glmTile,
 					../../../addons/ofxVectorTile/libs/glmTile/Labels,
 					../../../addons/ofxVectorTile/libs/glmTools,
