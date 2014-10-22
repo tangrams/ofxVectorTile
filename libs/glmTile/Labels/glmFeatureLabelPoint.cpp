@@ -160,8 +160,6 @@ void glmFeatureLabelPoint::draw2D(){
         if(m_alpha > 0.0 && m_projectedCentroid.z > 0 && m_anchorPoint.z > 0){
 //            drawStippleLine(m_projectedCentroid, m_anchorPoint, 0x1111);
 
-            FONScontext* ctx = m_font->getContext();
-            glfonsSetColor(ctx, 255, 255, 255, m_alpha * 255);
             m_font->drawString(m_fsid, m_label, m_alpha);
         }
     }

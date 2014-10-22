@@ -39,6 +39,9 @@ public:
     float getDescender() const;
     float getLineH() const;
     
+    glm::vec3 m_outlineColor;
+    glm::vec3 m_fontColor;
+    
 protected:
     bool    m_bLoaded;
     

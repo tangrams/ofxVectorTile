@@ -148,8 +148,8 @@ void glfonsScale(FONScontext* ctx, float x, float y);
 
 void glfonsDrawText(FONScontext* ctx, fsuint id);
 void glfonsDrawText(FONScontext* ctx, fsuint id, unsigned int from, unsigned int to);
-void glfonsSetColor(FONScontext* ctx, unsigned int r, unsigned int g, unsigned int b, unsigned int a);
-void glfonsSetOutlineColor(FONScontext* ctx, unsigned int r, unsigned int g, unsigned int b, unsigned int a);
+void glfonsSetColor(FONScontext* ctx, float r, float g, float b, float a);
+void glfonsSetOutlineColor(FONScontext* ctx, float r, float g, float b, float a);
 void glfonsSetSDFProperties(FONScontext* ctx, float minOutlineD, float maxOutlineD, float minInsideD, float maxInsideD, float mixFactor);
 
 void glfonsUpdateViewport(FONScontext* ctx);
@@ -426,7 +426,6 @@ void glfonsDrawText(FONScontext* ctx, fsuint id, unsigned int from, unsigned int
     GLStash* stash = glctx->stashes->at(id);
     
     glm::mat4 mvp = glctx->projectionMatrix * glctx->transform;
-    glm::vec4 color = glctx->color / 255.0f;
     
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, glctx->tex);
@@ -444,11 +443,10 @@ void glfonsDrawText(FONScontext* ctx, fsuint id, unsigned int from, unsigned int
     glUseProgram(program);
     glUniform1i(glGetUniformLocation(program, "u_tex"), 0);
     glUniformMatrix4fv(glGetUniformLocation(program, "u_mvp"), 1, GL_FALSE, glm::value_ptr(mvp));
-    glUniform4f(glGetUniformLocation(program, "u_color"), color.r, color.g, color.b, color.a);
+    glUniform4f(glGetUniformLocation(program, "u_color"), glctx->color.r, glctx->color.g, glctx->color.b, glctx->color.a);
     
     if(stash->effect == FONS_EFFECT_DISTANCE_FIELD) {
-        glm::vec4 outlineColor = glctx->outlineColor / 255.0f;
-        glUniform4f(glGetUniformLocation(program, "u_outlineColor"), outlineColor.r, outlineColor.g, outlineColor.b, outlineColor.a);
+        glUniform4f(glGetUniformLocation(program, "u_outlineColor"), glctx->outlineColor.r, glctx->outlineColor.g, glctx->outlineColor.b, glctx->outlineColor.a);
         glUniform1f(glGetUniformLocation(program, "u_mixFactor"), glctx->sdfMixFactor);
         glUniform1f(glGetUniformLocation(program, "u_minOutlineD"), glctx->sdfProperties[0]);
         glUniform1f(glGetUniformLocation(program, "u_maxOutlineD"), glctx->sdfProperties[1]);
@@ -483,7 +481,7 @@ void glfonsDrawText(FONScontext* ctx, fsuint id) {
     glfonsDrawText(ctx, id, 0, last);
 }
 
-void glfonsSetColor(FONScontext* ctx, unsigned int r, unsigned int g, unsigned int b, unsigned int a) {
+void glfonsSetColor(FONScontext* ctx, float r, float g, float b, float a) {
     GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
     glctx->color = glm::vec4(r, g, b, a);
 }
@@ -524,7 +522,7 @@ float glfonsGetLength(FONScontext* ctx, fsuint id) {
     return stash->length;
 }
 
-void glfonsSetOutlineColor(FONScontext* ctx, unsigned int r, unsigned int g, unsigned int b, unsigned int a) {
+void glfonsSetOutlineColor(FONScontext* ctx, float r, float g, float b, float a) {
     GLFONScontext* glctx = (GLFONScontext*) ctx->params.userPtr;
     glctx->outlineColor = glm::vec4(r, g, b, a);
 }
