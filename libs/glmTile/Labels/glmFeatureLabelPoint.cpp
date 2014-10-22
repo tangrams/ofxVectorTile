@@ -196,7 +196,7 @@ void glmFeatureLabelPoint::draw3D(){
 
 void glmFeatureLabelPoint::drawDebug(){
     
-    glColor4f(1.0, 1.0, 1.0, m_alpha);
+    glColor4f(m_font->fontColor.r, m_font->fontColor.g, m_font->fontColor.g, m_alpha);
     glEnable(GL_LINE_STIPPLE);
     glLineStipple(1, 0x1111);
     for (auto &it: m_anchorLines) {
@@ -209,7 +209,7 @@ void glmFeatureLabelPoint::drawDebug(){
 //        glColor4f(m_font->colorFront.r, m_font->colorFront.g, m_font->colorFront.g,0.2);
 //        m_label.drawCorners();
     } else {
-        glColor4f(1.0, 1.0, 1.0, 1.);
+        glColor4f(m_font->fontColor.r, m_font->fontColor.g, m_font->fontColor.g,1.);
         getLabel(25).drawCorners();
     }
 }

@@ -71,8 +71,8 @@ glmRectangle glmFont::getStringBoundingBox(unsigned int id) {
 }
 
 void glmFont::drawString(unsigned int _id, float _alpha) {
-    glfonsSetColor(m_fs, m_fontColor.r, m_fontColor.g, m_fontColor.b, _alpha);
-    glfonsSetOutlineColor(m_fs, m_outlineColor.r, m_outlineColor.g, m_outlineColor.b, _alpha);
+    glfonsSetColor(m_fs, fontColor.r, fontColor.g, fontColor.b, _alpha);
+    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, _alpha);
     glfonsScale(m_fs, 1, -1);
     glfonsDrawText(m_fs, _id);
 }
@@ -82,8 +82,8 @@ void glmFont::drawString(unsigned int _id, const glm::vec3 &_pos, float _alpha) 
     
     glfonsTranslate(m_fs, _pos.x, _pos.y);
     
-    glfonsSetColor(m_fs, m_fontColor.r, m_fontColor.g, m_fontColor.b, _alpha);
-    glfonsSetOutlineColor(m_fs, m_outlineColor.r, m_outlineColor.g, m_outlineColor.b, _alpha);
+    glfonsSetColor(m_fs, fontColor.r, fontColor.g, fontColor.b, _alpha);
+    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, _alpha);
     glfonsDrawText(m_fs, _id);
     
     glfonsPopMatrix(m_fs);
@@ -95,8 +95,8 @@ void glmFont::drawString(unsigned int _id, const glmRectangle &_rect, float _alp
     
     glfonsTranslate(m_fs, p.x, p.y);
     
-    glfonsSetColor(m_fs, m_fontColor.r, m_fontColor.g, m_fontColor.b, _alpha);
-    glfonsSetOutlineColor(m_fs, m_outlineColor.r, m_outlineColor.g, m_outlineColor.b, _alpha);
+    glfonsSetColor(m_fs, fontColor.r, fontColor.g, fontColor.b, _alpha);
+    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, _alpha);
     glfonsDrawText(m_fs, _id);
     
     glfonsPopMatrix(m_fs);
@@ -113,8 +113,8 @@ void glmFont::drawSubString(unsigned int _id, unsigned int _i, bool _offset, flo
 void glmFont::drawSubString(unsigned int _id, unsigned int _from, unsigned int _to, float _alpha) {
     glfonsScale(m_fs, 1, -1);
     
-    glfonsSetColor(m_fs, m_fontColor.r, m_fontColor.g, m_fontColor.b, _alpha);
-    glfonsSetOutlineColor(m_fs, m_outlineColor.r, m_outlineColor.g, m_outlineColor.b, _alpha);
+    glfonsSetColor(m_fs, fontColor.r, fontColor.g, fontColor.b, _alpha);
+    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, _alpha);
     
     glfonsDrawText(m_fs, _id, _from, _to);
 }
