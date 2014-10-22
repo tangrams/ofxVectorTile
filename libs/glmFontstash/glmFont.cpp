@@ -40,14 +40,13 @@ bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, boo
     } else {
         m_effect = FONS_EFFECT_DISTANCE_FIELD;
         
-        fonsSetBlur(m_fs, 5.0);
+        fonsSetBlur(m_fs, 4.5);
         fonsSetBlurType(m_fs, m_effect);
         
         fonsSetSize(m_fs, _fontsize);
         fonsSetFont(m_fs, m_font);
         
-        glfonsSetOutlineColor(m_fs, 0, 0, 0, 255);
-        glfonsSetSDFProperties(m_fs, 0.1, 0.35, 0.3, 0.6, 0.8);
+        glfonsSetSDFProperties(m_fs, 0.25, 0.35, 0.38, 0.55, 0.7);
         
         fonsVertMetrics(m_fs, &m_ascender, &m_descender, &m_lineh);
         
@@ -72,7 +71,7 @@ glmRectangle glmFont::getStringBoundingBox(unsigned int id) {
 
 void glmFont::drawString(unsigned int _id, float _alpha) {
     glfonsSetColor(m_fs, fontColor.r, fontColor.g, fontColor.b, _alpha);
-    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, _alpha);
+    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, 1.0);
     glfonsScale(m_fs, 1, -1);
     glfonsDrawText(m_fs, _id);
 }

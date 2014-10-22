@@ -112,12 +112,19 @@ uniform float u_minInsideD;
 uniform float u_maxInsideD;
 
 varying vec2 v_uv;
+                                                  
+const float gamma = 2.2;
 
 void main(void) {
     float distance = texture2D(u_tex, v_uv).a;
-    vec4 inside = smoothstep(u_minInsideD, u_maxInsideD, distance) * u_color;
-    vec4 outline = smoothstep(u_minOutlineD, u_maxOutlineD, distance) * u_outlineColor;
-    gl_FragColor = mix(outline, inside, u_mixFactor);
+    
+    float a1 = smoothstep(u_minInsideD, u_maxInsideD, distance);
+    float a2 = smoothstep(u_minOutlineD, u_maxOutlineD, distance);
+    
+    a1 = pow(a1, 1.0 / gamma);
+    a2 = pow(a2, 1.0 / gamma);
+    
+    gl_FragColor = mix(u_outlineColor * a2, u_color * a1, u_mixFactor);
 }
 );
 
