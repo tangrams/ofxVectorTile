@@ -104,8 +104,6 @@ void glmFeatureLabelLine::updateCached(){
         std::string word = "";
         float wordWidth = 0.0f;
         
-        std::cout << std::endl;
-    
         for(int i = 0; i < m_text.size(); ++i) {
             float currentOffset = glfonsGetGlyphOffset(ctx, m_fsid, i);
             float nextOffset;
@@ -132,6 +130,7 @@ void glmFeatureLabelLine::updateCached(){
         }
         
         m_label = m_font->getStringBoundingBox(m_fsid);
+        m_bChanged = false;
     } else {
         bVisible = false;
     }
