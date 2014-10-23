@@ -66,7 +66,7 @@ bool glmFeatureLabelPoint::isInside(const glm::vec3 &_point){
 
 void glmFeatureLabelPoint::updateCached(){
     if(m_font!=NULL&&m_text!="NONE"){
-        m_label = m_font->getStringBoundingBox(m_text);
+        m_label = m_font->getStringBoundingBox(m_fsid);
         m_bChanged = false;
     }
 }
@@ -158,9 +158,9 @@ void glmFeatureLabelPoint::draw2D(){
         }
         
         if(m_alpha > 0.0 && m_projectedCentroid.z > 0 && m_anchorPoint.z > 0){
-            glColor4f(m_font->colorFront.x,m_font->colorFront.y,m_font->colorFront.z,m_alpha);
 //            drawStippleLine(m_projectedCentroid, m_anchorPoint, 0x1111);
-            m_font->drawString(m_text, m_label, m_alpha);
+
+            m_font->drawString(m_fsid, m_label, m_alpha);
         }
     }
 }
@@ -196,7 +196,7 @@ void glmFeatureLabelPoint::draw3D(){
 
 void glmFeatureLabelPoint::drawDebug(){
     
-    glColor4f(m_font->colorFront.r, m_font->colorFront.g, m_font->colorFront.g, m_alpha);
+    glColor4f(m_font->fontColor.r, m_font->fontColor.g, m_font->fontColor.g, m_alpha);
     glEnable(GL_LINE_STIPPLE);
     glLineStipple(1, 0x1111);
     for (auto &it: m_anchorLines) {
@@ -209,7 +209,7 @@ void glmFeatureLabelPoint::drawDebug(){
 //        glColor4f(m_font->colorFront.r, m_font->colorFront.g, m_font->colorFront.g,0.2);
 //        m_label.drawCorners();
     } else {
-        glColor4f(m_font->colorFront.r, m_font->colorFront.g, m_font->colorFront.g,1.);
+        glColor4f(m_font->fontColor.r, m_font->fontColor.g, m_font->fontColor.g,1.);
         getLabel(25).drawCorners();
     }
 }

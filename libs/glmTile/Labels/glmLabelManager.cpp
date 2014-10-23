@@ -155,6 +155,8 @@ void glmLabelManager::updateProjection(){
         m_bProjectionChanged = true;
     }
     
+    glfonsUpdateViewport(m_font->getContext());
+    
     //  Projection Change? New Labels?
     //
     if(m_bProjectionChanged || m_bChange ){

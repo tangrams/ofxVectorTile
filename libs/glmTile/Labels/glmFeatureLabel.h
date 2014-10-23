@@ -31,6 +31,8 @@ public:
     
     bool    bVisible;
     
+    unsigned int getId() const;
+    
 protected:
     virtual void updateCached() = 0;
 
@@ -41,6 +43,8 @@ protected:
     
     float       m_alpha;
     bool        m_bChanged;
+    
+    fsuint      m_fsid;
 };
 
 typedef std::tr1::shared_ptr<glmFeatureLabel> glmFeatureLabelRef;

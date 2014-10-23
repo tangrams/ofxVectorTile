@@ -11,6 +11,7 @@ void ofApp::setup(){
     //  Load Label Fonts
     //
     labels.loadFont("Champagne & Limousines.ttf", 10);
+    labels.setFontColor(ofFloatColor(1.0), ofFloatColor(0.0));
     
     //  Link the label manager with the builder
     //

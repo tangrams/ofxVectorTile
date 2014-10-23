@@ -99,13 +99,24 @@ void glmFeatureLabelLine::updateCached(){
         
         m_lettersWidth.clear();
         m_wordsWidth.clear();
-        
+
+        FONScontext* ctx = m_font->getContext();
         std::string word = "";
         float wordWidth = 0.0f;
         
-        for(int i = 0; i < m_text.size(); i++){
-            float letterWidth = m_font->stringWidth( std::string(1,m_text[i]) );
+        for(int i = 0; i < m_text.size(); ++i) {
+            float currentOffset = glfonsGetGlyphOffset(ctx, m_fsid, i);
+            float nextOffset;
+            float letterWidth;
+        
+            if(i < m_text.size() - 1) {
+                nextOffset = glfonsGetGlyphOffset(ctx, m_fsid, i+1);
+            } else {
+                nextOffset = glfonsGetLength(ctx, m_fsid);
+            }
+            letterWidth = (nextOffset - currentOffset);
             
+            float wordWidth = 0.0f;
             if( m_text[i] == ' '){
                 m_lettersWidth.push_back(letterWidth);
                 m_wordsWidth.push_back(wordWidth);
@@ -118,7 +129,7 @@ void glmFeatureLabelLine::updateCached(){
             }
         }
         
-        m_label = m_font->getStringBoundingBox(m_text);
+        m_label = m_font->getStringBoundingBox(m_fsid);
         m_bChanged = false;
     } else {
         bVisible = false;
@@ -148,8 +159,7 @@ void glmFeatureLabelLine::draw2D(){
 }
 
 void glmFeatureLabelLine::drawDebug(){
-    glColor4f(m_font->colorFront.x,m_font->colorFront.y,m_font->colorFront.z,m_alpha);
-    
+        
     glEnable(GL_LINE_STIPPLE);
     glLineStipple(1, 0x1111);
     for (auto &it: m_anchorLines) {
@@ -230,21 +240,22 @@ void glmFeatureLabelLine::drawAllTextAtOnce( glmAnchorLine &_anchorLine){
             }
             
             if(!bOver){
+                FONScontext* fs = m_font->getContext();
                 
-                glPushMatrix();
-                glTranslated(src.x, src.y, src.z);
+                glfonsPushMatrix(fs);
+                glfonsTranslate(fs, src.x, src.y);
                 
-                glScalef(1,-1,1);
-                glRotated(rot*RAD_TO_DEG, 0, 0, -1);
+                glfonsScale(fs, 1, -1);
+                glfonsRotate(fs, rot * RAD_TO_DEG);
                 
-                if(angle < PI*0.5 && angle > -PI*0.5){
-                    glScaled(-1, -1, 1);
-                    glTranslated(-m_label.width, 0, 0);
+                if(angle < PI*0.5 && angle > -PI*0.5) {
+                    glfonsScale(fs, -1, -1);
+                    glfonsTranslate(fs, -m_label.width, 0);
                 }
                 
-                glTranslatef(0., -m_label.height*0.5,0.);
-                m_font->drawString( m_text, mark.m_alpha );
-                glPopMatrix();
+                glfonsTranslate(fs, 0.0, -m_label.height*0.5);
+                m_font->drawString(m_fsid, mark.m_alpha);
+                glfonsPopMatrix(fs);
             }
         }
         
@@ -278,18 +289,22 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                 if(screen.inside(src)){
                     double rot = _anchorLine.getAngleAt(offset);
                     
-                    glPushMatrix();
-                    glTranslated(src.x, src.y, src.z);
+                    FONScontext* ctx = m_font->getContext();
                     
-                    glScalef(1,-1,1);
-                    glRotated(rot*RAD_TO_DEG, 0, 0, -1);
+                    glfonsPushMatrix(ctx);
+                    glfonsTranslate(ctx, src.x, src.y);
                     
-                    glScaled(-1, -1, 1);
-                    glTranslated(-m_lettersWidth[i], 0, 0);
+                    glfonsScale(ctx, 1, -1);
+                    glfonsRotate(ctx, rot * RAD_TO_DEG);
                     
-                    glTranslatef(0., -m_label.height*0.5,0.);
-                    m_font->drawString( std::string(1,m_text[i]), mark.m_alpha );
-                    glPopMatrix();
+                    glfonsScale(ctx, -1, -1);
+                    glfonsTranslate(ctx, -m_lettersWidth[i], 0);
+                    
+                    glfonsTranslate(ctx, 0, -m_label.height*0.5);
+                    
+                    m_font->drawSubString(m_fsid, i, false, mark.m_alpha);
+                    glfonsPopMatrix(ctx);
+                    
                     offset += m_lettersWidth[i];
                 } else {
                     break;
@@ -303,16 +318,19 @@ void glmFeatureLabelLine::drawLetterByLetter(glmAnchorLine &_anchorLine){
                 if(screen.inside(src)){
                     double rot = _anchorLine.getAngleAt(offset);
                     
-                    glPushMatrix();
-                    glTranslated(src.x, src.y, src.z);
+                    FONScontext* ctx = m_font->getContext();
                     
-                    glScalef(1,-1,1);
-                    glRotated(rot*RAD_TO_DEG, 0, 0, -1);
+                    glfonsPushMatrix(ctx);
+                    glfonsTranslate(ctx, src.x, src.y);
                     
-                    glTranslatef(0., -m_label.height*0.5,0.);
-                    m_font->drawString( std::string(1,m_text[i]), mark.m_alpha );
+                    glfonsScale(ctx, 1, -1);
+                    glfonsRotate(ctx, rot * RAD_TO_DEG);
                     
-                    glPopMatrix();
+                    glfonsTranslate(ctx, 0.0, -m_label.height * 0.5);
+                    
+                    m_font->drawSubString(m_fsid, i, false, mark.m_alpha);
+                    
+                    glfonsPopMatrix(ctx);
                     offset += m_lettersWidth[i];
                 } else {
                     break;

@@ -20,13 +20,8 @@ ofxVectorLabels::~ofxVectorLabels(){
 }
 
 void ofxVectorLabels::setFontColor( const ofFloatColor &_front, const ofFloatColor &_back ){
-    m_font->colorFront.r = _front.r;
-    m_font->colorFront.g = _front.g;
-    m_font->colorFront.b = _front.b;
-    
-    m_font->colorBack.r = _back.r;
-    m_font->colorBack.g = _back.g;
-    m_font->colorBack.b = _back.b;
+    m_font->outlineColor = glm::vec3(_back.r, _back.g, _back.b);
+    m_font->fontColor = glm::vec3(_front.r, _front.g, _front.b);
 }
 
 void ofxVectorLabels::updateCameraPosition( const ofPoint &_camPos ){
