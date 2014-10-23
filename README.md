@@ -9,7 +9,6 @@ Install addons dependences:
 ```
 	cd openFrameworks/addons
 	git clone --depth 1 http://github.com/jefftimesten/ofxJSON.git
-	git clone --depth 1 http://github.com/Flightphase/ofxFTGL.git
 ```
 
 ## Add to project
@@ -21,7 +20,6 @@ On the project Properties (the blue icons with the name of your project) go to `
 ## Dependences
 
 - [ofxJSON](https://github.com/jefftimesten/ofxJSON)
-- [ofxFTGL](https://github.com/Flightphase/ofxFTGL)
 
 ## Sources
 
@@ -31,11 +29,9 @@ On the project Properties (the blue icons with the name of your project) go to `
 		-	[openGL](http://www.opengl.org/)
 		- [glm](http://glm.g-truc.net/0.9.5/index.html)
 
-	* [glmFTGL](https://github.com/tangrams/glmFTGL)
-		- [FTGL](http://sourceforge.net/projects/ftgl/)
-
 	* [cURL](http://curl.haxx.se/libcurl/)
 	* [JsonCpp](https://github.com/open-source-parsers/jsoncpp)
+	* [Fontstash](https://github.com/memononen/fontstash)
 
 
 ## The Problem

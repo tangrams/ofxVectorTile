@@ -129,13 +129,13 @@ glm::vec3  glmRectangle::getCenter() const {
 
 //----------------------------------------------------------
 bool glmRectangle::inside(const glm::vec3& p) const {
-    return p.x > getMinX() && p.y > getMinY() &&
-    p.x < getMaxX() && p.y < getMaxY();
+    return  p.x > getMinX() && p.y > getMinY() &&
+            p.x < getMaxX() && p.y < getMaxY();
 }
 
 //----------------------------------------------------------
 bool glmRectangle::inside(const glmRectangle& rect) const {
-    return inside(rect.getMinX(),rect.getMinY()) &&
+    return  inside(rect.getMinX(),rect.getMinY()) &&
             inside(rect.getMaxX(),rect.getMaxY());
 }
 
