@@ -50,10 +50,30 @@ bool glmFont::loadFont(std::string _filename, float _fontsize, float _depth, boo
         
         fonsVertMetrics(m_fs, &m_ascender, &m_descender, &m_lineh);
         
+        fonsSetErrorCallback(m_fs, glmFont::handleFontstashError, this);
+        
         m_bLoaded = true;
     }
     
     return m_bLoaded;
+}
+
+void glmFont::handleFontstashError(void* uptr, int error, int val) {
+    glmFont* ref = (glmFont*) uptr;
+    
+    switch (error) {
+        case FONS_ATLAS_FULL:
+            int width, height;
+            fonsGetAtlasSize(ref->m_fs, &width, &height);
+            if(width <= ATLAS_MAX_SIZE && height <= ATLAS_MAX_SIZE) {
+                fonsExpandAtlas(ref->m_fs, width * 2, height * 2, 0);
+            } else {
+                std::cerr << "Atlas couldn't expand more than " << ATLAS_MAX_SIZE << std::endl;
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 bool glmFont::isLoaded(){
@@ -71,7 +91,7 @@ glmRectangle glmFont::getStringBoundingBox(unsigned int id) {
 
 void glmFont::drawString(unsigned int _id, float _alpha) {
     glfonsSetColor(m_fs, fontColor.r, fontColor.g, fontColor.b, _alpha);
-    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, 1.0);
+    glfonsSetOutlineColor(m_fs, outlineColor.r, outlineColor.g, outlineColor.b, _alpha);
     glfonsScale(m_fs, 1, -1);
     glfonsDrawText(m_fs, _id);
 }

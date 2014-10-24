@@ -14,6 +14,8 @@
 #include "glmRectangle.h"
 #include "glfontstash.h"
 
+#define ATLAS_MAX_SIZE 2048
+
 class glmFont {
 public:
     
@@ -51,6 +53,8 @@ protected:
     float m_ascender;
     float m_descender;
     float m_lineh;
+    
+    static void handleFontstashError(void* uptr, int error, int val);
 };
 
 typedef std::tr1::shared_ptr<glmFont> glmFontRef;
