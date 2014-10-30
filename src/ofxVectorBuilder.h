@@ -18,6 +18,7 @@ public:
     virtual ~ofxVectorBuilder();
     
     ofxVectorTile getFromWeb(int _tileX, int _tileY, int _zoom);
+    ofxVectorTile getFromWeb(double _lat, double _lon, int _zoom);
     
     ofPoint getOffset();
     

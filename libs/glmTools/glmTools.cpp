@@ -12,6 +12,9 @@ double x2lon(double x) { return glm::degrees(x / R_EARTH); }
 double lat2y(double lat) { return R_EARTH * log(tan(PI / 4 + glm::radians(lat) / 2)); }
 double lon2x(double lon) { return glm::radians(lon) * R_EARTH; }
 
+int long2tilex(double lon, int z){ return (int)(floor((lon + 180.0) / 360.0 * pow(2.0, z)));}
+int lat2tiley(double lat, int z){ return (int)(floor((1.0 - log( tan(lat * M_PI/180.0) + 1.0 / cos(lat * M_PI/180.0)) / M_PI) / 2.0 * pow(2.0, z))); }
+
 float mapValue(const float &value, const float &inputMin, const float &inputMax, const float &outputMin, const float &outputMax, bool clamp ) {
 	if (fabs(inputMin - inputMax) < FLT_EPSILON){
 		return outputMin;

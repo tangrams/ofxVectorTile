@@ -75,6 +75,8 @@ double y2lat(double y);
 double x2lon(double x);
 double lat2y(double lat);
 double lon2x(double lon);
+int long2tilex(double lon, int z);
+int lat2tiley(double lat, int z);
 
 void wrapRad(double &_angle);
 float mapValue(const float &_value, const float &_inputMin, const float &_inputMax, const float &_outputMin, const float &_outputMax, bool clamp = false);

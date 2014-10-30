@@ -21,6 +21,7 @@ public:
     virtual ~glmTile();
     
     bool    load(int _tileX, int _tileY, int _zoom);
+    bool    load(double _lat, double _lon, int _zoom);
     
     glmMesh getMesh();
     glmMesh getMeshFor(const std::string &_layerName);
