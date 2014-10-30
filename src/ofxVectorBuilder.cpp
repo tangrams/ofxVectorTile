@@ -21,6 +21,10 @@ ofPoint ofxVectorBuilder::getOffset(){
     return toOf(m_geometryOffset);
 }
 
+ofPoint ofxVectorBuilder::getPointAt(double _lat, double _lon, double _alt){
+    return ofPoint(lon2x(_lon),lat2y(_lat),_alt)-getOffset();
+}
+
 ofxVectorTile ofxVectorBuilder::getFromWeb(int _tileX, int _tileY, int _zoom){
     if(bFirst){
         glmGeometryBuilder::setOffset(_tileX,_tileY,_zoom);

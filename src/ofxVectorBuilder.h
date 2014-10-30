@@ -21,7 +21,7 @@ public:
     ofxVectorTile getFromWeb(double _lat, double _lon, int _zoom);
     
     ofPoint getOffset();
-    
+    ofPoint getPointAt(double _lat, double _lon, double _alt = 0);
     
 private:
     
