@@ -18,11 +18,11 @@ ofxVectorBuilder::~ofxVectorBuilder(){
 }
 
 ofPoint ofxVectorBuilder::getOffset(){
-    return toOf(m_geometryOffset);
+    return toOf(glmGeometryBuilder::getOffset());
 }
 
 ofPoint ofxVectorBuilder::getPointAt(double _lat, double _lon, double _alt){
-    return ofPoint(lon2x(_lon),lat2y(_lat),_alt)-getOffset();
+    return toOf(glmGeometryBuilder::getPointAt(_lat, _lon, _alt));
 }
 
 ofxVectorTile ofxVectorBuilder::getFromWeb(int _tileX, int _tileY, int _zoom){

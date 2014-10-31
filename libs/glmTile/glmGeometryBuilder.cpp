@@ -69,6 +69,10 @@ void glmGeometryBuilder::setOffset(int _tileX, int _tileY, int _zoom){
     m_geometryOffset.y = lat2y(atanf(sinhf(PI*(1-2*(_tileY+0.5)/n))) * 180.0f / PI);
 }
 
+glm::vec3 glmGeometryBuilder::getPointAt(double _lat, double _lon, double _alt){
+    return glm::vec3(lon2x(_lon),lat2y(_lat),_alt)-m_geometryOffset;
+}
+
 void glmGeometryBuilder::load(int _tileX, int _tileY, int _zoom, glmTile &_tile){
     //  TODO: get JSON file from the web
     //

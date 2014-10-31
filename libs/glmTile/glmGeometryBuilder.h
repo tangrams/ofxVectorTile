@@ -40,6 +40,7 @@ public:
     glmTile getFromWeb(int _tileX, int _tileY, int _zoom);
     
     glm::vec3 getOffset();
+    glm::vec3 getPointAt(double _lat, double _lon, double _alt = 0);
     
     void mergeFeature(const glmFeatureRef &_father, const glmFeatureRef &_child);
     void deleteFeature( glmTile &_tile, const std::string &_idString );
