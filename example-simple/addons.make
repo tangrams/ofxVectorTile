@@ -1,3 +1,2 @@
-ofxFTGL
 ofxJSON
 ofxVectorTile
