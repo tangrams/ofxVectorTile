@@ -97,14 +97,14 @@ void glmGeometryBuilder::load(Json::Value &_jsonRoot, glmTile & _tile){
     //  ... also record those that have labels.
     //
     buildLayer(_jsonRoot, "earth", _tile, 0.0);
-    buildLayer(_jsonRoot, "landuse", _tile, 1.0);
+    buildLayer(_jsonRoot, "landuse", _tile, .1);
     
-    buildLayer(_jsonRoot, "water", _tile, 2.0);
-    buildLayer(_jsonRoot, "buildings", _tile, 3.0);
+    buildLayer(_jsonRoot, "water", _tile, .2);
+    buildLayer(_jsonRoot, "buildings", _tile, .3);
     
-    buildLayer(_jsonRoot, "places", _tile, 4.0);
-    buildLayer(_jsonRoot, "roads", _tile, 5.0);
-    buildLayer(_jsonRoot, "pois", _tile, 6.0);
+    buildLayer(_jsonRoot, "places", _tile, .4);
+    buildLayer(_jsonRoot, "roads", _tile, .5);
+    buildLayer(_jsonRoot, "pois", _tile, .6);
     
     //  Until the data from the server provides buildings parts
     //  merge buildings (both important for have smarter labels)
