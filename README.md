@@ -1,6 +1,6 @@
-## Tangram-Tile
+## VectorTile
 
-These addon is a wrapper from a [Mapzen](mapzen.com) [Tangram](https://github.com/tangrams) experiment on 3D Labels 
+This addon is a wrapper from a [Mapzen](mapzen.com) [Tangram](https://github.com/tangrams) experiment on 3D Labels 
 
 ## Install
 
@@ -8,26 +8,24 @@ Install addons dependences:
 
 ```
 	cd openFrameworks/addons
+	git clone --depth 1 http://github.com/patriciogonzalezvivo/ofxGlmTools.git
 	git clone --depth 1 http://github.com/jefftimesten/ofxJSON.git
 ```
 
 ## Add to project
 
-Install ```ofxTangramTile``` to your project using the ProjectGenerator, dragging folder or Adam’s [OFPlugin](https://github.com/admsyn/OFPlugin). 
+Install ```ofxVectorTile``` to your project using the ProjectGenerator, dragging folder or Adam’s [OFPlugin](https://github.com/admsyn/OFPlugin). 
 
 On the project Properties (the blue icons with the name of your project) go to `Building Settings` > `Linking` > `Other Linker Flags` and add `-lcurl`
 
 ## Dependences
 
+- [ofxGlmTools](https://github.com/patriciogonzalezvivo/ofxGlmTools)
 - [ofxJSON](https://github.com/jefftimesten/ofxJSON)
 
 ## Sources
 
 - [glmTile](https://github.com/tangrams/glmTile)
-
-	* [glmTools](https://github.com/tangrams/glmTools)
-		-	[openGL](http://www.opengl.org/)
-		- [glm](http://glm.g-truc.net/0.9.5/index.html)
 
 	* [cURL](http://curl.haxx.se/libcurl/)
 	* [JsonCpp](https://github.com/open-source-parsers/jsoncpp)
@@ -37,12 +35,9 @@ On the project Properties (the blue icons with the name of your project) go to `
 ## The Problem
 Labels in maps are a huge headache, and have been for a long time. There are lots of solutions for 2D mapping, but not so many when you work in 3D, and especially not when your map shifts between 2D and 3D. 
 
-## The Experiements
+## The Experiments
 
 The main trick is a 2D projection of the geometry to place the text, within the canvas. Like a heads-up display layer between the 3D geometry and the camera.
-
-Like this: 
-![HUD](images/hud.jpg)
 
 In the canvas: 
 ![projection](images/projection.png)

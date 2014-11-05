@@ -9,7 +9,7 @@
 #include <vector>
 #include <tr1/memory>
 
-#include "glm/glm.hpp"
+#include "glm.hpp"
 
 #include "glmRectangle.h"
 #include "glfontstash.h"
