@@ -26,6 +26,7 @@
 		3DD709B11A0C22CF00912063 /* glmFeatureLabelLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DD709A41A0C22CF00912063 /* glmFeatureLabelLine.cpp */; };
 		3DD709B21A0C22CF00912063 /* glmFeatureLabelPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DD709A61A0C22CF00912063 /* glmFeatureLabelPoint.cpp */; };
 		3DD709B31A0C22CF00912063 /* glmLabelManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DD709A81A0C22CF00912063 /* glmLabelManager.cpp */; };
+		3DD709B51A0C2AB400912063 /* ofxGlmTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DD709B41A0C2AB400912063 /* ofxGlmTools.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -374,6 +375,7 @@
 		3DD709A71A0C22CF00912063 /* glmFeatureLabelPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glmFeatureLabelPoint.h; sourceTree = "<group>"; };
 		3DD709A81A0C22CF00912063 /* glmLabelManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = glmLabelManager.cpp; sourceTree = "<group>"; };
 		3DD709A91A0C22CF00912063 /* glmLabelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glmLabelManager.h; sourceTree = "<group>"; };
+		3DD709B41A0C2AB400912063 /* ofxGlmTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxGlmTools.cpp; sourceTree = "<group>"; };
 		6e98cadc2b8b092daa0a53febb10b8ea /* ofxJSONElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSONElement.h; path = ../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/src/ofxJSONElement.h; sourceTree = SOURCE_ROOT; };
 		7ccb00f8a03ff8297e09fc57361e5e12 /* json-forwards.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = "json-forwards.h"; path = "../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/libs/jsoncpp/include/json/json-forwards.h"; sourceTree = SOURCE_ROOT; };
 		9d3184f0d823375efc462eda5312926c /* ofxJSONElement.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxJSONElement.cpp; path = ../../../../../../Patricio/Desktop/openFrameworks/addons/ofxJSON/src/ofxJSONElement.cpp; sourceTree = SOURCE_ROOT; };
@@ -465,6 +467,7 @@
 			children = (
 				3DD708651A0C22CB00912063 /* ofxGlm.h */,
 				3DD708661A0C22CB00912063 /* ofxGlmTools.h */,
+				3DD709B41A0C2AB400912063 /* ofxGlmTools.cpp */,
 			);
 			name = src;
 			path = ../../ofxGlmTools/src;
@@ -1112,6 +1115,7 @@
 				3DD709AC1A0C22CF00912063 /* glmFont.cpp in Sources */,
 				3DD709821A0C22CB00912063 /* glmGeom.cpp in Sources */,
 				3DD709AF1A0C22CF00912063 /* glmAnchorLine.cpp in Sources */,
+				3DD709B51A0C2AB400912063 /* ofxGlmTools.cpp in Sources */,
 				3DD709AB1A0C22CF00912063 /* ofxVectorLabels.cpp in Sources */,
 				3DD709831A0C22CB00912063 /* glmGL.cpp in Sources */,
 				3DD709AD1A0C22CF00912063 /* glmGeometryBuilder.cpp in Sources */,

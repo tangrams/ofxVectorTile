@@ -7,10 +7,6 @@
 
 #pragma once
 
-#include "glmGL.h"
-#include "glmGeom.h"
-#include "glmString.h"
-
 #include "glmFeature.h"
 #include "glmFont.h"
 #include "glmAnchorLine.h"

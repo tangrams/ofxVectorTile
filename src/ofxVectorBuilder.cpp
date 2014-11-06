@@ -7,6 +7,9 @@
 
 #include "ofxVectorBuilder.h"
 
+#include "ofxGlmTools.h"
+#include "ofxGlm.h"
+
 ofxVectorBuilder::ofxVectorBuilder(){
 
 }

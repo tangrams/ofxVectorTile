@@ -7,6 +7,10 @@
 
 #include "glmGeometryBuilder.h"
 
+#include "glmGeo.h"
+#include "glmGeom.h"
+#include "glmString.h"
+
 #include <fstream>
 #include <utility>
 
