@@ -7,7 +7,7 @@
 
 #include "glmTile.h"
 
-#include "glmGeometryBuilder.h"
+//#include "glmGeometryBuilder.h"
 
 glmTile::glmTile():tileX(-1), tileY(-1), zoom(-1){
 }
@@ -19,22 +19,22 @@ glmTile::~glmTile(){
     labeledPoints.clear();
 }
 
-bool glmTile::load(int _tileX, int _tileY, int _zoom){
-    tileX = _tileX;
-    tileY = _tileY;
-    zoom = _zoom;
-    
-    glmGeometryBuilder builder;
-    builder.setOffset(_tileX,_tileY,_zoom);
-    builder.load(tileX, tileY, zoom, *this);
-}
-
-bool glmTile::load(double _lat, double _lon, int _zoom){
-    int tileX = long2tilex(_lon, _zoom);
-    int tileY = lat2tiley(_lat, _zoom);
-    
-    return load(tileX,tileY,_zoom);
-}
+//bool glmTile::load(int _tileX, int _tileY, int _zoom){
+//    tileX = _tileX;
+//    tileY = _tileY;
+//    zoom = _zoom;
+//    
+//    glmGeometryBuilder builder;
+//    builder.setOffset(_tileX,_tileY,_zoom);
+//    builder.load(tileX, tileY, zoom, *this);
+//}
+//
+//bool glmTile::load(double _lat, double _lon, int _zoom){
+//    int tileX = glm::long2tilex(_lon, _zoom);
+//    int tileY = glm::lat2tiley(_lat, _zoom);
+//    
+//    return load(tileX,tileY,_zoom);
+//}
 
 glmMesh glmTile::getMeshFor(const std::string &_layerName){
     glmMesh mesh;

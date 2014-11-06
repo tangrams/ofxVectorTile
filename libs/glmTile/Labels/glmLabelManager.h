@@ -13,7 +13,6 @@
 #include "glmTile.h"
 #include "glmFeatureLabelLine.h"
 #include "glmFeatureLabelPoint.h"
-#include "glmVectorField.h"
 
 class glmLabelManager {
 public:

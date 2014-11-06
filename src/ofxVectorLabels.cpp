@@ -8,9 +8,6 @@
 
 #include "ofxVectorLabels.h"
 
-#include "glmFont.h"
-#include "ofxGlm.h"
-
 ofxVectorLabels::ofxVectorLabels(){
     
 }

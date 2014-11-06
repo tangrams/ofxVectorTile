@@ -11,6 +11,9 @@
 #include "ofMain.h"
 #include "glmLabelManager.h"
 
+#include "glmFont.h"
+#include "ofxGlm.h"
+
 class ofxVectorLabels: public glmLabelManager {
 public:
     

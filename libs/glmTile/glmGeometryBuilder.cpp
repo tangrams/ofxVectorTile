@@ -42,7 +42,7 @@ std::string getURL(const std::string& url) {
     return out.str();
 }
 
-glmGeometryBuilder::glmGeometryBuilder():m_geometryOffset(0.0,0.0,0.0),lineWidth(5.5),labelManager(NULL){
+glmGeometryBuilder::glmGeometryBuilder():m_geometryOffset(0.0,0.0,0.0),lineWidth(5.5),labelManager(NULL),m_bFirst(true){
     LayerColorPalette["earth"] = glm::vec4(0.5,0.5,0.5,1.0);
     LayerColorPalette["landuse"] = glm::vec4(0.0,0.7,0.0,1.0);
     LayerColorPalette["water"] = glm::vec4(0.0,0.0,0.9,1.0);
@@ -64,13 +64,12 @@ void glmGeometryBuilder::setOffset(glm::vec3 _offset){
 }
 
 void glmGeometryBuilder::setOffset(int _tileX, int _tileY, int _zoom){
-    float n = powf(2.0f, _zoom);
-    m_geometryOffset.x = lon2x((_tileX + 0.5) / n * 360.0f - 180.0f);
-    m_geometryOffset.y = lat2y(atanf(sinhf(PI*(1-2*(_tileY+0.5)/n))) * 180.0f / PI);
+    m_geometryOffset = tile2xy(_tileX, _tileY, _zoom);
 }
 
 glm::vec3 glmGeometryBuilder::getPointAt(double _lat, double _lon, double _alt){
-    return glm::vec3(lon2x(_lon),lat2y(_lat),_alt)-m_geometryOffset;
+    return glm::vec3(lon2x(_lon),
+                     lat2y(_lat),_alt)-m_geometryOffset;
 }
 
 void glmGeometryBuilder::load(int _tileX, int _tileY, int _zoom, glmTile &_tile){
@@ -237,9 +236,28 @@ void glmGeometryBuilder::deleteFeature( glmTile &_tile, const std::string &_idSt
 }
 
 glmTile glmGeometryBuilder::getFromWeb(int _tileX, int _tileY, int _zoom){
+    
+    if(m_bFirst){
+        setOffset(_tileX,_tileY,_zoom);
+        m_bFirst = false;
+    }
+    
     glmTile newTile;
     load(_tileX, _tileY,_zoom,newTile);
     return newTile;
+}
+
+glmTile glmGeometryBuilder::getFromWeb(double _lat, double _lon, int _zoom){
+    int tileX = long2tilex(_lon, _zoom);
+    int tileY = lat2tiley(_lat, _zoom);
+    
+    if(m_bFirst){
+        setOffset(tileX,tileY,_zoom);
+        m_bFirst = false;
+    }
+    
+    glmTile tile;
+    glmGeometryBuilder::load(tileX,tileY,_zoom,tile);
 }
 
 void glmGeometryBuilder::buildLayer(Json::Value &_jsonRoot, const std::string &_layerName, glmTile &_tile, float _minHeight) {

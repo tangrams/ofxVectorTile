@@ -7,13 +7,16 @@
 
 #pragma once
 
+#include <memory>
+
 #include "json/json.h"
-#include "glmTools.h"
 
 #include "glmTile.h"
 #include "glmLabelManager.h"
 
-#include <memory>
+#include "glmGeo.h"
+#include "glmGeom.h"
+#include "glmString.h"
 
 class glmGeometryBuilder {
 public:
@@ -38,6 +41,7 @@ public:
     void load(Json::Value &_jsonRoot, glmTile &_tile);
     glmTile getFromFile(std::string _fileName);
     glmTile getFromWeb(int _tileX, int _tileY, int _zoom);
+    glmTile getFromWeb(double _lat, double _lon, int _zoom);
     
     glm::vec3 getOffset();
     glm::vec3 getPointAt(double _lat, double _lon, double _alt = 0);
@@ -62,4 +66,6 @@ protected:
     glm::vec3 m_geometryOffset;
     
     glmLabelManager *labelManager;
+    
+    bool    m_bFirst;
 };
