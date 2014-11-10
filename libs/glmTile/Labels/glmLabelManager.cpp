@@ -177,7 +177,6 @@ void glmLabelManager::updateProjection(){
 
                 it->m_anchorLines.clear();
                 if(bUpdateSegments){
-                    glmPolyline allPoints;
                     for (auto &shape: it->shapes) {
                         glmAnchorLine line;
                         for (int i = 0; i < shape.size(); i++) {
