@@ -46,7 +46,7 @@ ofMesh ofxVectorTile::getMeshFor(const std::vector< std::string > &_layersNames)
 void ofxVectorTile::draw(){
     for (auto &layer : byLayers ){
         for( auto &feature : layer.second ){
-            feature->draw();
+            drawMesh(*feature);
         }
     }
 }

@@ -258,8 +258,9 @@ glmTile glmGeometryBuilder::getFromWeb(double _lat, double _lon, int _zoom){
         m_bFirst = false;
     }
     
-    glmTile tile;
-    glmGeometryBuilder::load(tileX,tileY,_zoom,tile);
+    glmTile newTile;
+    glmGeometryBuilder::load(tileX,tileY,_zoom,newTile);
+    return newTile;
 }
 
 void glmGeometryBuilder::buildLayer(Json::Value &_jsonRoot, const std::string &_layerName, glmTile &_tile, float _minHeight) {
