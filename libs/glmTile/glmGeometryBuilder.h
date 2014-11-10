@@ -7,12 +7,11 @@
 
 #pragma once
 
+//#include <memory>
 #include "json/json.h"
 
 #include "glmTile.h"
 #include "glmLabelManager.h"
-
-#include <memory>
 
 class glmGeometryBuilder {
 public:

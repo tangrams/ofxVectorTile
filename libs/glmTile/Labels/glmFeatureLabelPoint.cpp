@@ -181,14 +181,14 @@ void glmFeatureLabelPoint::draw3D(){
     if(m_alpha > 0.1){
         
         m_line.clear();
-        m_line.setDrawMode(GL_LINES);
+        m_line.setDrawMode(LINES);
         m_line.addVertex(m_centroid);
         m_line.addVertex(m_centroid+m_offset);
         
         glColor4f(1., 1., 1., m_alpha);
         glEnable(GL_LINE_STIPPLE);
         glLineStipple(1, 0x1111);
-        m_line.draw();
+        drawMesh(m_line);
         glDisable(GL_LINE_STIPPLE);
         
         glColor4f(1., 1., 1., 1.);

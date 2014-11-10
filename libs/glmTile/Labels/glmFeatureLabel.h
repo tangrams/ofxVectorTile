@@ -8,9 +8,10 @@
 #pragma once
 
 #include "glmFeature.h"
-#include "glmFont.h"
 #include "glmAnchorLine.h"
 #include "glmRectangle.h"
+
+#include "glmFont.h"
 
 class glmFeatureLabel : public glmFeature{
 public:

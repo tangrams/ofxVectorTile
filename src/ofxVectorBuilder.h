@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "ofMesh.h"
+#include "ofMain.h"
 #include "glmGeometryBuilder.h"
 
 class ofxVectorBuilder : public glmGeometryBuilder {

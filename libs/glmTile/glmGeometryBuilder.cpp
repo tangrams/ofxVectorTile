@@ -7,15 +7,15 @@
 
 #include "glmGeometryBuilder.h"
 
-#include "glmGeo.h"
-#include "glmGeom.h"
-#include "glmString.h"
-
 #include <fstream>
 #include <utility>
 
 #include <curl/curl.h>
 #include <iostream>
+
+#include "glmGeo.h"
+#include "glmGeom.h"
+#include "glmString.h"
 
 //write_data call back from CURLOPT_WRITEFUNCTION
 //responsible to read and fill "stream" with the data.
@@ -112,55 +112,53 @@ void glmGeometryBuilder::load(Json::Value &_jsonRoot, glmTile & _tile){
     //  Until the data from the server provides buildings parts
     //  merge buildings (both important for have smarter labels)
     //
-    for (auto &pointLabel: _tile.labeledPoints) {
-        
-        for(int i = _tile.byLayers["buildings"].size()-1; i >= 0; i-- ){
-            if (pointLabel.get() != NULL
-                && _tile.byLayers["buildings"][i].get() != NULL
-                && pointLabel.get() != _tile.byLayers["buildings"][i].get() ) {
-                
-                bool bOverlap = false;
-                
-                for (auto &it: _tile.byLayers["buildings"][i]->shapes ) {
-                    glm::vec3 centroid = it.getCentroid();
-                    for (auto &jt: pointLabel->shapes){
-                        if( jt.isInside(centroid.x, centroid.y) ){
-                            bOverlap = true;
-                            break;
-                        }
-                    }
-                    
-                    if(bOverlap){
-                        break;
-                    }
-                }
-                
-                if(bOverlap){
-                    mergeFeature(pointLabel, _tile.byLayers["buildings"][i]);
-                    
-                    //  Erase the merged geometry
-                    //
-                    deleteFeature(_tile, _tile.byLayers["buildings"][i]->idString);
-                }
-                
-            }
-            
-        }
-        
-        int maxHeight = 0;
-        glm::vec3 center;
-        for (auto &it: pointLabel->shapes) {
-            if (it[0].z > maxHeight) {
-                maxHeight = it[0].z;
-            }
-            center += it.getCentroid();
-        }
-        center = center / (float)pointLabel->shapes.size();
-        center.z = maxHeight;
-        pointLabel->setPosition(center);
-    }
-    
-    
+//    for (auto &pointLabel: _tile.labeledPoints) {
+//        
+//        for(int i = _tile.byLayers["buildings"].size()-1; i >= 0; i-- ){
+//            if (pointLabel.get() != NULL
+//                && _tile.byLayers["buildings"][i].get() != NULL
+//                && pointLabel.get() != _tile.byLayers["buildings"][i].get() ) {
+//                
+//                bool bOverlap = false;
+//                
+//                for (auto &it: _tile.byLayers["buildings"][i]->shapes ) {
+//                    glm::vec3 centroid = it.getCentroid();
+//                    for (auto &jt: pointLabel->shapes){
+//                        if( jt.isInside(centroid.x, centroid.y) ){
+//                            bOverlap = true;
+//                            break;
+//                        }
+//                    }
+//                    
+//                    if(bOverlap){
+//                        break;
+//                    }
+//                }
+//                
+//                if(bOverlap){
+//                    mergeFeature(pointLabel, _tile.byLayers["buildings"][i]);
+//                    
+//                    //  Erase the merged geometry
+//                    //
+//                    deleteFeature(_tile, _tile.byLayers["buildings"][i]->idString);
+//                }
+//                
+//            }
+//            
+//        }
+//        
+//        int maxHeight = 0;
+//        glm::vec3 center;
+//        for (auto &it: pointLabel->shapes) {
+//            if (it[0].z > maxHeight) {
+//                maxHeight = it[0].z;
+//            }
+//            center += it.getCentroid();
+//        }
+//        center = center / (float)pointLabel->shapes.size();
+//        center.z = maxHeight;
+//        pointLabel->setPosition(center);
+//    }
 }
 
 glm::vec3 glmGeometryBuilder::getOffset(){

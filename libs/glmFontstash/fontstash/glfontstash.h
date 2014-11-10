@@ -28,6 +28,8 @@
 #include <map>
 #include <stack>
 
+#include <OpenGL/gl.h>
+
 typedef unsigned int fsuint;
 
 #define BUFFER_SIZE     2

@@ -10,7 +10,7 @@
 #include <map>
 
 #include "glmFeature.h"
-#include "glmFeatureLabel.h"
+//#include "glmFeatureLabel.h"
 #include "glmFeatureLabelLine.h"
 #include "glmFeatureLabelPoint.h"
 
