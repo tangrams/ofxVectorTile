@@ -1,13 +1,15 @@
 //
 //  ofxVectorTile.cpp
+//  example
 //
-//  Created by Patricio Gonzalez Vivo on 10/10/14.
+//  Created by Patricio Gonzalez Vivo on 11/10/14.
 //
 //
 
 #include "ofxVectorTile.h"
 
 #include "ofxGlm.h"
+#include "ofxGlmTools.h"
 
 ofxVectorTile::ofxVectorTile(){
     
@@ -15,6 +17,18 @@ ofxVectorTile::ofxVectorTile(){
 
 ofxVectorTile::~ofxVectorTile(){
     
+}
+
+ofxVectorTile& ofxVectorTile::operator = (const glmTile &_tile){
+    byLayers.clear();
+    labeledFeatures.clear();
+    labeledLines.clear();
+    labeledPoints.clear();
+    
+    byLayers = _tile.byLayers;
+    labeledFeatures = _tile.labeledFeatures;
+    labeledLines = _tile.labeledLines;
+    labeledPoints = _tile.labeledPoints;
 }
 
 ofMesh ofxVectorTile::getMesh(){

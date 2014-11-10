@@ -8,13 +8,11 @@
 
 #pragma once
 
-#include "glmFont.h"
-
 #include "glmTile.h"
 #include "glmFeatureLabelLine.h"
 #include "glmFeatureLabelPoint.h"
-#include "glmVectorField.h"
 
+#include "glmFont.h"
 class glmLabelManager {
 public:
     

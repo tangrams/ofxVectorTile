@@ -8,7 +8,8 @@ void ofApp::setup(){
     light.setDiffuseColor(ofFloatColor(0.9));
     light.setPosition(ofPoint(0,0,100));
     
-    tile.load(19299,24631,16);
+    ofxVectorBuilder builder;
+    tile = builder.getMesh(19299,24631,16);
 }
 
 //--------------------------------------------------------------

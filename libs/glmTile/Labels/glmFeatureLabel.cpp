@@ -8,6 +8,10 @@
 
 #include "glmFeatureLabel.h"
 
+#include "glmGL.h"
+#include "glmGeom.h"
+#include "glmString.h"
+
 glmFeatureLabel::glmFeatureLabel(): m_text("NONE"), m_alpha(0.0), m_cameraPos(NULL), bVisible(false), m_bChanged(true) {
     
 }

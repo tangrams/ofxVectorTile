@@ -1,7 +1,7 @@
 //
-//  ofxVectorTile.cpp
+//  ofxVectorTile.h
 //
-//  Created by Patricio Gonzalez Vivo on 10/10/14.
+//  Created by Patricio Gonzalez Vivo on 11/10/14.
 //
 //
 
@@ -16,12 +16,11 @@ public:
     ofxVectorTile();
     virtual ~ofxVectorTile();
     
+    ofxVectorTile& operator = (const glmTile &_tile);
+    
     ofMesh getMesh();
     ofMesh getMeshFor(const std::string &_layerName);
     ofMesh getMeshFor(const std::vector< std::string > &_layersNames);
     
     void draw();
 };
-
-
-

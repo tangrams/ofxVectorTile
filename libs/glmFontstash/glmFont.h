@@ -9,9 +9,9 @@
 #include <vector>
 #include <tr1/memory>
 
-#include "glm.hpp"
-
 #include "glmRectangle.h"
+
+#include "glm.hpp"
 #include "glfontstash.h"
 
 #define ATLAS_MAX_SIZE 2048

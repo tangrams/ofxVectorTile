@@ -1,7 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxVectorTile.h"
+
+#include "ofxVectorBuilder.h"
 
 class ofApp : public ofBaseApp{
 public:
@@ -22,5 +23,5 @@ public:
     ofEasyCam   cam;
     ofLight     light;
   
-    ofxVectorTile      tile;
+    ofVboMesh   tile;
 };

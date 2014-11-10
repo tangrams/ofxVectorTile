@@ -9,9 +9,7 @@
 
 #include "glmFeatureLabel.h"
 
-#include "glmPolyline.h"
 #include "glmAnchorLine.h"
-
 #include "glmFeatureLabelPoint.h"
 
 class glmFeatureLabelLine : public glmFeatureLabel{

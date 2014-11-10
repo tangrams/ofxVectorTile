@@ -163,7 +163,7 @@ void glmFeatureLabelLine::drawDebug(){
     glEnable(GL_LINE_STIPPLE);
     glLineStipple(1, 0x1111);
     for (auto &it: m_anchorLines) {
-        it.draw();
+        drawPolyline(it.getVertices());
     }
     glDisable(GL_LINE_STIPPLE);
     

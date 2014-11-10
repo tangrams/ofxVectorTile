@@ -5,7 +5,6 @@
 #include "ofxVectorBuilder.h"
 #include "ofxVectorLabels.h"
 
-
 class ofApp : public ofBaseApp{
 public:
     void setup();

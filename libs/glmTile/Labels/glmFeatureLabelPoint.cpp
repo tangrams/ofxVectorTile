@@ -8,6 +8,7 @@
 
 #include "glmFeatureLabelPoint.h"
 
+
 glmFeatureLabelPoint::glmFeatureLabelPoint():m_centroid(0.0,0.0,0.0), m_offset(0.0,0.0,0.0), m_anchorPoint(0.0,0.0,0.0), m_margin(8.0), m_angle(HALF_PI) {
 };
 
@@ -180,14 +181,14 @@ void glmFeatureLabelPoint::draw3D(){
     if(m_alpha > 0.1){
         
         m_line.clear();
-        m_line.setDrawMode(GL_LINES);
+        m_line.setDrawMode(LINES);
         m_line.addVertex(m_centroid);
         m_line.addVertex(m_centroid+m_offset);
         
         glColor4f(1., 1., 1., m_alpha);
         glEnable(GL_LINE_STIPPLE);
         glLineStipple(1, 0x1111);
-        m_line.draw();
+        drawMesh(m_line);
         glDisable(GL_LINE_STIPPLE);
         
         glColor4f(1., 1., 1., 1.);
@@ -200,7 +201,7 @@ void glmFeatureLabelPoint::drawDebug(){
     glEnable(GL_LINE_STIPPLE);
     glLineStipple(1, 0x1111);
     for (auto &it: m_anchorLines) {
-        it.draw();
+        drawPolyline(it.getVertices());
     }
     glDisable(GL_LINE_STIPPLE);
     drawCross(m_anchorPoint,3.0);
@@ -210,7 +211,7 @@ void glmFeatureLabelPoint::drawDebug(){
 //        m_label.drawCorners();
     } else {
         glColor4f(m_font->fontColor.r, m_font->fontColor.g, m_font->fontColor.g,1.);
-        getLabel(25).drawCorners();
+        drawCorners(getLabel(25));
     }
 }
 

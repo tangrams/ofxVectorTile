@@ -18,7 +18,7 @@
 #ifndef GLFONTSTASH_H
 #define GLFONTSTASH_H
 
-#include "glm.hpp"
+#include "glmGL.h"
 #include "type_ptr.hpp"
 #include "matrix_transform.hpp"
 
@@ -27,6 +27,8 @@
 
 #include <map>
 #include <stack>
+
+#include <OpenGL/gl.h>
 
 typedef unsigned int fsuint;
 

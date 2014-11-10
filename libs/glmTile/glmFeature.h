@@ -12,6 +12,8 @@
 //#include <memory>
 #include <tr1/memory>
 
+#include "glmString.h"
+#include "glmPolyline.h"
 #include "glmMesh.h"
 
 class glmFeature : public glmMesh {
@@ -21,7 +23,7 @@ public:
     virtual ~glmFeature(){};
     
     std::vector<glmPolyline> shapes;
-    std::string     idString;
+    std::string idString;
     
 protected:
     

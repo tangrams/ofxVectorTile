@@ -13,6 +13,10 @@
 #include <curl/curl.h>
 #include <iostream>
 
+#include "glmGeo.h"
+#include "glmGeom.h"
+#include "glmString.h"
+
 //write_data call back from CURLOPT_WRITEFUNCTION
 //responsible to read and fill "stream" with the data.
 size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream) {
@@ -42,7 +46,7 @@ std::string getURL(const std::string& url) {
     return out.str();
 }
 
-glmGeometryBuilder::glmGeometryBuilder():m_geometryOffset(0.0,0.0,0.0),lineWidth(5.5),labelManager(NULL){
+glmGeometryBuilder::glmGeometryBuilder():m_geometryOffset(0.0,0.0,0.0),lineWidth(5.5),labelManager(NULL),m_bFirst(true){
     LayerColorPalette["earth"] = glm::vec4(0.5,0.5,0.5,1.0);
     LayerColorPalette["landuse"] = glm::vec4(0.0,0.7,0.0,1.0);
     LayerColorPalette["water"] = glm::vec4(0.0,0.0,0.9,1.0);
@@ -64,13 +68,12 @@ void glmGeometryBuilder::setOffset(glm::vec3 _offset){
 }
 
 void glmGeometryBuilder::setOffset(int _tileX, int _tileY, int _zoom){
-    float n = powf(2.0f, _zoom);
-    m_geometryOffset.x = lon2x((_tileX + 0.5) / n * 360.0f - 180.0f);
-    m_geometryOffset.y = lat2y(atanf(sinhf(PI*(1-2*(_tileY+0.5)/n))) * 180.0f / PI);
+    m_geometryOffset = tile2xy(_tileX, _tileY, _zoom);
 }
 
 glm::vec3 glmGeometryBuilder::getPointAt(double _lat, double _lon, double _alt){
-    return glm::vec3(lon2x(_lon),lat2y(_lat),_alt)-m_geometryOffset;
+    return glm::vec3(lon2x(_lon),
+                     lat2y(_lat),_alt)-m_geometryOffset;
 }
 
 void glmGeometryBuilder::load(int _tileX, int _tileY, int _zoom, glmTile &_tile){
@@ -109,55 +112,53 @@ void glmGeometryBuilder::load(Json::Value &_jsonRoot, glmTile & _tile){
     //  Until the data from the server provides buildings parts
     //  merge buildings (both important for have smarter labels)
     //
-    for (auto &pointLabel: _tile.labeledPoints) {
-        
-        for(int i = _tile.byLayers["buildings"].size()-1; i >= 0; i-- ){
-            if (pointLabel.get() != NULL
-                && _tile.byLayers["buildings"][i].get() != NULL
-                && pointLabel.get() != _tile.byLayers["buildings"][i].get() ) {
-                
-                bool bOverlap = false;
-                
-                for (auto &it: _tile.byLayers["buildings"][i]->shapes ) {
-                    glm::vec3 centroid = it.getCentroid();
-                    for (auto &jt: pointLabel->shapes){
-                        if( jt.isInside(centroid.x, centroid.y) ){
-                            bOverlap = true;
-                            break;
-                        }
-                    }
-                    
-                    if(bOverlap){
-                        break;
-                    }
-                }
-                
-                if(bOverlap){
-                    mergeFeature(pointLabel, _tile.byLayers["buildings"][i]);
-                    
-                    //  Erase the merged geometry
-                    //
-                    deleteFeature(_tile, _tile.byLayers["buildings"][i]->idString);
-                }
-                
-            }
-            
-        }
-        
-        int maxHeight = 0;
-        glm::vec3 center;
-        for (auto &it: pointLabel->shapes) {
-            if (it[0].z > maxHeight) {
-                maxHeight = it[0].z;
-            }
-            center += it.getCentroid();
-        }
-        center = center / (float)pointLabel->shapes.size();
-        center.z = maxHeight;
-        pointLabel->setPosition(center);
-    }
-    
-    
+//    for (auto &pointLabel: _tile.labeledPoints) {
+//        
+//        for(int i = _tile.byLayers["buildings"].size()-1; i >= 0; i-- ){
+//            if (pointLabel.get() != NULL
+//                && _tile.byLayers["buildings"][i].get() != NULL
+//                && pointLabel.get() != _tile.byLayers["buildings"][i].get() ) {
+//                
+//                bool bOverlap = false;
+//                
+//                for (auto &it: _tile.byLayers["buildings"][i]->shapes ) {
+//                    glm::vec3 centroid = it.getCentroid();
+//                    for (auto &jt: pointLabel->shapes){
+//                        if( jt.isInside(centroid.x, centroid.y) ){
+//                            bOverlap = true;
+//                            break;
+//                        }
+//                    }
+//                    
+//                    if(bOverlap){
+//                        break;
+//                    }
+//                }
+//                
+//                if(bOverlap){
+//                    mergeFeature(pointLabel, _tile.byLayers["buildings"][i]);
+//                    
+//                    //  Erase the merged geometry
+//                    //
+//                    deleteFeature(_tile, _tile.byLayers["buildings"][i]->idString);
+//                }
+//                
+//            }
+//            
+//        }
+//        
+//        int maxHeight = 0;
+//        glm::vec3 center;
+//        for (auto &it: pointLabel->shapes) {
+//            if (it[0].z > maxHeight) {
+//                maxHeight = it[0].z;
+//            }
+//            center += it.getCentroid();
+//        }
+//        center = center / (float)pointLabel->shapes.size();
+//        center.z = maxHeight;
+//        pointLabel->setPosition(center);
+//    }
 }
 
 glm::vec3 glmGeometryBuilder::getOffset(){
@@ -237,9 +238,28 @@ void glmGeometryBuilder::deleteFeature( glmTile &_tile, const std::string &_idSt
 }
 
 glmTile glmGeometryBuilder::getFromWeb(int _tileX, int _tileY, int _zoom){
+    
+    if(m_bFirst){
+        setOffset(_tileX,_tileY,_zoom);
+        m_bFirst = false;
+    }
+    
     glmTile newTile;
     load(_tileX, _tileY,_zoom,newTile);
     return newTile;
+}
+
+glmTile glmGeometryBuilder::getFromWeb(double _lat, double _lon, int _zoom){
+    int tileX = long2tilex(_lon, _zoom);
+    int tileY = lat2tiley(_lat, _zoom);
+    
+    if(m_bFirst){
+        setOffset(tileX,tileY,_zoom);
+        m_bFirst = false;
+    }
+    
+    glmTile tile;
+    glmGeometryBuilder::load(tileX,tileY,_zoom,tile);
 }
 
 void glmGeometryBuilder::buildLayer(Json::Value &_jsonRoot, const std::string &_layerName, glmTile &_tile, float _minHeight) {
