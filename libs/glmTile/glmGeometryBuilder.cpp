@@ -16,6 +16,7 @@
 #include "glmGeo.h"
 #include "glmGeom.h"
 #include "glmString.h"
+#include "glmTesselation.h"
 
 //write_data call back from CURLOPT_WRITEFUNCTION
 //responsible to read and fill "stream" with the data.
@@ -79,7 +80,7 @@ glm::vec3 glmGeometryBuilder::getPointAt(double _lat, double _lon, double _alt){
 void glmGeometryBuilder::load(int _tileX, int _tileY, int _zoom, glmTile &_tile){
     //  TODO: get JSON file from the web
     //
-    std::string tmp = getURL("http://vector.mapzen.com/osm/all/"+toString(_zoom)+"/"+toString(_tileX)+"/"+toString(_tileY)+".json");
+    std::string tmp = getURL("http://vector.mapzen.com/osm/all/"+ toString(_zoom)+"/"+toString(_tileX)+"/"+toString(_tileY)+".json");
     
     std::tr1::shared_ptr<Json::Value> jsonVal(new Json::Value);
     
@@ -384,7 +385,8 @@ void glmGeometryBuilder::buildLayer(Json::Value &_jsonRoot, const std::string &_
                 feature->shapes.push_back(polyline);
             }
             
-            feature->add(polyline,lineWidth);
+//            feature->add(polyline,lineWidth);
+            flatLine(*feature, polyline, lineWidth);
             
         } else if (geometryType.compare("MultiLineString") == 0) {
             
@@ -420,7 +422,8 @@ void glmGeometryBuilder::buildLayer(Json::Value &_jsonRoot, const std::string &_
                 }
             }
             
-            feature->add(polyline,lineWidth);
+//            feature->add(polyline,lineWidth);
+            flatLine(*feature, polyline, lineWidth);
             
         } else if (geometryType.compare("Polygon") == 0) {
             
@@ -540,7 +543,7 @@ void glmGeometryBuilder::pointJson2Mesh(Json::Value &_lineJson, glmMesh &_mesh, 
                                _minHeight));
         angle += jump;
     }
-    _mesh.add(polyline);
+    _mesh.add( getMesh(polyline) );
 }
 
 //---------------------------------------------------------------------------
@@ -600,5 +603,5 @@ void glmGeometryBuilder::polygonJson2Mesh(Json::Value &polygonJson, glmMesh &_me
         rings.push_back(ringCoords);
     }
     
-    _mesh.add(rings);
+    _mesh.add( getMesh(rings) );
 }
