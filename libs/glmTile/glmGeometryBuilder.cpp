@@ -80,7 +80,7 @@ glm::vec3 glmGeometryBuilder::getPointAt(double _lat, double _lon, double _alt){
 void glmGeometryBuilder::load(int _tileX, int _tileY, int _zoom, glmTile &_tile){
     //  TODO: get JSON file from the web
     //
-    std::string tmp = getURL("http://vector.mapzen.com/osm/all/"+ toString(_zoom)+"/"+toString(_tileX)+"/"+toString(_tileY)+".json");
+    std::string tmp = getURL("http://vector.mapzen.com/osm/all/"+ getString(_zoom)+"/" + getString(_tileX) + "/" + getString(_tileY)+".json");
     
     std::tr1::shared_ptr<Json::Value> jsonVal(new Json::Value);
     
