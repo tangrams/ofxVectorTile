@@ -1,3 +1,6 @@
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 ## VectorTile
 
 This addon is a wrapper from a [Mapzen](mapzen.com) [Tangram](https://github.com/tangrams) experiment on 3D Labels 
